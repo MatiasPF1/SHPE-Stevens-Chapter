@@ -1,8 +1,8 @@
 "use client";
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { motion, type Easing } from 'framer-motion';
+const heroImages = ["/SHPE2025.jpg", "/Kahoot.png", "/tips.jpg", "/tip2.jpg"];
 
 // Icon component for contact details
 const InfoIcon = ({ type }: { type:'address' }) => {
@@ -43,7 +43,15 @@ interface HeroSectionProps {
 
 const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
   ({ className, logo, slogan, title, subtitle, callToAction, backgroundImage, contactInfo }, ref) => {
-    
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+      }, 6000);
+      return () => clearInterval(interval);
+    }, []);
+
     // Animation variants for the container to orchestrate children animations
     const containerVariants = {
       hidden: { opacity: 0 },
@@ -133,16 +141,25 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
             </motion.footer>
         </div>
 
-        {/* Right Side: Image with Clip Path Animation */}
+        {/* Right Side: Image Carousel with one-time clip-path reveal */}
         <motion.div 
-          className="w-full min-h-full bg-cover bg-center md:w-1/2 md:min-h-full lg:w-4/6"
-          style={{ 
-            backgroundImage: `url(${backgroundImage})`,
-          }}
+          className="relative w-full md:w-1/2 lg:w-11/15 overflow-hidden"
+          style={{ minHeight: '400px' }}
           initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
-          animate={{ clipPath: 'polygon(28% 0, 100% 0, 100% 100%, 0% 100%)' }}
+          animate={{ clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0% 100%)' }}
           transition={{ duration: 1.2, ease: "circOut" }}
         >
+          {heroImages.map((src, index) => (
+            <img
+              key={src}
+              src={src}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+              style={{
+                opacity: index === currentImageIndex ? 1 : 0,
+              }}
+            />
+          ))}
         </motion.div>
       </motion.section>
     );
