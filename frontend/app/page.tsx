@@ -1,4 +1,6 @@
-import { HeroSection } from "@/components/ui/hero-section-2";
+import { HeroSection } from "@/components_Main/hero-section-2";
+import ElegantCarousel from "@/components_Main/elegant-carousel";
+import AboutSection from "@/components_Main/about-section";
 
 export default function Home() {
   return (
@@ -10,7 +12,7 @@ export default function Home() {
             <span className="text-primary">Professional Engineers</span>
           </>
         }
-        subtitle="The Society of Hispanic Professional Engineers at Stevens Institute of Technology, empowers the Hispanic community to realize its fullest potential through STEM awareness, access, support, and development."
+        subtitle="Stevens SHPE builds professional excellence through leadership, community engagement, and sustainable innovation in engineering, empowering the next generation of Hispanic STEM professionals."
         callToAction={{
           text: "JOIN NATIONAL CHAPTER →",
           href: "https://shpe.org/membership/become-a-member/",
@@ -20,6 +22,8 @@ export default function Home() {
           address: "1 Castle Point Terrace, Hoboken, NJ",
         }}
       />
+      <AboutSection />
+      <ElegantCarousel />
     </div>
   );
 }
