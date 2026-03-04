@@ -9,7 +9,7 @@ export default function Home() {
         title={
           <>
             Society of Hispanic <br />
-            <span className="text-primary">Professional Engineers</span>
+            <span className="text-red-600">Professional Engineers</span>
           </>
         }
         subtitle="Stevens SHPE builds professional excellence through leadership, community engagement, and sustainable innovation in engineering, empowering the next generation of Hispanic STEM professionals."

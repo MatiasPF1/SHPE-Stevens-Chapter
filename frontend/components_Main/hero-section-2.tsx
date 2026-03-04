@@ -8,7 +8,7 @@ const heroImages = ["/SHPE2025.jpg", "/Kahoot.png", "/tips.jpg", "/tip2.jpg"];
 const InfoIcon = ({ type }: { type:'address' }) => {
     const icons = {
         address: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-red-500">
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
             </svg>
@@ -81,7 +81,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       <motion.section
         ref={ref}
         className={cn(
-          "relative flex w-full flex-col overflow-hidden bg-background text-foreground md:flex-row",
+          "relative flex min-h-[calc(100vh-5rem)] w-full flex-col overflow-hidden bg-gray-900 text-white md:flex-row",
           className
         )}
         initial="hidden"
@@ -89,7 +89,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         variants={containerVariants}
       >
         {/* Left Side: Content */}
-        <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16">
+        <div className="flex w-full flex-col justify-between px-8 py-10 md:w-[45%] md:px-12 md:py-14 lg:w-[42%] lg:pl-20 lg:pr-12 lg:py-16">
             {/* Top Section: Logo & Main Content */}
             <div>
                 <motion.header className="mb-12" variants={itemVariants}>
@@ -97,30 +97,36 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                         <div className="flex items-center">
                             <img src={logo.url} alt={logo.alt} className="mr-3 h-8" />
                             <div>
-                                {logo.text && <p className="text-lg font-bold text-foreground">{logo.text}</p>}
-                                {slogan && <p className="text-xs tracking-wider text-muted-foreground">{slogan}</p>}
+                                {logo.text && <p className="text-lg font-bold text-white">{logo.text}</p>}
+                                {slogan && <p className="text-xs tracking-wider text-gray-400">{slogan}</p>}
                             </div>
                         </div>
                     )}
                 </motion.header>
 
                 <motion.main variants={containerVariants}>
-                    <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
+                    <motion.h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[3.4rem]" variants={itemVariants}>
                         {title}
                     </motion.h1>
-                    <motion.div className="my-6 h-1 w-20 bg-primary" variants={itemVariants}></motion.div>
-                    <motion.p className="mb-8 max-w-md text-base text-muted-foreground" variants={itemVariants}>
+                    <motion.p className="mt-8 mb-8 max-w-md text-[0.95rem] leading-relaxed text-gray-300" variants={itemVariants}>
                         {subtitle}
                     </motion.p>
-                    <motion.a href={callToAction.href} className="text-lg font-bold tracking-widest text-primary transition-colors hover:text-primary/80" variants={itemVariants}>
-                        {callToAction.text}
+                    <motion.a
+                      href={callToAction.href}
+                      className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-red-500 transition-all duration-300 hover:gap-3 hover:text-red-400"
+                      variants={itemVariants}
+                    >
+                        {callToAction.text.replace(' →', '')}
+                        <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
                     </motion.a>
                 </motion.main>
             </div>
 
             {/* Bottom Section: Footer Info */}
-            <motion.footer className="mt-12 w-full" variants={itemVariants}>
-                <div className="grid grid-cols-1 gap-6 text-xs text-muted-foreground sm:grid-cols-3">
+            <motion.footer className="mt-auto pt-10 w-full" variants={itemVariants}>
+                <div className="flex flex-wrap gap-6 text-xs text-gray-400">
                     {contactInfo.website && (
                     <div className="flex items-center">
                         <InfoIcon type="address" />
@@ -143,10 +149,10 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
         {/* Right Side: Image Carousel with one-time clip-path reveal */}
         <motion.div 
-          className="relative w-full md:w-1/2 lg:w-11/15 overflow-hidden"
-          style={{ minHeight: '400px' }}
+          className="relative w-full md:w-[55%] lg:w-[58%] overflow-hidden"
+          style={{ minHeight: '500px' }}
           initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
-          animate={{ clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0% 100%)' }}
+          animate={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
           transition={{ duration: 1.2, ease: "circOut" }}
         >
           {heroImages.map((src, index) => (
