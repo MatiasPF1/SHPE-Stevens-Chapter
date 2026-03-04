@@ -24,8 +24,12 @@ export default function Home() {
         }}
       />
       <Logos3 />
-      <AboutSection />
-      <ElegantCarousel />
+      <div className="-translate-y-8">
+        <AboutSection />
+      </div>
+        <div className="-translate-y-12">
+        <ElegantCarousel />
+      </div>
     </div>
   );
 }

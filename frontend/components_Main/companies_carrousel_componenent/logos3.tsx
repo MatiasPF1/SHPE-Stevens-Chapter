@@ -27,34 +27,35 @@ interface Logos3Props {
 
 const Logos3 = ({
   logosTop = [
-    { id: "company-1", description: "Company 1", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+1", className: "h-10 w-auto" },
-    { id: "company-2", description: "Company 2", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+2", className: "h-10 w-auto" },
-    { id: "company-3", description: "Company 3", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+3", className: "h-10 w-auto" },
-    { id: "company-4", description: "Company 4", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+4", className: "h-10 w-auto" },
-    { id: "company-5", description: "Company 5", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+5", className: "h-10 w-auto" },
-    { id: "company-6", description: "Company 6", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+6", className: "h-10 w-auto" },
-    { id: "company-7", description: "Company 7", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+7", className: "h-10 w-auto" },
-    { id: "company-8", description: "Company 8", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+8", className: "h-10 w-auto" },
+    { id: "company-1", description: "Chase", image: "/Company1.png", className: "max-h-[40px] max-w-[150px] object-contain" },
+    { id: "company-2", description: "Bank of America", image: "/Company2.png", className: "max-h-[45px] max-w-[50px] object-contain" },
+    { id: "company-3", description: "NVIDIA", image: "/Company3.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "company-4", description: "GE", image: "/Company4.png", className: "max-h-[45px] max-w-[120px] object-contain" },
+    { id: "company-5", description: "GM", image: "/Company5.png", className: "max-h-[35px] max-w-[160px] object-contain" },
+    { id: "company-6", description: "Microsoft", image: "/Company6.png", className: "max-h-[40px] max-w-[150px] object-contain" },
+    { id: "company-7", description: "Honda", image: "/Company7.png", className: "max-h-[45px] max-w-[45px] object-contain" },
+    { id: "company-8", description: "Company 8", image: "/Company8.png", className: "max-h-[45px] max-w-[45px] object-contain" },
   ],
   logosBottom = [
-    { id: "company-9", description: "Company 9", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+9", className: "h-10 w-auto" },
-    { id: "company-10", description: "Company 10", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+10", className: "h-10 w-auto" },
-    { id: "company-11", description: "Company 11", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+11", className: "h-10 w-auto" },
-    { id: "company-12", description: "Company 12", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+12", className: "h-10 w-auto" },
-    { id: "company-13", description: "Company 13", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+13", className: "h-10 w-auto" },
-    { id: "company-14", description: "Company 14", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+14", className: "h-10 w-auto" },
-    { id: "company-15", description: "Company 15", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+15", className: "h-10 w-auto" },
-    { id: "company-16", description: "Company 16", image: "https://placehold.co/120x40/1f2937/9ca3af?text=Company+16", className: "h-10 w-auto" },
+    { id: "company-9", description: "Company 9", image: "/Company9.png", className: "max-h-[40px] max-w-[130px] object-contain" },
+    { id: "company-10", description: "Company 10", image: "/Company10.png", className: "max-h-[45px] max-w-[70px] object-contain" },
+    { id: "company-11", description: "PSE&G", image: "/Company11.png", className: "max-h-[35px] max-w-[160px] object-contain" },
+    { id: "company-12", description: "Apple", image: "/Company12.png",
+      className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "company-13", description: "Autodesk", image: "/Company13.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "company-14", description: "Lockheed Martin", image: "/Compnay14.png", className: "max-h-[35px] max-w-[160px] object-contain" },
+    { id: "company-15", description: "Verizon", image: "/Company15.png", className: "max-h-[45px] max-w-[45px] object-contain" },
+    { id: "company-16", description: "Johnson & Johnson", image: "/Company16.png", className: "max-h-[40px] max-w-[140px] object-contain" },
   ],
 }: Logos3Props) => {
   return (
-    <section className="py-12 space-y-8">
+    <section className="py-10 space-y-8 overflow-hidden">
       {/* Top carousel - scrolls right */}
-      <div>
-        <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
+      <div className="overflow-hidden">
+        <div className="relative flex items-center w-full">
           <Carousel
-            opts={{ loop: true }}
-            plugins={[AutoScroll({ playOnInit: true, speed: 0.5 })]}
+            opts={{ loop: true, watchDrag: false }}
+            plugins={[AutoScroll({ playOnInit: true, speed: 1.2 })]}
           >
             <CarouselContent className="ml-0">
               {logosTop.map((logo) => (
@@ -62,7 +63,7 @@ const Logos3 = ({
                   key={logo.id}
                   className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
                 >
-                  <div className="mx-10 flex shrink-0 items-center justify-center">
+                  <div className="mx-10 flex shrink-0 items-center justify-center h-[50px] w-[160px]">
                     <div>
                       <img
                         src={logo.image}
@@ -81,11 +82,11 @@ const Logos3 = ({
       </div>
 
       {/* Bottom carousel - scrolls left */}
-      <div>
-        <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
+      <div className="overflow-hidden">
+        <div className="relative flex items-center w-full">
           <Carousel
-            opts={{ loop: true }}
-            plugins={[AutoScroll({ playOnInit: true, speed: 0.5, direction: "backward" })]}
+            opts={{ loop: true, watchDrag: false }}
+            plugins={[AutoScroll({ playOnInit: true, speed: 1.2, direction: "backward" })]}
           >
             <CarouselContent className="ml-0">
               {logosBottom.map((logo) => (
@@ -93,7 +94,7 @@ const Logos3 = ({
                   key={logo.id}
                   className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
                 >
-                  <div className="mx-10 flex shrink-0 items-center justify-center">
+                  <div className="mx-10 flex shrink-0 items-center justify-center h-[50px] w-[160px]">
                     <div>
                       <img
                         src={logo.image}
