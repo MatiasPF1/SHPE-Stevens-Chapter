@@ -105,15 +105,15 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 </motion.header>
 
                 <motion.main variants={containerVariants}>
-                    <motion.h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[3.4rem]" variants={itemVariants}>
+                    <motion.h1 className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-[3.6rem]" variants={itemVariants}>
                         {title}
                     </motion.h1>
-                    <motion.p className="mt-8 mb-8 max-w-md text-[0.95rem] leading-relaxed text-gray-300" variants={itemVariants}>
+                    <motion.p className="font-body mt-8 mb-8 max-w-md text-[0.95rem] font-light leading-[1.8] tracking-wide text-gray-300" variants={itemVariants}>
                         {subtitle}
                     </motion.p>
                     <motion.a
                       href={callToAction.href}
-                      className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-red-500 transition-all duration-300 hover:gap-3 hover:text-red-400"
+                      className="font-body group inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-red-500 transition-all duration-300 hover:gap-3 hover:text-red-400"
                       variants={itemVariants}
                     >
                         {callToAction.text.replace(' →', '')}
@@ -126,7 +126,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
             {/* Bottom Section: Footer Info */}
             <motion.footer className="mt-auto pt-10 w-full" variants={itemVariants}>
-                <div className="flex flex-wrap gap-6 text-xs text-gray-400">
+                <div className="font-body flex flex-wrap gap-6 text-xs tracking-wide text-gray-400">
                     {contactInfo.website && (
                     <div className="flex items-center">
                         <InfoIcon type="address" />
