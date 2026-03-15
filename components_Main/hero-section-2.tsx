@@ -81,7 +81,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       <motion.section
         ref={ref}
         className={cn(
-          "relative flex min-h-screen w-full flex-col overflow-hidden bg-[#0C2340] text-white md:flex-row",
+          "relative flex min-h-screen w-full flex-col overflow-hidden bg-[#FAFAF8] text-[#0C2340] md:flex-row",
           className
         )}
         initial="hidden"
@@ -97,18 +97,18 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                         <div className="flex items-center">
                             <img src={logo.url} alt={logo.alt} className="mr-3 h-8" />
                             <div>
-                                {logo.text && <p className="text-lg font-bold text-white">{logo.text}</p>}
-                                {slogan && <p className="text-xs tracking-wider text-gray-300">{slogan}</p>}
+                                {logo.text && <p className="text-lg font-bold text-[#0C2340]">{logo.text}</p>}
+                                {slogan && <p className="text-xs tracking-wider text-gray-500">{slogan}</p>}
                             </div>
                         </div>
                     )}
                 </motion.header>
 
                 <motion.main variants={containerVariants}>
-                    <motion.h1 className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-[3.6rem]" variants={itemVariants}>
+                    <motion.h1 className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-[#0C2340] md:text-5xl lg:text-[3.6rem]" variants={itemVariants}>
                         {title}
                     </motion.h1>
-                    <motion.p className="font-body mt-8 mb-8 max-w-md text-[0.95rem] font-light leading-[1.8] tracking-wide text-gray-200" variants={itemVariants}>
+                    <motion.p className="font-body mt-8 mb-8 max-w-md text-base font-normal leading-[1.8] tracking-wide text-[#3D4F5F]" variants={itemVariants}>
                         {subtitle}
                     </motion.p>
                     <motion.a
@@ -122,7 +122,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                         </svg>
                     </motion.a>
 
-                    <motion.div className="font-body mt-8 flex flex-wrap gap-6 text-xs tracking-wide text-gray-300" variants={itemVariants}>
+                    <motion.div className="font-body mt-8 flex flex-wrap gap-6 text-sm tracking-wide text-[#3D4F5F]" variants={itemVariants}>
                         {contactInfo.website && (
                         <div className="flex items-center">
                             <InfoIcon type="address" />
