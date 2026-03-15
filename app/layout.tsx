@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display, Inter } from "next/font/google";
 import Navbar from "@/app/Navbar";
+import Footer from "@/app/Footer";
 import "./globals.css";
 
 const montserrat = Montserrat({ 
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body className={`${montserrat.variable} ${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
