@@ -2,8 +2,8 @@ import TeamCard from "@/components_team/team-card";
 
 export default function TeamSection() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-10 text-center">
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-300 mx-auto px-10 text-center">
         <h2 className="text-4xl font-bold text-[#0C2340]">Meet the Team</h2>
 
         {/* Year selector — add future years here */}
@@ -14,21 +14,20 @@ export default function TeamSection() {
         </div>
 
         {/* Team grid */}
-        <div className="mt-12 flex flex-wrap justify-center gap-16">
-          <TeamCard name="Eve Gutierrez"          role="President"               image="/team/Eve_President.jpg"             linkedin="https://www.linkedin.com/in/eve-gutierrez-07333724a/" />
-          <TeamCard name="Sabrina Elgazzar"       role="Internal Vice President" image="/team/Sabrina_VP.jpg"                linkedin="https://www.linkedin.com/in/sabrinaelgazzar/" />
-          <TeamCard name="Nicolas Buendia"        role="External Vice President" image="/team/Nicolas_VP.jpg"                linkedin="https://www.linkedin.com/in/nicolas-buendia/" />
-          <TeamCard name="Emmanuel Madera"        role="Treasurer"               image="/team/Emanuel_Treasurer.jpg"         linkedin="https://www.linkedin.com/in/emmanuel-madera/" />
-          <TeamCard name="Leonel Andrade"         role="Chief Web Officer"       image="/team/Leone_WebChief.jpg"            linkedin="https://www.linkedin.com/in/leonel-andrade-ba9763212/" />
-          <TeamCard name="Matias Freire"          role="Website Developer"       image="/team/MatiasFreire_WebDeveloper.jpg" linkedin="https://www.linkedin.com/in/matias43/" />
-          <TeamCard name="Jesus Monegro"          role="Secretary"               image="/team/Jesus_Secretary.jpg"           linkedin="https://www.linkedin.com/in/jesusmonegrojimenez/" />
-          <TeamCard name="Ines V. Nuñez"          role="SHPEtina Head"           image="/team/Ines_SHPETINA.jpg"             linkedin="https://www.linkedin.com/in/inesnunez1/" />
-          <TeamCard name="Emely Vargas"           role="External Relations"      image="/team/Emely_ExternalRel.jpg"         linkedin="https://www.linkedin.com/in/emely-vargas1/" />
-          <TeamCard name="Luis Alejandro Ruiz"    role="Recruitment Chair"       image="/team/Luis_Recruitmentchair.jpg"     linkedin="https://www.linkedin.com/in/luis-alejandro-ruiz-20xx/" />
-          <TeamCard name="Isabella Chiang"        role="Public Relations"        image="/team/Isabella_PublicRel.jpg"        linkedin="https://www.linkedin.com/in/ichiang12/" />
-          <TeamCard name="Diego Sanabriga"        role="Pre-Collegiate Chair"    image="/team/Diego_prechair.jpg"            linkedin="https://www.linkedin.com/in/diego-sanabriga-41545831b/" />
-          <TeamCard name="Naomi Fernandez"        role="Pre-Collegiate Chair"    image="/team/Naomi_prechair.jpg"            linkedin="https://www.linkedin.com/in/naomi-fernandez-b43b72207/" />
-          <TeamCard name="Tomas Gonzalez Bonilla" role="Academic Chair"          image="/team/ThomasAcademichair.jpg"        linkedin="https://www.linkedin.com/in/tomas-gonzalezbonilla/" />
+        <div className="mt-12 grid grid-cols-4 gap-5">
+          <TeamCard name="Eve Gutierrez"          role="President"               image="/team/Eve_President.jpg"             linkedin="https://www.linkedin.com/in/eve-gutierrez-07333724a/"  email="egutier1@stevens.edu" />
+          <TeamCard name="Sabrina Elgazzar"       role="Internal Vice President" image="/team/Sabrina_VP.jpg"                linkedin="https://www.linkedin.com/in/sabrinaelgazzar/"          email="selgazza@stevens.edu" />
+          <TeamCard name="Nicolas Buendia"        role="External Vice President" image="/team/Nicolas_VP.jpg"                linkedin="https://www.linkedin.com/in/nicolas-buendia/"          email="nbuendia@stevens.edu" />
+          <TeamCard name="Emmanuel Madera"        role="Treasurer"               image="/team/Emanuel_Treasurer.jpg"         linkedin="https://www.linkedin.com/in/emmanuel-madera/"          email="emadera@stevens.edu" />
+          <TeamCard name="Leonel Andrade"         role="Chief Web Officer"       image="/team/Leone_WebChief.jpg"            linkedin="https://www.linkedin.com/in/leonel-andrade-ba9763212/" email="landrade1@stevens.edu" />
+          <TeamCard name="Jesus Monegro"          role="Secretary"               image="/team/Jesus_Secretary.jpg"           linkedin="https://www.linkedin.com/in/jesusmonegrojimenez/"      email="jmonegro1@stevens.edu" />
+          <TeamCard name="Ines V. Nuñez"          role="SHPEtina Head"           image="/team/Ines_SHPETINA.jpg"             linkedin="https://www.linkedin.com/in/inesnunez1/"               email="inunez1@stevens.edu" />
+          <TeamCard name="Emely Vargas"           role="External Relations"      image="/team/Emely_ExternalRel.jpg"         linkedin="https://www.linkedin.com/in/emely-vargas1/"            email="evargas2@stevens.edu" />
+          <TeamCard name="Luis Alejandro Ruiz"    role="Recruitment Chair"       image="/team/Luis_Recruitmentchair.jpg"     linkedin="https://www.linkedin.com/in/luis-alejandro-ruiz-20xx/" email="lruiz1@stevens.edu" />
+          <TeamCard name="Isabella Chiang"        role="Public Relations"        image="/team/Isabella_PublicRel.jpg"        linkedin="https://www.linkedin.com/in/ichiang12/"                email="ichiang@stevens.edu" />
+          <TeamCard name="Diego Sanabriga"        role="Pre-Collegiate Chair"    image="/team/Diego_prechair.jpg"            linkedin="https://www.linkedin.com/in/diego-sanabriga-41545831b/" email="dsanabri@stevens.edu" />
+          <TeamCard name="Naomi Fernandez"        role="Pre-Collegiate Chair"    image="/team/Naomi_prechair.jpg"            linkedin="https://www.linkedin.com/in/naomi-fernandez-b43b72207/" email="nfernan3@stevens.edu" />
+          <TeamCard name="Tomas Gonzalez Bonilla" role="Academic Chair"          image="/team/ThomasAcademichair.jpg"        linkedin="https://www.linkedin.com/in/tomas-gonzalezbonilla/"   email="tgonzale1@stevens.edu" />
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components_Main/hero-section-2";
+import SocialsSection from "@/components_Main/socials-section";
 import ElegantCarousel from "@/components_Main/elegant-carousel";
 import AboutSection from "@/components_Main/about-section";
 import { Logos3 } from "@/components_Main/logos_carousel/logos3";
@@ -19,6 +20,7 @@ export default function Home() {
         }}
       />
       <Logos3 />
+      <SocialsSection />
       <div className="-translate-y-8">
         <AboutSection />
       </div>
