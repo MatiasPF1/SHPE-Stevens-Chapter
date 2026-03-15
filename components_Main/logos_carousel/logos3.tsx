@@ -23,22 +23,22 @@ interface Logos3Props {
 
 const Logos3 = ({
   logosTop = [
-    { id: "nvidia", description: "NVIDIA", image: "/NVDA_BIG 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "microsoft", description: "Microsoft", image: "/microsoft 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "meta", description: "Meta", image: "/META_BIG 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "intel", description: "Intel", image: "/intel 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "ibm", description: "IBM", image: "/IBM 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "honeywell", description: "Honeywell", image: "/HON_BIG 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "goldman", description: "Goldman Sachs", image: "/GS 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "nvidia", description: "NVIDIA", image: "/logos/NVDA_BIG 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "microsoft", description: "Microsoft", image: "/logos/microsoft 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "meta", description: "Meta", image: "/logos/META_BIG 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "intel", description: "Intel", image: "/logos/intel 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "ibm", description: "IBM", image: "/logos/IBM 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "honeywell", description: "Honeywell", image: "/logos/HON_BIG 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "goldman", description: "Goldman Sachs", image: "/logos/GS 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
   ],
   logosBottom = [
-    { id: "dell", description: "Dell", image: "/DELL 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "apple", description: "Apple", image: "/apple-dark 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "boa", description: "Bank of America", image: "/bankofamerica-dark 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "boeing", description: "Boeing", image: "/BA_BIG 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "cat", description: "Caterpillar", image: "/CAT 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "capitalOne", description: "Capital One", image: "/COF_BIG 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
-    { id: "lockheed", description: "Lockheed Martin", image: "/LMT 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "dell", description: "Dell", image: "/logos/DELL 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "apple", description: "Apple", image: "/logos/apple-dark 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "boa", description: "Bank of America", image: "/logos/bankofamerica-dark 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "boeing", description: "Boeing", image: "/logos/BA_BIG 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "cat", description: "Caterpillar", image: "/logos/CAT 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "capitalOne", description: "Capital One", image: "/logos/COF_BIG 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
+    { id: "lockheed", description: "Lockheed Martin", image: "/logos/LMT 1.png", className: "max-h-[40px] max-w-[140px] object-contain" },
   ],
 }: Logos3Props) => {
   return (

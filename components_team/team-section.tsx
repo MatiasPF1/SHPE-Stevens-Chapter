@@ -15,20 +15,20 @@ export default function TeamSection() {
 
         {/* Team grid */}
         <div className="mt-12 flex flex-wrap justify-center gap-16">
-          <TeamCard name="Eve Gutierrez"          role="President"               image="/Eve_President.jpg"             linkedin="https://www.linkedin.com/in/eve-gutierrez-07333724a/" />
-          <TeamCard name="Sabrina Elgazzar"       role="Internal Vice President" image="/Sabrina_VP.jpg"                linkedin="https://www.linkedin.com/in/sabrinaelgazzar/" />
-          <TeamCard name="Nicolas Buendia"        role="External Vice President" image="/Nicolas_VP.jpg"                linkedin="https://www.linkedin.com/in/nicolas-buendia/" />
-          <TeamCard name="Emmanuel Madera"        role="Treasurer"               image="/Emanuel_Treasurer.jpg"         linkedin="https://www.linkedin.com/in/emmanuel-madera/" />
-          <TeamCard name="Leonel Andrade"         role="Chief Web Officer"       image="/Leone_WebChief.jpg"            linkedin="https://www.linkedin.com/in/leonel-andrade-ba9763212/" />
-          <TeamCard name="Matias Freire"          role="Website Developer"       image="/MatiasFreire_WebDeveloper.jpg" linkedin="https://www.linkedin.com/in/matias43/" />
-          <TeamCard name="Jesus Monegro"          role="Secretary"               image="/Jesus_Secretary.jpg"           linkedin="https://www.linkedin.com/in/jesusmonegrojimenez/" />
-          <TeamCard name="Ines V. Nuñez"          role="SHPEtina Head"           image="/Ines_SHPETINA.jpg"             linkedin="https://www.linkedin.com/in/inesnunez1/" />
-          <TeamCard name="Emely Vargas"           role="External Relations"      image="/Emely_ExternalRel.jpg"         linkedin="https://www.linkedin.com/in/emely-vargas1/" />
-          <TeamCard name="Luis Alejandro Ruiz"    role="Recruitment Chair"       image="/Luis_Recruitmentchair.jpg"     linkedin="https://www.linkedin.com/in/luis-alejandro-ruiz-20xx/" />
-          <TeamCard name="Isabella Chiang"        role="Public Relations"        image="/Isabella_PublicRel.jpg"        linkedin="https://www.linkedin.com/in/ichiang12/" />
-          <TeamCard name="Diego Sanabriga"        role="Pre-Collegiate Chair"    image="/Diego_prechair.jpg"            linkedin="https://www.linkedin.com/in/diego-sanabriga-41545831b/" />
-          <TeamCard name="Naomi Fernandez"        role="Pre-Collegiate Chair"    image="/Naomi_prechair.jpg"            linkedin="https://www.linkedin.com/in/naomi-fernandez-b43b72207/" />
-          <TeamCard name="Tomas Gonzalez Bonilla" role="Academic Chair"          image="/ThomasAcademichair.jpg"        linkedin="https://www.linkedin.com/in/tomas-gonzalezbonilla/" />
+          <TeamCard name="Eve Gutierrez"          role="President"               image="/team/Eve_President.jpg"             linkedin="https://www.linkedin.com/in/eve-gutierrez-07333724a/" />
+          <TeamCard name="Sabrina Elgazzar"       role="Internal Vice President" image="/team/Sabrina_VP.jpg"                linkedin="https://www.linkedin.com/in/sabrinaelgazzar/" />
+          <TeamCard name="Nicolas Buendia"        role="External Vice President" image="/team/Nicolas_VP.jpg"                linkedin="https://www.linkedin.com/in/nicolas-buendia/" />
+          <TeamCard name="Emmanuel Madera"        role="Treasurer"               image="/team/Emanuel_Treasurer.jpg"         linkedin="https://www.linkedin.com/in/emmanuel-madera/" />
+          <TeamCard name="Leonel Andrade"         role="Chief Web Officer"       image="/team/Leone_WebChief.jpg"            linkedin="https://www.linkedin.com/in/leonel-andrade-ba9763212/" />
+          <TeamCard name="Matias Freire"          role="Website Developer"       image="/team/MatiasFreire_WebDeveloper.jpg" linkedin="https://www.linkedin.com/in/matias43/" />
+          <TeamCard name="Jesus Monegro"          role="Secretary"               image="/team/Jesus_Secretary.jpg"           linkedin="https://www.linkedin.com/in/jesusmonegrojimenez/" />
+          <TeamCard name="Ines V. Nuñez"          role="SHPEtina Head"           image="/team/Ines_SHPETINA.jpg"             linkedin="https://www.linkedin.com/in/inesnunez1/" />
+          <TeamCard name="Emely Vargas"           role="External Relations"      image="/team/Emely_ExternalRel.jpg"         linkedin="https://www.linkedin.com/in/emely-vargas1/" />
+          <TeamCard name="Luis Alejandro Ruiz"    role="Recruitment Chair"       image="/team/Luis_Recruitmentchair.jpg"     linkedin="https://www.linkedin.com/in/luis-alejandro-ruiz-20xx/" />
+          <TeamCard name="Isabella Chiang"        role="Public Relations"        image="/team/Isabella_PublicRel.jpg"        linkedin="https://www.linkedin.com/in/ichiang12/" />
+          <TeamCard name="Diego Sanabriga"        role="Pre-Collegiate Chair"    image="/team/Diego_prechair.jpg"            linkedin="https://www.linkedin.com/in/diego-sanabriga-41545831b/" />
+          <TeamCard name="Naomi Fernandez"        role="Pre-Collegiate Chair"    image="/team/Naomi_prechair.jpg"            linkedin="https://www.linkedin.com/in/naomi-fernandez-b43b72207/" />
+          <TeamCard name="Tomas Gonzalez Bonilla" role="Academic Chair"          image="/team/ThomasAcademichair.jpg"        linkedin="https://www.linkedin.com/in/tomas-gonzalezbonilla/" />
         </div>
       </div>
     </section>
