@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components_Main/hero-section-2";
 import ElegantCarousel from "@/components_Main/elegant-carousel";
 import AboutSection from "@/components_Main/about-section";
+import { Logos3 } from "@/components_Main/logos_carousel/logos3";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           address: "1 Castle Point Terrace, Hoboken, NJ",
         }}
       />
+      <Logos3 />
       <div className="-translate-y-8">
         <AboutSection />
       </div>
