@@ -9,11 +9,11 @@
 }
 
 :root {
-  --background: #111827;
-  --foreground: #ffffff;
-  --primary: #ef4444;
+  --background: #ffffff;
+  --foreground: #0C2340;
+  --primary: #dd5a36;
   --primary-foreground: #ffffff;
-  --muted-foreground: #9ca3af;
+  --muted-foreground: #5a6a7a;
 }
 
 body {

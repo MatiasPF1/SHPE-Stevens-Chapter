@@ -8,7 +8,7 @@ const heroImages = ["/SHPE2025.jpg", "/Kahoot.png", "/tips.jpg", "/tip2.jpg"];
 const InfoIcon = ({ type }: { type:'address' }) => {
     const icons = {
         address: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-red-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-[#D4380D]">
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
             </svg>
@@ -81,7 +81,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       <motion.section
         ref={ref}
         className={cn(
-          "relative flex min-h-[calc(100vh-5rem)] w-full flex-col overflow-hidden bg-gray-900 text-white md:flex-row",
+          "relative flex min-h-screen w-full flex-col overflow-hidden bg-[#0C2340] text-white md:flex-row",
           className
         )}
         initial="hidden"
@@ -98,7 +98,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                             <img src={logo.url} alt={logo.alt} className="mr-3 h-8" />
                             <div>
                                 {logo.text && <p className="text-lg font-bold text-white">{logo.text}</p>}
-                                {slogan && <p className="text-xs tracking-wider text-gray-400">{slogan}</p>}
+                                {slogan && <p className="text-xs tracking-wider text-gray-300">{slogan}</p>}
                             </div>
                         </div>
                     )}
@@ -108,12 +108,12 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                     <motion.h1 className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-[3.6rem]" variants={itemVariants}>
                         {title}
                     </motion.h1>
-                    <motion.p className="font-body mt-8 mb-8 max-w-md text-[0.95rem] font-light leading-[1.8] tracking-wide text-gray-300" variants={itemVariants}>
+                    <motion.p className="font-body mt-8 mb-8 max-w-md text-[0.95rem] font-light leading-[1.8] tracking-wide text-gray-200" variants={itemVariants}>
                         {subtitle}
                     </motion.p>
                     <motion.a
                       href={callToAction.href}
-                      className="font-body group inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-red-500 transition-all duration-300 hover:gap-3 hover:text-red-400"
+                      className="font-body group inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#D4380D] transition-all duration-300 hover:gap-3 hover:text-[#E8501F]"
                       variants={itemVariants}
                     >
                         {callToAction.text.replace(' →', '')}
@@ -121,30 +121,27 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                           <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>
                     </motion.a>
+
+                    <motion.div className="font-body mt-8 flex flex-wrap gap-6 text-xs tracking-wide text-gray-300" variants={itemVariants}>
+                        {contactInfo.website && (
+                        <div className="flex items-center">
+                            <InfoIcon type="address" />
+                            <span>{contactInfo.website}</span>
+                        </div>
+                        )}
+                        {contactInfo.phone && (
+                        <div className="flex items-center">
+                            <InfoIcon type="address" />
+                            <span>{contactInfo.phone}</span>
+                        </div>
+                        )}
+                        <div className="flex items-center">
+                            <InfoIcon type="address" />
+                            <span>{contactInfo.address}</span>
+                        </div>
+                    </motion.div>
                 </motion.main>
             </div>
-
-            {/* Bottom Section: Footer Info */}
-            <motion.footer className="mt-auto pt-10 w-full" variants={itemVariants}>
-                <div className="font-body flex flex-wrap gap-6 text-xs tracking-wide text-gray-400">
-                    {contactInfo.website && (
-                    <div className="flex items-center">
-                        <InfoIcon type="address" />
-                        <span>{contactInfo.website}</span>
-                    </div>
-                    )}
-                    {contactInfo.phone && (
-                    <div className="flex items-center">
-                        <InfoIcon type="address" />
-                        <span>{contactInfo.phone}</span>
-                    </div>
-                    )}
-                    <div className="flex items-center">
-                        <InfoIcon type="address" />
-                        <span>{contactInfo.address}</span>
-                    </div>
-                </div>
-            </motion.footer>
         </div>
 
         {/* Right Side: Image Carousel with one-time clip-path reveal */}

@@ -24,7 +24,7 @@ const slides: SlideData[] = [
     subtitle: 'Hoboken Grace Toy Drive',
     description:
       'Through initiatives like the Hoboken Grace Community Church Toy Drive, we serve our community with integrity and purpose, making a meaningful impact while upholding high standards of leadership and excellence. We are committed to giving back, fostering a culture of service that enriches both our members and the communities we touch.',
-    accent: '#2563eb',
+    accent: '#0C2340',
     imageUrl: '/Service.jpg',
   },
   {
@@ -32,7 +32,7 @@ const slides: SlideData[] = [
     subtitle: 'MOCK INTERVIEWS',
     description:
       'Through mock interviews and workshops, we promote continuous growth and professional development, fostering a culture of learning that extends beyond the classroom. We empower our members to excel in their careers and make a lasting impact in the engineering field.',
-    accent: '#d4380d',
+    accent: '#D4380D',
     imageUrl: '/Education.jpg',
   },
   {
