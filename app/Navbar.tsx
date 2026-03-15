@@ -2,19 +2,21 @@ export default function Navbar() {
   return (
     // Navbar Container
     <div className="flex h-20 items-center justify-between border-b border-gray-200 bg-white px-10 shadow-sm">
-      {/* Left Section - Stevens SHPE Logo */}
+      {/* Left Section - Stevens SHPE Logo → links to home */}
       <div className="flex items-center">
-        <img
-          src="/Stevens Institute of Technology.svg"
-          alt="Stevens Institute of Technology"
-          className="w-80 h-auto transition-transform duration-300 ease-in-out hover:scale-110 translate-y-2"
-        />
+        <a href="/">
+          <img
+            src="/Stevens Institute of Technology.svg"
+            alt="Stevens Institute of Technology"
+            className="w-80 h-auto transition-transform duration-300 ease-in-out hover:scale-110 translate-y-2"
+          />
+        </a>
       </div>
 
       {/* Right Section - Hyperlinks to different sections */}
       <div className="flex items-center gap-8 font-semibold text-[#0C2340]">
         <a
-          href="#eboard"
+          href="/team"
           className="hover:text-[#D4380D] transition-colors duration-300 ease-in-out hover:scale-110"
         >
           Team
@@ -48,6 +50,14 @@ export default function Navbar() {
           className="hover:text-[#D4380D] transition-colors duration-300 ease-in-out hover:scale-110"
         >
           Conference
+        </a>
+        <a
+          href="https://shpe.org/membership/become-a-member/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-2 rounded-full bg-[#D1472C] text-white text-sm font-semibold hover:bg-[#b83a22] transition-colors duration-300"
+        >
+          Join SHPE
         </a>
       </div>
     </div>
