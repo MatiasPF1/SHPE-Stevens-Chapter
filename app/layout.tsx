@@ -4,6 +4,8 @@ import Navbar from "@/app/Navbar";
 import Footer from "@/app/Footer";
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shpestevens.org";
+
 const montserrat = Montserrat({ 
   subsets: ["latin"],
   weight: ["400", "700","900"],
@@ -23,9 +25,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SHPE Stevens | Society of Hispanic Professional Engineers",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "SHPE Stevens | Society of Hispanic Professional Engineers",
+    template: "%s | SHPE Stevens",
+  },
   description:
     "The Society of Hispanic Professional Engineers at Stevens Institute of Technology empowers the Hispanic community through STEM awareness, access, support, and professional development.",
+  applicationName: "SHPE Stevens",
   keywords: [
     "SHPE",
     "Stevens Institute of Technology",
@@ -36,10 +43,28 @@ export const metadata: Metadata = {
     "professional development",
     "college chapter",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "SHPE Stevens | Society of Hispanic Professional Engineers",
     description:
       "Empowering the Hispanic community at Stevens Institute of Technology through STEM awareness, access, support, and development.",
+    url: "/",
+    siteName: "SHPE Stevens",
+    type: "website",
+    locale: "en_US",
     images: ["/og-image.png"],
   },
   icons: {
