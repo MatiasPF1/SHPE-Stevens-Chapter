@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     // Navbar Container
-    <div className="flex h-20 items-center justify-between border-b border-gray-200 bg-white px-10 shadow-sm">
+    <div className="sticky top-0 z-50 flex h-20 items-center justify-between border-b border-gray-100 bg-white/95 px-10 shadow-sm backdrop-blur-md">
       {/* Left Section - Stevens SHPE Logo → links to home */}
       <div className="flex items-center">
         <a href="/">

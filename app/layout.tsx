@@ -4,13 +4,7 @@ import Navbar from "@/app/Navbar";
 import Footer from "@/app/Footer";
 import "./globals.css";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : undefined) ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined) ||
-  "https://shpe-stevens-chapter.vercel.app";
+const siteUrl = "https://shpestevens.org";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
