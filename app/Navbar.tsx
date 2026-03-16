@@ -15,47 +15,31 @@ export default function Navbar() {
 
       {/* Right Section - Hyperlinks to different sections */}
       <div className="flex items-center gap-8 font-semibold text-[#0C2340]">
-        <a
-          href="/team"
-          className="hover:text-[#D4380D] transition-colors duration-300 ease-in-out hover:scale-110"
-        >
-          Team
-        </a>
-        <a
-          href="#sponsors"
-          className="hover:text-[#D4380D] transition-colors duration-300 ease-in-out hover:scale-110"
-        >
-          Sponsors
-        </a>
-        <a
-          href="#shpejr"
-          className="hover:text-[#D4380D] transition-colors duration-300 ease-in-out hover:scale-110"
-        >
-          SHPEJR
-        </a>
-        <a
-          href="#shepetina"
-          className="hover:text-[#D4380D] transition-colors duration-300 ease-in-out hover:scale-110"
-        >
-          SHEPtina
-        </a>
-        <a
-          href="#contact"
-          className="hover:text-[#D4380D] transition-colors duration-300 ease-in-out hover:scale-110"
-        >
-          Contact Us
-        </a>
-        <a
-          href="#conference"
-          className="hover:text-[#D4380D] transition-colors duration-300 ease-in-out hover:scale-110"
-        >
-          Conference
-        </a>
+        {[
+          { label: "Team", href: "/team" },
+          { label: "Sponsors", href: "#sponsors" },
+          { label: "SHPEJR", href: "#shpejr" },
+          { label: "SHEPtina", href: "#shepetina" },
+          { label: "Contact Us", href: "#contact" },
+          { label: "Conference", href: "#conference" },
+        ].map(({ label, href }) => (
+          <a
+            key={label}
+            href={href}
+            className="relative inline-block text-[#0C2340] text-sm font-semibold tracking-wide transition-colors duration-200 hover:text-[#A32035] group"
+          >
+            {label}
+            <span className="absolute -bottom-0.5 left-0 h-0.5 w-0 rounded-full bg-[#A32035] transition-all duration-300 group-hover:w-full" />
+          </a>
+        ))}
         <a
           href="https://shpe.org/membership/become-a-member/"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-2 rounded-full bg-[#A32035] text-white text-sm font-semibold hover:bg-[#8a1c2e] transition-colors duration-300"
+          className="relative px-5 py-2 rounded-full bg-[#A32035] text-white text-sm font-semibold overflow-hidden
+                     shadow-md hover:shadow-[0_0_18px_rgba(163,32,53,0.5)] transition-all duration-300
+                     before:absolute before:inset-0 before:bg-white/10 before:-translate-x-full before:skew-x-[-20deg]
+                     hover:before:translate-x-[200%] before:transition-transform before:duration-500"
         >
           Join SHPE
         </a>

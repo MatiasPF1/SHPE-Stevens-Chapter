@@ -24,15 +24,15 @@ export default function Home() {
       <div className="-translate-y-8">
         <AboutSection />
       </div>
-        <div className="-translate-y-12">
+        <div className="-translate-y-23">
         <ElegantCarousel />
       </div>
 
-      <div className="-translate-y-20">
+      <div className="-translate-y-28">
       <TestimonialsSection />
       </div>
 
-      <div className="-translate-y-12">
+      <div className="-translate-y-25">
       <SocialsSection />
       </div>
     </div>

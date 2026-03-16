@@ -7,6 +7,7 @@ const testimonials = [
   {
     name: "Mauricio Sanchez",
     designation: "System Design Intern at NVIDIA",
+    companyLogo: "/Testimonials/Nvidia.png",
     quote:
       "I chose SHPE because I wanted to join a community that would help me develop both professionally and personally. The connections I've made through SHPE have shaped where I am today.",
     src: "/Testimonials/Mauricio.jpg",
@@ -14,6 +15,7 @@ const testimonials = [
   {
     name: "Matias Freire",
     designation: "Software Engineer Intern at Wabtec",
+    companyLogo: "/Testimonials/Wabtec.png",
     quote:
       "SHPE provided me with an invaluable mentor and network that helped me land my first internship. As an immigrant, I felt I was in a community that understood my background and supported my growth.",
     src: "/Testimonials/MatiasFreire_WebDeveloper.jpeg",
@@ -37,15 +39,13 @@ export default function TestimonialsSection() {
   return (
     <section className="py-24 bg-[#FAFAF8]">
       {/* Section header */}
-      <div className="max-w-6xl mx-auto px-6 text-center mb-16">
-        <div className="flex items-center justify-center gap-4 mb-4">
-          <div className="h-0.5 w-16 bg-[#A32035]"></div>
-          <h2 className="text-4xl font-bold text-[#0C2340]">Latino Success</h2>
-          <div className="h-0.5 w-16 bg-[#A32035]"></div>
-        </div>
-        <p className="text-base font-medium text-[#1e293b] italic">
-          Per aspera Ad Astra --{" "}
-          <span className="text-base font-medium text-[#1e293b] italic">Through hardships to the stars</span>
+      <div className="max-w-3xl mx-auto px-6 text-center mb-16">
+        <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#A32035] mb-5">Student Success</p>
+        <h2 className="text-5xl font-bold text-[#0C2340] leading-tight mb-6">Latino Success</h2>
+        <div className="w-12 h-0.5 bg-[#A32035] mx-auto mb-8" />
+        <p className="text-lg text-[#3D4F5F] font-light leading-[1.9] italic">
+          Per aspera Ad Astra &mdash;{" "}
+          <span className="not-italic font-normal text-base">&ldquo;Through hardships to the stars&rdquo;</span>
         </p>
         <p className="mt-4 text-base text-[#3D4F5F] max-w-xl mx-auto leading-relaxed">
           Here are some of our active students and the incredible success they have achieved through hard work, community, and the SHPE network.
@@ -85,9 +85,18 @@ export default function TestimonialsSection() {
 
             <div className="mt-8 h-px w-16 bg-[#A32035]" />
 
-            <div className="mt-6">
-              <p className="text-[#A32035] font-bold text-lg">{t.name}</p>
-              <p className="text-[#3D4F5F] text-sm font-medium mt-0.5">{t.designation}</p>
+            <div className="mt-6 flex items-center gap-4">
+              <div>
+                <p className="text-[#A32035] font-bold text-lg">{t.name}</p>
+                <p className="text-[#3D4F5F] text-sm font-medium mt-0.5">{t.designation}</p>
+              </div>
+              {t.companyLogo && (
+                <img
+                  src={t.companyLogo}
+                  alt={t.designation}
+                  className="h-16 w-auto max-w-[160px] object-contain opacity-90"
+                />
+              )}
             </div>
 
             {/* Controls */}
