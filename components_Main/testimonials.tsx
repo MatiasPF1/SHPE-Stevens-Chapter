@@ -44,7 +44,11 @@ export default function TestimonialsSection() {
           <div className="h-0.5 w-16 bg-[#A32035]"></div>
         </div>
         <p className="text-base font-medium text-[#1e293b] italic">
-          Per aspera Ad Astra
+          Per aspera Ad Astra --{" "}
+          <span className="text-base font-medium text-[#1e293b] italic">Through hardships to the stars</span>
+        </p>
+        <p className="mt-4 text-base text-[#3D4F5F] max-w-xl mx-auto leading-relaxed">
+          Here are some of our active students and the incredible success they have achieved through hard work, community, and the SHPE network.
         </p>
       </div>
 
@@ -99,7 +103,7 @@ export default function TestimonialsSection() {
                 <button
                   onClick={next}
                   aria-label="Next"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0C2340] text-white hover:bg-[#A32035] transition-colors"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#0C2340] text-[#0C2340] hover:bg-[#0C2340] hover:text-white transition-colors"
                 >
                   <ChevronRight className="h-5 w-5" />
                 </button>

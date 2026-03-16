@@ -27,7 +27,11 @@ export default function Home() {
         <div className="-translate-y-12">
         <ElegantCarousel />
       </div>
+
+      <div className="-translate-y-20">
       <TestimonialsSection />
+      </div>
+
       <div className="-translate-y-12">
       <SocialsSection />
       </div>
