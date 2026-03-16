@@ -16,7 +16,7 @@ const testimonials = [
     designation: "Software Engineer Intern at Wabtec",
     quote:
       "SHPE provided me with an invaluable mentor and network that helped me land my first internship. As an immigrant, I felt I was in a community that understood my background and supported my growth.",
-    src: "/Testimonials/MatiasFreire_WebDeveloper.jpg",
+    src: "/Testimonials/MatiasFreire_WebDeveloper.jpeg",
   },
 ];
 
