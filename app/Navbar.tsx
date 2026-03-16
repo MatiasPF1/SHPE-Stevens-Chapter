@@ -55,7 +55,7 @@ export default function Navbar() {
           href="https://shpe.org/membership/become-a-member/"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-2 rounded-full bg-[#D1472C] text-white text-sm font-semibold hover:bg-[#b83a22] transition-colors duration-300"
+          className="px-5 py-2 rounded-full bg-[#A32035] text-white text-sm font-semibold hover:bg-[#8a1c2e] transition-colors duration-300"
         >
           Join SHPE
         </a>

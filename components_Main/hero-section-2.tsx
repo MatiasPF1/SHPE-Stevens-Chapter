@@ -94,10 +94,10 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         variants={containerVariants}
       >
         {/* Left Side: Content */}
-        <div className="flex w-full flex-col justify-between px-8 py-10 md:w-[45%] md:px-12 md:py-14 lg:w-[42%] lg:pl-20 lg:pr-12 lg:py-16">
+        <div className="flex w-full flex-col justify-center px-8 py-10 md:w-[45%] md:px-12 md:py-10 lg:w-[42%] lg:pl-20 lg:pr-12 lg:pt-10 lg:pb-16">
             {/* Top Section: Logo & Main Content */}
             <div>
-                <motion.header className="mb-12" variants={itemVariants}>
+                <motion.header className="mb-6" variants={itemVariants}>
                     {logo && (
                         <div className="flex items-center">
                             <img src={logo.url} alt={logo.alt} className="mr-3 h-8" />
@@ -118,7 +118,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                     </motion.p>
                     <motion.a
                       href={callToAction.href}
-                      className="font-body group inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#D4380D] transition-all duration-300 hover:gap-3 hover:text-[#E8501F]"
+                      className="font-body group inline-flex items-center gap-2 rounded-full bg-[#A32035] px-6 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-white shadow-lg transition-all duration-300 hover:bg-[#8a1c2e] hover:gap-3 hover:shadow-xl"
                       variants={itemVariants}
                     >
                         {callToAction.text.replace(' →', '')}
