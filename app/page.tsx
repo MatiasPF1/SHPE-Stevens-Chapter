@@ -3,6 +3,7 @@ import ElegantCarousel from "@/components_Main/elegant-carousel";
 import AboutSection from "@/components_Main/about-section";
 import { Logos3 } from "@/components_Main/logos_carousel/logos3";
 import SocialsSection from "@/components_Main/socials-section";
+import TestimonialsSection from "@/components_Main/testimonials";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <div className="-translate-y-12">
         <ElegantCarousel />
       </div>
+      <TestimonialsSection />
       <div className="-translate-y-12">
       <SocialsSection />
       </div>
