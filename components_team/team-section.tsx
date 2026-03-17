@@ -2,7 +2,7 @@ import TeamCard from "@/components_team/team-card";
 
 export default function TeamSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-[#FAFAF8]">
       <div className="max-w-300 mx-auto px-10 text-center">
         <h2 className="text-4xl font-bold text-[#0C2340]">Meet the Team</h2>
 
