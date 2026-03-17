@@ -28,11 +28,11 @@ export default function Home() {
         <ElegantCarousel />
       </div>
 
-      <div className="-translate-y-28">
+      <div className="-translate-y-38">
       <TestimonialsSection />
       </div>
 
-      <div className="-translate-y-25">
+      <div className="-translate-y-35">
       <SocialsSection />
       </div>
     </div>

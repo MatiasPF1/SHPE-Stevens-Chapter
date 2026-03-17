@@ -15,7 +15,7 @@ const slides: SlideData[] = [
     title: 'Familia',
     subtitle: 'SHPE National Convention 2025',
     description:
-      'Being part of Society of Hispanic Professional Engineers means being part of a familia. In the Stevens chapter, we support each other academically, professionally, and personally. We create a space where every member feels valued and empowered to grow. Each year, we promote and support more than 20 students to attend the National Convention, connecting them with career opportunities, industry leaders, and a powerful network that extends beyond campus.',
+      'At Stevens SHPE, we are more than a club. We are familia. Every year, we send 20+ students to the National Convention, connecting them with industry leaders and opportunities that shape their careers.',
     accent: '#16a34a',
     imageUrl: '/JoeSimon.jpg',
   },
@@ -23,7 +23,7 @@ const slides: SlideData[] = [
     title: 'Service',
     subtitle: 'Hoboken Grace Toy Drive',
     description:
-      'Through initiatives like the Hoboken Grace Community Church Toy Drive, we serve our community with integrity and purpose, making a meaningful impact while upholding high standards of leadership and excellence. We are committed to giving back, fostering a culture of service that enriches both our members and the communities we touch.',
+      'We give back. Through initiatives like the Hoboken Grace Toy Drive, our members serve the local community with purpose. Great engineers build more than products.',
     accent: '#0C2340',
     imageUrl: '/Service.jpg',
   },
@@ -31,7 +31,7 @@ const slides: SlideData[] = [
     title: 'Education',
     subtitle: 'MOCK INTERVIEWS',
     description:
-      'Through mock interviews and workshops, we promote continuous growth and professional development, fostering a culture of learning that extends beyond the classroom. We empower our members to excel in their careers and make a lasting impact in the engineering field.',
+      'From mock interviews to technical workshops, we give our members the tools to compete. Growth does not stop at graduation. It starts here.',
     accent: '#D4380D',
     imageUrl: '/Education.jpg',
   },
@@ -39,7 +39,7 @@ const slides: SlideData[] = [
     title: 'Resilience',
     subtitle: 'LEADERSHPE X SHPETINA',
     description:
-      'Latinos make up roughly 9 percent of the engineering workforce in the United States, and Latina women represent only about 2 percent. These numbers reflect the barriers our community continues to face. At Stevens, we believe in not just surviving but thriving. We are committed to empowerment, representation, and creating a space where our members build resilience, lead with confidence, and redefine what is possible in engineering.',
+      'Latinos are 9% of the engineering workforce. Latinas, just 2%. We are changing that. We build leaders who do not just break barriers. They redefine what is possible.',
     accent: '#f59e0b',
     imageUrl: '/Rescilence.jpg',
   },

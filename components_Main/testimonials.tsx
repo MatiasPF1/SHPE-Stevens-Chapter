@@ -12,6 +12,17 @@ const testimonials = [
       "I chose SHPE because I wanted to join a community that would help me develop both professionally and personally. The connections I've made through SHPE have shaped where I am today.",
     src: "/Testimonials/Mauricio.jpg",
   },
+
+   {
+    name: "Nataly Jimenez-Cruz",
+    designation: "AI/ML Engineer Intern at Collins Aerospace",
+    companyLogo: "/Testimonials/Collins.png",
+    quote:
+      "SHPE gave me opportunities I would not have had otherwise, attending the National Convention, becoming a mentor, and building a network that has directly shaped my career. I am genuinely grateful for all of it.",
+    src: "/Testimonials/Nathaly.jpg",
+  },
+
+
   {
     name: "Matias Freire",
     designation: "Software Engineer Intern at Wabtec",
@@ -45,11 +56,9 @@ export default function TestimonialsSection() {
         <div className="w-12 h-0.5 bg-[#A32035] mx-auto mb-8" />
         <p className="text-lg text-[#3D4F5F] font-light leading-[1.9] italic">
           Per aspera Ad Astra &mdash;{" "}
-          <span className="not-italic font-normal text-base">&ldquo;Through hardships to the stars&rdquo;</span>
+          <span className="text-lg text-[#3D4F5F] font-light leading-[1.9] italic">Through hardships to the stars</span>
         </p>
-        <p className="mt-4 text-base text-[#3D4F5F] max-w-xl mx-auto leading-relaxed">
-          Here are some of our active students and the incredible success they have achieved through hard work, community, and the SHPE network.
-        </p>
+       
       </div>
 
       {/* Carousel */}
