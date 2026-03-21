@@ -1,18 +1,18 @@
 export default function AboutSection() {
   return (
-    <section className="py-24 px-6 bg-[#FAFAF8]">
-      <div className="max-w-3xl mx-auto">
+    <section className="py-12 px-6 pb-16 bg-[#FAFAF8]">
+      <div className="max-w-4xl mx-auto">
 
         {/* Eyebrow */}
-        <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#A32035] mb-5 text-center">About Us</p>
+        <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#A32035] mb-3 text-center">About Us</p>
 
         {/* Heading */}
-        <h2 className="text-5xl font-bold text-[#0C2340] leading-tight text-center mb-8">
+        <h2 className="text-5xl font-bold text-[#0C2340] leading-tight text-center mb-4">
           Who Are We?
         </h2>
 
         {/* Thin divider */}
-        <div className="w-12 h-0.5 bg-[#A32035] mx-auto mb-10" />
+        <div className="w-12 h-0.5  mx-auto mb-5" />
 
         {/* Body */}
         <p className="text-lg text-[#3D4F5F] leading-[1.9] text-center font-light">
