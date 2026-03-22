@@ -42,7 +42,7 @@ const Logos3 = ({
   ],
 }: Logos3Props) => {
   return (
-    <section className="py-10 space-y-15 overflow-hidden bg-[#FAFAF8]">
+    <section className="py-10 space-y-15 overflow-hidden" style={{ backgroundColor: 'var(--page-bg)' }}>
       {/* Top row - scrolls right */}
       <div className="relative mx-auto flex items-center justify-center">
         <Carousel

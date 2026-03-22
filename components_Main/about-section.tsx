@@ -2,7 +2,7 @@ import TiltedCard from './about-section/AboutReactBit';
 
 export default function AboutSection() {
   return (
-    <section className="py-16 px-6 bg-[#FAFAF8] overflow-hidden">
+    <section className="py-16 px-6 overflow-hidden" style={{ backgroundColor: 'var(--page-bg)' }}>
       <div className="max-w-6xl mx-auto">
 
         {/* Top row: label + body text (left) | big heading (right) */}

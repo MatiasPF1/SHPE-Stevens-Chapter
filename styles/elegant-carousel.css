@@ -5,7 +5,7 @@
   min-height: 600px;
   overflow: hidden;
   padding: 3rem 2rem;
-  background: #FAFAF8;
+  background: var(--page-bg, #FAFAF8);
 }
 
 @media (min-width: 768px) {
