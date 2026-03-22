@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Montserrat, Playfair_Display, Inter } from "next/font/google";
+import { Montserrat, Playfair_Display, Inter, Geist } from "next/font/google";
 import Navbar from "@/app/Navbar";
 import Footer from "@/app/Footer";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const siteUrl = "https://shpestevens.org";
 
@@ -79,7 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className={`${montserrat.variable} ${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
         <Navbar />
         {children}
