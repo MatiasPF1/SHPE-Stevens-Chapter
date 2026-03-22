@@ -55,16 +55,15 @@ export default function TestimonialsSection() {
   return (
     <section className="py-24 bg-[#FAFAF8]">
       {/* Section header */}
-      <div className="max-w-3xl mx-auto px-6 text-center mb-16">
+      <div className="max-w-5xl mx-auto px-16 text-center mb-16">
         <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#A32035] mb-5">Stevens SHPE Member Spotlight</p>
-        <h2 className="text-5xl font-bold text-[#0C2340] leading-tight mb-6">Latino Success at Stevens</h2>
+        <h2 className="text-5xl font-bold text-[#0C2340] leading-tight mb-6">Hispanic Success</h2>
         <p className="text-lg text-[#3D4F5F] font-light leading-[1.9] italic">
-          Per aspera Ad Astra,{" "}
-          <span className="text-lg text-[#3D4F5F] font-light leading-[1.9] italic">Through hardships to the stars</span>
+          Per aspera Ad Astra
         </p>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-16">
         <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-12 items-start">
 
           {/* Left — Photo */}
@@ -83,7 +82,7 @@ export default function TestimonialsSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
               <p className="text-white font-bold text-lg leading-tight">{t.name}</p>
-              <p className="text-gray-300 text-xs uppercase tracking-[0.15em] mt-1">{t.role}</p>
+              <p className="text-gray-300 text-xs uppercase tracking-[0.15em] mt-1">{t.designation}</p>
             </div>
           </div>
 
