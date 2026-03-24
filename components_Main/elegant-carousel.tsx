@@ -15,7 +15,7 @@ const slides: SlideData[] = [
     title: 'Familia',
     subtitle: 'SHPE National Convention 2025',
     description:
-      'At Stevens SHPE, we are more than a club. We are familia. Every year, we send 20+ students to the National Convention, connecting them with industry leaders and opportunities that shape their careers.',
+      'At Stevens SHPE, we are more than a professional organization. We are familia. Every year, we send 25+ sponsored students to the National Convention, connecting them with industry leaders and opportunities that shape their careers.',
     accent: '#16a34a',
     imageUrl: '/JoeSimon.jpg',
   },
@@ -24,7 +24,7 @@ const slides: SlideData[] = [
     subtitle: 'Hoboken Grace Toy Drive',
     description:
       'We give back. Through initiatives like the Hoboken Grace Toy Drive, our members serve the local community with purpose. Great engineers build more than products.',
-    accent: '#0C2340',
+    accent: '#e63946',
     imageUrl: '/Service.jpg',
   },
   {
@@ -32,7 +32,7 @@ const slides: SlideData[] = [
     subtitle: 'MOCK INTERVIEWS',
     description:
       'From mock interviews to technical workshops, we give our members the tools to compete. Growth does not stop at graduation. It starts here.',
-    accent: '#D4380D',
+    accent: '#7c3aed',
     imageUrl: '/Education.jpg',
   },
   {

@@ -57,8 +57,8 @@ export default function TestimonialsSection() {
       {/* Section header */}
       <div className="max-w-5xl mx-auto px-16 text-center mb-16">
         <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#A32035] mb-5">Stevens SHPE Member Spotlight</p>
-        <h2 className="text-5xl font-bold text-[#0C2340] leading-tight mb-6">Hispanic Success</h2>
-        <p className="text-lg text-[#3D4F5F] font-light leading-[1.9] italic">
+        <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(3rem,12vw,5rem)] font-black text-[#0C2340]  leading-[0.95] tracking-tight mb-8">Hispanic Success</h2>
+        <p className="font-[family-name:var(--font-playfair)] text-xl text-[#3D4F5F] font-light leading-[1.9] italic">
           Per aspera Ad Astra
         </p>
       </div>

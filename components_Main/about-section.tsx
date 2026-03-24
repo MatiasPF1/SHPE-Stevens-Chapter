@@ -26,7 +26,7 @@ export default function AboutSection() {
 
           {/* Right — large heading */}
           <div className="md:w-1/2 flex items-center justify-end">
-            <h2 className="text-6xl md:text-7xl font-black text-[#0C2340] leading-tight text-right">
+            <h2 className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl font-black text-[#0C2340] leading-tight text-right">
               Who Are<br />We?
             </h2>
           </div>
