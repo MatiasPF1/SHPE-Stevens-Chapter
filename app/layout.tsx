@@ -5,7 +5,7 @@ import Footer from "@/app/Footer";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const siteUrl = "https://shpestevens.org";
+const siteUrl = "https://shpestevens.vercel.app";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
@@ -75,6 +75,13 @@ export const metadata: Metadata = {
     icon: "/og-image.png",
     apple: "/og-image.png",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "SHPE Stevens | Society of Hispanic Professional Engineers",
+    description:
+      "Empowering the Hispanic community at Stevens Institute of Technology through STEM awareness, access, support, and development.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
@@ -82,8 +89,37 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "SHPE Stevens",
+    alternateName: "Society of Hispanic Professional Engineers at Stevens Institute of Technology",
+    url: siteUrl,
+    logo: `${siteUrl}/og-image.png`,
+    sameAs: [
+      "https://shpe.org",
+      "https://www.stevens.edu",
+    ],
+    description:
+      "The Society of Hispanic Professional Engineers chapter at Stevens Institute of Technology, empowering the Hispanic community through STEM awareness, access, support, and professional development.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "1 Castle Point Terrace",
+      addressLocality: "Hoboken",
+      addressRegion: "NJ",
+      postalCode: "07030",
+      addressCountry: "US",
+    },
+  };
+
   return (
     <html lang="en" className={cn("font-sans")}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${montserrat.variable} ${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
         <Navbar />
         {children}

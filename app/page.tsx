@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { HeroSection } from "@/components_Main/hero-section-2";
 import { Logos3 } from "@/components_Main/logos_carousel/logos3";
@@ -6,6 +7,23 @@ const AboutSection = dynamic(() => import("@/components_Main/about-section"));
 const ElegantCarousel = dynamic(() => import("@/components_Main/elegant-carousel"));
 const TestimonialsSection = dynamic(() => import("@/components_Main/testimonials"));
 const SocialsSection = dynamic(() => import("@/components_Main/socials-section"));
+
+export const metadata: Metadata = {
+  title: "SHPE Stevens | Society of Hispanic Professional Engineers",
+  description:
+    "The Society of Hispanic Professional Engineers at Stevens Institute of Technology empowers the Hispanic community through STEM awareness, access, support, and professional development.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "SHPE Stevens | Society of Hispanic Professional Engineers",
+    description:
+      "Empowering the Hispanic community at Stevens Institute of Technology through STEM awareness, access, support, and development.",
+    url: "/",
+    type: "website",
+    images: ["/og-image.png"],
+  },
+};
 
 export default function Home() {
   return (
