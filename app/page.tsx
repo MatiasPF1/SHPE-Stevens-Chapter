@@ -1,9 +1,11 @@
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components_Main/hero-section-2";
-import ElegantCarousel from "@/components_Main/elegant-carousel";
-import AboutSection from "@/components_Main/about-section";
 import { Logos3 } from "@/components_Main/logos_carousel/logos3";
-import SocialsSection from "@/components_Main/socials-section";
-import TestimonialsSection from "@/components_Main/testimonials";
+
+const AboutSection = dynamic(() => import("@/components_Main/about-section"));
+const ElegantCarousel = dynamic(() => import("@/components_Main/elegant-carousel"));
+const TestimonialsSection = dynamic(() => import("@/components_Main/testimonials"));
+const SocialsSection = dynamic(() => import("@/components_Main/socials-section"));
 
 export default function Home() {
   return (

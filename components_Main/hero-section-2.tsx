@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { cn } from "@/lib/utils";
-import { motion, type Easing } from 'framer-motion';
+import { motion, type Easing } from 'motion/react';
 const heroImages = ["/SHPE2025.jpg", "/Kahoot.png", "/tips.jpg", "/tip2.jpg"];
 
 // Icon component for contact details
@@ -158,14 +159,15 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
           transition={{ duration: 1.2, ease: "circOut" }}
         >
           {heroImages.map((src, index) => (
-            <img
+            <Image
               key={src}
               src={src}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
-              style={{
-                opacity: index === currentImageIndex ? 1 : 0,
-              }}
+              fill
+              sizes="(max-width: 768px) 100vw, 58vw"
+              className="object-cover transition-opacity duration-700 ease-in-out"
+              style={{ opacity: index === currentImageIndex ? 1 : 0 }}
+              priority={index === 0}
             />
           ))}
         </motion.div>

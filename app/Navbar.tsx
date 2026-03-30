@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Navbar() {
   return (
     // Navbar Container
@@ -5,10 +7,13 @@ export default function Navbar() {
       {/* Left Section - Stevens SHPE Logo → links to home */}
       <div className="flex items-center">
         <a href="/">
-          <img
+          <Image
             src="/Stevens Institute of Technology.svg"
             alt="Stevens Institute of Technology"
+            width={320}
+            height={60}
             className="w-80 h-auto transition-transform duration-300 ease-in-out hover:scale-110 translate-y-2"
+            priority
           />
         </a>
       </div>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface TeamCardProps {
   name: string;
   role: string;
@@ -11,10 +13,12 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
   return (
     <div className="group relative rounded-2xl overflow-hidden shadow-md ring-1 ring-gray-200 w-full h-[320px]">
       {/* Full-bleed photo */}
-      <img
+      <Image
         src={image}
         alt={name}
-        className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+        fill
+        sizes="(max-width: 768px) 100vw, 300px"
+        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
       />
 
       {/* Bottom gradient overlay — fades out on hover */}

@@ -1,5 +1,6 @@
 import { Mail } from "lucide-react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -15,9 +16,11 @@ export default function Footer() {
           {/* Left — Logo + tagline + socials */}
           <div className="flex flex-col gap-3 md:w-80 shrink-0 self-start md:-mt-8 -translate-y-14">
             <a href="/" className="inline-block -mt-1">
-              <img
+              <Image
                 src="/Stevens Institute of Technology.svg"
                 alt="SHPE Stevens Institute of Technology"
+                width={400}
+                height={240}
                 className="brightness-0 invert h-60 w-auto"
               />
             </a>

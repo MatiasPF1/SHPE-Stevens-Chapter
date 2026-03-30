@@ -1,6 +1,7 @@
 ﻿'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 
 const testimonials = [
@@ -68,15 +69,13 @@ export default function TestimonialsSection() {
 
           {/* Left — Photo */}
           <div className="relative min-h-[480px] rounded-2xl overflow-hidden">
-            <img
+            <Image
               key={t.src + active}
               src={t.src}
               alt={t.name}
-              className="absolute inset-0 w-full h-full object-cover object-top"
-              onError={(e) => {
-                e.currentTarget.src = `https://placehold.co/600x700/0C2340/ffffff?text=${encodeURIComponent(t.name)}`;
-                e.currentTarget.onerror = null;
-              }}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
@@ -116,9 +115,11 @@ export default function TestimonialsSection() {
                 <p className="text-[9px] uppercase tracking-[0.2em] text-[#e40000] font-bold">Interning At</p>
                 <div className="w-6 h-px bg-[#e40000]/40" />
                 {t.companyLogo && (
-                  <img
+                  <Image
                     src={t.companyLogo}
                     alt={t.designation}
+                    width={120}
+                    height={48}
                     className="h-12 w-auto max-w-[120px] object-contain"
                   />
                 )}
@@ -140,19 +141,17 @@ export default function TestimonialsSection() {
                 className="group flex flex-col items-center gap-2 disabled:cursor-default"
               >
                 {/* Circle */}
-                <div className={`w-14 h-14 rounded-full overflow-hidden transition-all duration-300 ${
+                <div className={`w-14 h-14 rounded-full overflow-hidden relative transition-all duration-300 ${
                   i === active
                     ? 'outline outline-3 outline-offset-2 outline-[#0C2340] shadow-md'
                     : 'outline outline-2 outline-offset-2 outline-transparent grayscale group-hover:grayscale-0 group-hover:outline-[#0C2340]/40 group-hover:scale-105'
                 }`}>
-                  <img
+                  <Image
                     src={story.src}
                     alt={story.name}
-                    className="w-full h-full object-cover object-top"
-                    onError={(e) => {
-                      e.currentTarget.src = `https://placehold.co/120x120/0C2340/ffffff?text=${encodeURIComponent(story.name[0])}`;
-                      e.currentTarget.onerror = null;
-                    }}
+                    fill
+                    sizes="56px"
+                    className="object-cover object-top"
                   />
                 </div>
                 {/* Name */}
