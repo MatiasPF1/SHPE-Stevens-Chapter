@@ -1,12 +1,13 @@
 ﻿'use client';
 
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+
 
 const testimonials = [
   {
     name: "Mauricio Sanchez",
     role: "SHPE Member Spotlight",
+    shortRole: "Systems Design Intern",
     designation: "System Design Intern at NVIDIA",
     companyLogo: "/Testimonials/Nvidia.png",
     quote:
@@ -20,6 +21,7 @@ const testimonials = [
   {
     name: "Nataly Jimenez-Cruz",
     role: "SHPE Member Spotlight",
+    shortRole: "ML/AI Intern",
     designation: "AI/ML Engineer Intern at Collins Aerospace",
     companyLogo: "/Testimonials/Collins.png",
     quote:
@@ -33,6 +35,7 @@ const testimonials = [
   {
     name: "Matias Freire",
     role: "SHPE Member Spotlight",
+    shortRole: "SWE Intern",
     designation: "Software Engineer Intern at Wabtec",
     companyLogo: "/Testimonials/Wabtec.png",
     quote:
@@ -49,22 +52,19 @@ export default function TestimonialsSection() {
   const [active, setActive] = useState(0);
   const t = testimonials[active];
 
-  const prev = () => setActive((a) => (a - 1 + testimonials.length) % testimonials.length);
-  const next = () => setActive((a) => (a + 1) % testimonials.length);
-
   return (
     <section className="py-24 bg-[#FAFAF8]">
       {/* Section header */}
       <div className="max-w-5xl mx-auto px-16 text-center mb-16">
         <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#A32035] mb-5">Stevens SHPE Member Spotlight</p>
-        <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(3rem,12vw,4rem)] font-black text-[#0C2340]  leading-[0.95] tracking-tight mb-8">Hispanic Success</h2>
+        <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(3rem,12vw,4rem)] font-black text-[#0C2340] leading-[0.95] tracking-tight mb-8">Hispanic Success</h2>
         <p className="font-[family-name:var(--font-playfair)] text-xl text-[#3D4F5F] font-light leading-[1.9] italic">
           Per aspera Ad Astra
         </p>
       </div>
 
       <div className="max-w-7xl mx-auto px-16">
-        <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr_200px] gap-20 items-start">
 
           {/* Left — Photo */}
           <div className="relative min-h-[480px] rounded-2xl overflow-hidden">
@@ -78,7 +78,6 @@ export default function TestimonialsSection() {
                 e.currentTarget.onerror = null;
               }}
             />
-            {/* Dark gradient overlay at bottom for name */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
               <p className="text-white font-bold text-lg leading-tight">{t.name}</p>
@@ -86,81 +85,85 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Right — Content */}
-          <div className="flex flex-col justify-between py-4">
+          {/* Center — Content */}
+          <div className="flex flex-col gap-6 py-2">
+            {/* Quote */}
             <div>
-              {/* Decorative closing-quote mark */}
-              <div className="flex justify-end">
-                <span className="text-[#A32035] text-7xl font-serif leading-none select-none">&rdquo;</span>
-              </div>
-
-              {/* Quote */}
-              <blockquote
-                key={active}
-                className="text-[#0C2340] text-xl font-bold italic leading-snug mt-2"
-              >
+              <blockquote key={active} className="font-[family-name:var(--font-playfair)] text-[#0C2340] text-xl font-bold italic leading-snug">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
-
-              {/* Impact */}
-              <h3 className="mt-6 text-[#0C2340] font-bold text-base">The SHPE Impact</h3>
-              <p className="mt-2 text-[#3D4F5F] text-sm leading-relaxed">{t.impactText}</p>
             </div>
 
-            {/* Metadata row */}
-            <div className="mt-10 flex items-end justify-between">
-              <div className="flex gap-10">
-                <div>
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-[#3D4F5F] font-medium">Affiliation</p>
-                  <p className="mt-1 text-[#0C2340] font-bold text-sm">{t.affiliation}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-[#3D4F5F] font-medium">Major</p>
-                  <p className="mt-1 text-[#0C2340] font-bold text-sm">{t.focus}</p>
-                </div>
-              </div>
+            {/* Impact */}
+            <div>
+              <h3 className="text-[#0C2340] font-bold text-sm">The SHPE Impact</h3>
+              <p className="mt-1.5 text-[#3D4F5F] text-sm leading-relaxed">{t.impactText}</p>
+            </div>
 
-              {/* Company logo */}
-              {t.companyLogo && (
-                <img
-                  src={t.companyLogo}
-                  alt={t.designation}
-                  className="h-10 w-auto max-w-[120px] object-contain opacity-80"
-                />
-              )}
+            {/* Metadata cards */}
+            <div className="grid grid-cols-3 gap-3 mt-2">
+              <div className="rounded-xl border border-[#0C2340]/15 bg-white shadow-sm p-4 flex flex-col gap-2">
+                <p className="text-[9px] uppercase tracking-[0.2em] text-[#e40000] font-bold">Affiliation</p>
+                <div className="w-6 h-px bg-[#e40000]/40" />
+                <p className="text-[#0C2340] font-bold text-sm leading-snug">{t.affiliation}</p>
+              </div>
+              <div className="rounded-xl border border-[#0C2340]/15 bg-white shadow-sm p-4 flex flex-col gap-2">
+                <p className="text-[9px] uppercase tracking-[0.2em] text-[#e40000] font-bold">Major</p>
+                <div className="w-6 h-px bg-[#e40000]/40" />
+                <p className="text-[#0C2340] font-bold text-sm leading-snug">{t.focus}</p>
+              </div>
+              <div className="rounded-xl border border-[#0C2340]/15 bg-white shadow-sm p-4 flex flex-col gap-2">
+                <p className="text-[9px] uppercase tracking-[0.2em] text-[#e40000] font-bold">Interning At</p>
+                <div className="w-6 h-px bg-[#e40000]/40" />
+                {t.companyLogo && (
+                  <img
+                    src={t.companyLogo}
+                    alt={t.designation}
+                    className="h-12 w-auto max-w-[120px] object-contain"
+                  />
+                )}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Navigation */}
-        <div className="flex items-center gap-6 mt-8 justify-center">
-          <button
-            onClick={prev}
-            aria-label="Previous"
-            className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#0C2340] text-[#0C2340] hover:bg-[#0C2340] hover:text-white transition-colors"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-
-          {/* Dots */}
-          <div className="flex gap-2">
-            {testimonials.map((_, i) => (
+          {/* Right — See More Stories sidebar */}
+          <div className="hidden md:flex flex-col items-center gap-6 pt-2">
+            <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#0C2340] self-start translate-x-13">
+              More Stories
+            </p>
+            {testimonials.map((story, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                aria-label={`Go to testimonial ${i + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${i === active ? 'w-8 bg-[#A32035]' : 'w-2 bg-slate-300'}`}
-              />
+                disabled={i === active}
+                aria-label={`View ${story.name}'s story`}
+                className="group flex flex-col items-center gap-2 disabled:cursor-default"
+              >
+                {/* Circle */}
+                <div className={`w-14 h-14 rounded-full overflow-hidden transition-all duration-300 ${
+                  i === active
+                    ? 'outline outline-3 outline-offset-2 outline-[#0C2340] shadow-md'
+                    : 'outline outline-2 outline-offset-2 outline-transparent grayscale group-hover:grayscale-0 group-hover:outline-[#0C2340]/40 group-hover:scale-105'
+                }`}>
+                  <img
+                    src={story.src}
+                    alt={story.name}
+                    className="w-full h-full object-cover object-top"
+                    onError={(e) => {
+                      e.currentTarget.src = `https://placehold.co/120x120/0C2340/ffffff?text=${encodeURIComponent(story.name[0])}`;
+                      e.currentTarget.onerror = null;
+                    }}
+                  />
+                </div>
+                {/* Name */}
+                <p className={`text-[10px] font-semibold leading-tight transition-colors duration-200 ${
+                  i === active ? 'text-[#0C2340]' : 'text-[#9CA3AF] group-hover:text-[#0C2340]'
+                }`}>
+                  {story.name.split(' ')[0]}
+                </p>
+              </button>
             ))}
           </div>
-
-          <button
-            onClick={next}
-            aria-label="Next"
-            className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#0C2340] text-[#0C2340] hover:bg-[#0C2340] hover:text-white transition-colors"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
         </div>
       </div>
     </section>
