@@ -14,7 +14,7 @@ const testimonials = [
     quote:
       "I chose SHPE because I wanted to join a community that would help me develop both professionally and personally. The connections I've made through SHPE have shaped where I am today.",
     src: "/Testimonials/Mauricio.jpg",
-    affiliation: "Stevens Institute of Technology",
+    nationality: "Peruvian",
     focus: "Electrical Engineering",
     impactText:
       "Mauricio proves that a strong network is the real competitive edge. SHPE gave him the community and the confidence to walk into NVIDIA as a first generation engineer.",
@@ -28,7 +28,7 @@ const testimonials = [
     quote:
       "SHPE has provided direct connections to career opportunities that have been instrumental to my growth. I'm looking forward to giving back to this community and supporting the next generation of tech professionals.",
     src: "/Testimonials/Nathaly.jpg",
-    affiliation: "Stevens Institute of Technology",
+    nationality: "Peruvian",
     focus: "Computer Science",
     impactText:
       "Nataly didn't just find an internship through SHPE, she found a blueprint for leadership. Her path to Collins Aerospace started with showing up for her community.",
@@ -42,7 +42,7 @@ const testimonials = [
     quote:
       "SHPE provided me with an invaluable mentor and network that helped me land my first internship. As an immigrant, I felt I was in a community that understood my background and supported my growth.",
     src: "/Testimonials/MatiasFreire_WebDeveloper.jpeg",
-    affiliation: "Stevens Institute of Technology",
+    nationality: "Ecuadorian",
     focus: "Computer Science",
     impactText:
       "Moving to a new country and breaking into tech is no small feat. SHPE gave Matias the mentorship and belonging that turned an uncertain path into a career at Wabtec.",
@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-16">
+      <div className="max-w-7.5xl mx-auto px-16">
         <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr_200px] gap-20 items-start">
 
           {/* Left — Photo */}
@@ -99,28 +99,25 @@ export default function TestimonialsSection() {
               <p className="mt-1.5 text-[#3D4F5F] text-sm leading-relaxed">{t.impactText}</p>
             </div>
 
-            {/* Metadata cards */}
-            <div className="grid grid-cols-3 gap-3 mt-2">
-              <div className="rounded-xl border border-[#0C2340]/15 bg-white shadow-sm p-4 flex flex-col gap-2">
-                <p className="text-[9px] uppercase tracking-[0.2em] text-[#e40000] font-bold">Affiliation</p>
-                <div className="w-6 h-px bg-[#e40000]/40" />
-                <p className="text-[#0C2340] font-bold text-sm leading-snug">{t.affiliation}</p>
+            {/* Metadata rows */}
+            <div className="flex flex-col divide-y divide-gray-100 mt-4 border-t border-gray-100">
+              <div className="flex items-baseline gap-4 py-3">
+                <span className="w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] text-gray-400 font-medium">Nationality</span>
+                <span className="text-[#0C2340] font-[family-name:var(--font-playfair)] text-sm leading-snug">{t.nationality}</span>
               </div>
-              <div className="rounded-xl border border-[#0C2340]/15 bg-white shadow-sm p-4 flex flex-col gap-2">
-                <p className="text-[9px] uppercase tracking-[0.2em] text-[#e40000] font-bold">Major</p>
-                <div className="w-6 h-px bg-[#e40000]/40" />
-                <p className="text-[#0C2340] font-bold text-sm leading-snug">{t.focus}</p>
+              <div className="flex items-baseline gap-4 py-3">
+                <span className="w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] text-gray-400 font-medium">Major</span>
+                <span className="text-[#0C2340] font-[family-name:var(--font-playfair)] text-sm leading-snug">{t.focus}</span>
               </div>
-              <div className="rounded-xl border border-[#0C2340]/15 bg-white shadow-sm p-4 flex flex-col gap-2">
-                <p className="text-[9px] uppercase tracking-[0.2em] text-[#e40000] font-bold">Interning At</p>
-                <div className="w-6 h-px bg-[#e40000]/40" />
+              <div className="flex items-center gap-4 py-3">
+                <span className="w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] text-gray-400 font-medium">Interning At</span>
                 {t.companyLogo && (
                   <Image
                     src={t.companyLogo}
                     alt={t.designation}
                     width={120}
-                    height={48}
-                    className="h-12 w-auto max-w-[120px] object-contain"
+                    height={40}
+                    className="h-8 w-auto max-w-[110px] object-contain"
                   />
                 )}
               </div>
