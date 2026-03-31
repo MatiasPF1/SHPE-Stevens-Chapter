@@ -110,7 +110,7 @@ export default function TestimonialsSection() {
                 <span className="text-[#0C2340] font-[family-name:var(--font-playfair)] text-sm leading-snug">{t.focus}</span>
               </div>
               <div className="flex items-center gap-4 py-3">
-                <span className="w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] text-gray-400 font-medium">Interning At</span>
+                <span className="w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] text-gray-400 font-medium">Interned At</span>
                 {t.companyLogo && (
                   <Image
                     src={t.companyLogo}
