@@ -47,6 +47,21 @@ const testimonials = [
     impactText:
       "Moving to a new country and breaking into tech is no small feat. SHPE gave Matias the mentorship and belonging that turned an uncertain path into a career at Wabtec.",
   },
+
+  {
+    name: "Brandon Peralta",
+    role: "SHPE Member Spotlight",
+    shortRole: "Systems Integration Intern",
+    designation: "Systems Integration Intern at Raytheon",
+    companyLogo: "/Testimonials/Collins.png",
+    quote:
+      "SHPE has been one of the most impactful parts of my college experience, connecting me with alumni who helped me land my first co-op with L3Harris. But beyond the career benefits, SHPE has shaped who I am. Because of everything this organization has given me, I feel a deep responsibility to give back and help the next generation of engineers find their path to success.",
+    src: "/Testimonials/Brandon.jpg",
+    nationality: "Ecuadorian",
+    focus: "Mechanical Engineering",
+    impactText:
+      "Moving to a new country and breaking into tech is no small feat. SHPE gave Matias the mentorship and belonging that turned an uncertain path into a career at Wabtec.",
+  },
 ];
 
 export default function TestimonialsSection() {
@@ -54,12 +69,28 @@ export default function TestimonialsSection() {
   const t = testimonials[active];
 
   return (
-    <section className="py-24 bg-[#FAFAF8]">
+    <section className="py-28 bg-[#FAFAF8]">
       {/* Section header */}
-      <div className="max-w-5xl mx-auto px-16 text-center mb-16">
-        <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#A32035] mb-5">Stevens SHPE Member Spotlight</p>
-        <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(3rem,12vw,4rem)] font-black text-[#0C2340] leading-[0.95] tracking-tight mb-8">Hispanic Success</h2>
-        <p className="font-[family-name:var(--font-playfair)] text-xl text-[#3D4F5F] font-light leading-[1.9] italic">
+      <div className="max-w-3xl mx-auto px-8 text-center mb-20">
+        {/* Eyebrow with flanking rules */}
+        <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="h-px w-10 bg-[#A32035]" />
+          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#A32035]">Stevens SHPE Member Spotlight</p>
+          <div className="h-px w-10 bg-[#A32035]" />
+        </div>
+
+        <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(3.5rem,10vw,5.5rem)] font-black text-[#0C2340] leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>
+
+        {/* Diamond divider */}
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="h-px w-20 bg-[#0C2340]/15" />
+          <svg width="7" height="7" viewBox="0 0 7 7" fill="none" className="shrink-0">
+            <rect x="3.5" y="0.5" width="4.24" height="4.24" transform="rotate(45 3.5 3.5)" fill="#A32035" />
+          </svg>
+          <div className="h-px w-20 bg-[#0C2340]/15" />
+        </div>
+
+        <p className="font-[family-name:var(--font-playfair)] text-[1.15rem] text-[#3D4F5F]/80 font-light italic tracking-wide">
           Per aspera Ad Astra
         </p>
       </div>
@@ -87,8 +118,9 @@ export default function TestimonialsSection() {
           {/* Center — Content */}
           <div className="flex flex-col gap-6 py-2">
             {/* Quote */}
-            <div>
-              <blockquote key={active} className="font-[family-name:var(--font-playfair)] text-[#0C2340] text-xl font-bold italic leading-snug">
+            <div className="relative">
+              <span className="font-[family-name:var(--font-playfair)] text-[7rem] text-[#A32035]/10 font-black leading-none absolute -top-6 -left-3 select-none pointer-events-none">&ldquo;</span>
+              <blockquote key={active} className="font-[family-name:var(--font-playfair)] text-[#0C2340] text-xl font-bold italic leading-snug relative z-10">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
             </div>
