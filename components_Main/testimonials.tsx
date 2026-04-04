@@ -69,7 +69,7 @@ export default function TestimonialsSection() {
   const t = testimonials[active];
 
   return (
-    <section className="py-28 bg-[#FAFAF8]">
+    <section className="py-28 bg-(--page-bg)">
       {/* Section header */}
       <div className="max-w-3xl mx-auto px-8 text-center mb-20">
         {/* Eyebrow with flanking rules */}
@@ -119,7 +119,7 @@ export default function TestimonialsSection() {
           <div className="flex flex-col gap-6 py-2">
             {/* Quote */}
             <div className="relative">
-              <span className="font-[family-name:var(--font-playfair)] text-[7rem] text-[#A32035]/10 font-black leading-none absolute -top-6 -left-3 select-none pointer-events-none">&ldquo;</span>
+              <span className="font-[family-name:var(--font-playfair)] text-[7rem] text-[#A32035]/10 font-black leading-none absolute -top-6 -left-3 select-none pointer-events-none"></span>
               <blockquote key={active} className="font-[family-name:var(--font-playfair)] text-[#0C2340] text-xl font-bold italic leading-snug relative z-10">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>

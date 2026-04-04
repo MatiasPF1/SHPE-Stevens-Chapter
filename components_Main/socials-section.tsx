@@ -2,7 +2,7 @@ import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function SocialsSection() {
   return (
-    <section className="py-12 text-center bg-[#FAFAF8]">
+    <section className="py-12 text-center bg-(--page-bg)">
       <p className="text-xs font-semibold tracking-widest text-red-500 uppercase mb-2">
         Stay Connected
       </p>

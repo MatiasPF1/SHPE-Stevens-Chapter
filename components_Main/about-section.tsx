@@ -5,14 +5,19 @@ export default function AboutSection() {
     <section className="py-16 px-6 overflow-hidden" style={{ backgroundColor: 'var(--page-bg)' }}>
       <div className="max-w-6xl mx-auto">
 
-        {/* Top row: label + body text (left) | big heading (right) */}
-        <div className="flex flex-col md:flex-row gap-10">
+        {/* Top: big heading | Below: label + body text */}
+        <div className="flex flex-col gap-15">
 
-          {/* Left — eyebrow + body */}
-          <div className="md:w-1/2 flex flex-col justify-center">
+          {/* Heading */}
+          <h2 className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl font-black text-[#0C2340] leading-tight ml-80">
+            Who Are We?
+          </h2>
+
+          {/* Eyebrow + body */}
+          <div className="flex flex-col">
             <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#A32035] mb-5">About Us</p>
 
-            <p className="text-base text-[#3D4F5F] leading-[1.9]">
+            <p className="text-base text-[#3D4F5F] leading-[1.9] ">
               The{" "}
               <span className="font-bold text-[#0C2340]">Society of Hispanic Professional Engineers</span>{" "}
               at Stevens empowers students to succeed{" "}
@@ -23,17 +28,10 @@ export default function AboutSection() {
               <span className="font-bold italic text-[#2D6A4F]">community</span>.
             </p>
           </div>
-
-          {/* Right — large heading */}
-          <div className="md:w-1/2 flex items-center justify-end">
-            <h2 className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl font-black text-[#0C2340] leading-tight text-right">
-              Who Are<br />We?
-            </h2>
-          </div>
         </div>
 
         {/* Tilted Cards */}
-        <div className="flex flex-row flex-nowrap justify-center gap-8 mt-12">
+        <div className="flex flex-row flex-nowrap justify-center gap-8 mt-20">
           <TiltedCard
             imageSrc="/Competition.png"
             altText="Competititon"
