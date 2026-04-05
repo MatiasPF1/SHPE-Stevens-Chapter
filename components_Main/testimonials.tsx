@@ -157,40 +157,42 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Right — See More Stories sidebar */}
-          <div className="hidden md:flex flex-col items-center gap-6 pt-2">
-            <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#0C2340] self-start translate-x-13">
+          <div className="hidden md:flex flex-col items-center gap-4 pt-2">
+            <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#0C2340]">
               More Stories
             </p>
-            {testimonials.map((story, i) => (
-              <button
-                key={i}
-                onClick={() => setActive(i)}
-                disabled={i === active}
-                aria-label={`View ${story.name}'s story`}
-                className="group flex flex-col items-center gap-2 disabled:cursor-default"
-              >
-                {/* Circle */}
-                <div className={`w-14 h-14 rounded-full overflow-hidden relative transition-all duration-300 ${
-                  i === active
-                    ? 'outline outline-3 outline-offset-2 outline-[#0C2340] shadow-md'
-                    : 'outline outline-2 outline-offset-2 outline-transparent grayscale group-hover:grayscale-0 group-hover:outline-[#0C2340]/40 group-hover:scale-105'
-                }`}>
-                  <Image
-                    src={story.src}
-                    alt={story.name}
-                    fill
-                    sizes="56px"
-                    className="object-cover object-top"
-                  />
-                </div>
-                {/* Name */}
-                <p className={`text-[10px] font-semibold leading-tight transition-colors duration-200 ${
-                  i === active ? 'text-[#0C2340]' : 'text-[#9CA3AF] group-hover:text-[#0C2340]'
-                }`}>
-                  {story.name.split(' ')[0]}
-                </p>
-              </button>
-            ))}
+            <div className="grid grid-cols-2 gap-12">
+              {testimonials.map((story, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  disabled={i === active}
+                  aria-label={`View ${story.name}'s story`}
+                  className="group flex flex-col items-center gap-2 disabled:cursor-default"
+                >
+                  {/* Circle */}
+                  <div className={`w-14 h-14 rounded-full overflow-hidden relative transition-all duration-300 ${
+                    i === active
+                      ? 'outline outline-3 outline-offset-2 outline-[#0C2340] shadow-md'
+                      : 'outline outline-2 outline-offset-2 outline-transparent grayscale group-hover:grayscale-0 group-hover:outline-[#0C2340]/40 group-hover:scale-105'
+                  }`}>
+                    <Image
+                      src={story.src}
+                      alt={story.name}
+                      fill
+                      sizes="56px"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  {/* Name */}
+                  <p className={`text-[10px] font-semibold leading-tight transition-colors duration-200 ${
+                    i === active ? 'text-[#0C2340]' : 'text-[#9CA3AF] group-hover:text-[#0C2340]'
+                  }`}>
+                    {story.name.split(' ')[0]}
+                  </p>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
