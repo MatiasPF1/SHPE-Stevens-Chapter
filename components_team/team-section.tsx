@@ -62,7 +62,7 @@ const eBoards: EBoard[] = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function TeamSection() {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(1);
   const board = eBoards[index];
   const hasPrev = index > 0;
   const hasNext = index < eBoards.length - 1;

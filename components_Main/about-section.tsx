@@ -9,24 +9,41 @@ export default function AboutSection() {
         <div className="flex flex-col gap-15">
 
           {/* Heading */}
-          <h2 className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl font-black text-[#0C2340] leading-tight ml-80">
+          <h2 className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl font-black text-[#0C2340] leading-tight text-center">
             Who Are We?
           </h2>
 
           {/* Eyebrow + body */}
           <div className="flex flex-col">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#A32035] mb-5">About Us</p>
+            <div className="flex items-center justify-center gap-4 mb-5">
+              <span className="w-16 h-px bg-[#A32035]" />
+              <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#A32035] whitespace-nowrap">About Us</p>
+              <span className="w-16 h-px bg-[#A32035]" />
+            </div>
 
-            <p className="text-base text-[#3D4F5F] leading-[1.9] ">
-              The{" "}
-              <span className="font-bold text-[#0C2340]">Society of Hispanic Professional Engineers</span>{" "}
-              at Stevens empowers students to succeed{" "}
-              <span className="font-bold text-[#0C2340]">professionally</span>,{" "}
-              <span className="font-bold text-[#0C2340]">academically</span>, and{" "}
-              <span className="font-bold text-[#0C2340]">socially</span>. We are a family built on{" "}
-              <span className="font-bold italic text-[#A32035]">excellence</span> and{" "}
-              <span className="font-bold italic text-[#2D6A4F]">community</span>.
-            </p>
+            {/* Triangle text — 3 layers, wide → narrow */}
+            <div className="flex flex-col items-center text-center text-base text-[#3D4F5F] leading-[1.9]">
+              {/* Layer 1 — widest */}
+              <p className="w-full">
+                The{" "}
+                <span className="font-bold text-[#0C2340]">Society of Hispanic Professional Engineers</span>{" "}
+                at Stevens empowers students to succeed{" "}
+                <span className="font-bold text-[#0C2340]">professionally</span>,{" "}
+                <span className="font-bold text-[#0C2340]">academically</span>, and{" "}
+                <span className="font-bold text-[#0C2340]">socially</span>.
+              </p>
+              {/* Layer 2 — medium */}
+              <p className="max-w-[72%]">
+                We are a family built on{" "}
+                <span className="font-bold italic text-[#0C2340]">excellence</span>{" "}
+                and{" "}
+                <span className="font-bold italic text-[#0C2340]">community</span>.
+              </p>
+              {/* Layer 3 — narrowest */}
+              <p className="max-w-[42%]">
+                Together, we rise.
+              </p>
+            </div>
           </div>
         </div>
 

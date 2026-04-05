@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 interface TeamCardProps {
   name: string;
@@ -10,8 +13,13 @@ interface TeamCardProps {
 }
 
 export default function TeamCard({ name, role, image, linkedin, email, description }: TeamCardProps) {
+  const [active, setActive] = useState(false);
+
   return (
-    <div className="group relative rounded-2xl overflow-hidden shadow-md ring-1 ring-gray-200 w-full h-[320px]">
+    <div
+      className="group relative rounded-2xl overflow-hidden shadow-md ring-1 ring-gray-200 w-full h-[320px] cursor-pointer"
+      onClick={() => setActive((v) => !v)}
+    >
       {/* Full-bleed photo */}
       <Image
         src={image}
@@ -21,28 +29,25 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
         className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
       />
 
-      {/* Bottom gradient overlay — fades out on hover */}
-      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+      {/* Bottom gradient overlay — fades out on hover/active */}
+      <div className={`absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-0 ${active ? 'opacity-0' : ''}`} />
 
-      {/* Bottom name + role — fades out on hover */}
-      <div className="absolute bottom-0 left-0 right-0 px-4 py-4 transition-opacity duration-300 group-hover:opacity-0 group-hover:pointer-events-none">
+      {/* Bottom name + role — fades out on hover/active */}
+      <div className={`absolute bottom-0 left-0 right-0 px-4 py-4 transition-opacity duration-300 group-hover:opacity-0 group-hover:pointer-events-none ${active ? 'opacity-0 pointer-events-none' : ''}`}>
         <p className="font-bold text-white text-base leading-tight">{name}</p>
         <p className="text-white/80 text-sm mt-0.5">{role}</p>
       </div>
 
-      {/* ── Hover overlay ── */}
-      <div className="absolute inset-0 bg-[#0C2340]/95 flex flex-col items-center justify-center px-5 text-center
-                      opacity-0 translate-y-3 pointer-events-none
-                      group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
-                      transition-all duration-300 ease-out">
+      {/* ── Hover / tap overlay ── */}
+      <div className={`absolute inset-0 bg-[#0C2340]/95 flex flex-col items-center justify-center px-5 text-center transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto ${active ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
         {/* Gold accent bar */}
-        <div className="w-10 h-1 bg-[#E4A500] rounded-full mb-4" />
+        <div className="w-10 h-1 bg-[#ee7f00] rounded-full mb-4" />
 
         {/* Name */}
         <p className="font-bold text-white text-base leading-tight">{name}</p>
 
         {/* Role */}
-        <p className="text-[#E4A500] text-xs font-semibold mt-1 uppercase tracking-widest">{role}</p>
+        <p className="text-[#ee7f00] text-xs font-semibold mt-1 uppercase tracking-widest">{role}</p>
 
         {/* Description */}
         {description && (
