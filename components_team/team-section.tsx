@@ -74,7 +74,7 @@ export default function TeamSection() {
       className="py-24"
       style={{ backgroundColor: '#F9FAFB' }}
     >
-      <div className="max-w-300 mx-auto px-10 text-center">
+      <div className="max-w-340 mx-auto px-10 text-center">
 
         {/* Header */}
         <div className="mb-14">
@@ -129,7 +129,7 @@ export default function TeamSection() {
         </div>
 
         {/* Team grid */}
-        <div className="grid grid-cols-4 gap-20">
+        <div className="grid grid-cols-4 gap-20 ">
           {board.members.map((m) => (
             <TeamCard key={m.name + m.role} {...m} />
           ))}

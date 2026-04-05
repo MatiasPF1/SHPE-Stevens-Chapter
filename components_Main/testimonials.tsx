@@ -60,7 +60,7 @@ const testimonials = [
     nationality: "Ecuadorian",
     focus: "Mechanical Engineering",
     impactText:
-      "Moving to a new country and breaking into tech is no small feat. SHPE gave Matias the mentorship and belonging that turned an uncertain path into a career at Wabtec.",
+      "SHPE didn't just open doors for Brandon, it shaped who he is. The alumni connections that led to his L3Harris co-op lit a fire in him to pay it forward and guide the next generation of engineers.",
   },
 ];
 
