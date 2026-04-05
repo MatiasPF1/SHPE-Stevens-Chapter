@@ -41,18 +41,17 @@ export default function Home() {
         }}
       />
       <Logos3 />
-      <div className="-translate-y-8">
-        <AboutSection />
-      </div>
-        <div className="-translate-y-23">
-        <ElegantCarousel />
+      <div className="-translate-y-11">
+      <AboutSection />
       </div>
 
-      <div className="-translate-y-38">
+      <div className="-translate-y-11">
+      <ElegantCarousel />
+      </div>
+      <div className="-translate-y-11">
       <TestimonialsSection />
       </div>
-
-      <div className="-translate-y-35">
+      <div className="-translate-y-11">
       <SocialsSection />
       </div>
     </div>

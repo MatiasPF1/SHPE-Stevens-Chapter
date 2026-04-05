@@ -17,41 +17,30 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
 
   return (
     <div
-      className="group relative bg-white cursor-pointer"
-      style={{ boxShadow: '0 24px 64px -16px rgba(12,35,64,0.13), 0 4px 18px -4px rgba(12,35,64,0.07)' }}
+      className="group relative bg-white cursor-pointer overflow-hidden"
+      style={{ boxShadow: '0 1px 4px rgba(12,35,64,0.08), 0 4px 16px rgba(12,35,64,0.06)' }}
       onClick={() => setShowBio((v) => !v)}
     >
-      {/* ── Edge-to-edge portrait with diagonal bottom cut ── */}
-      <div
-        className="relative w-full overflow-hidden"
-        style={{ height: '260px', clipPath: 'polygon(0 0, 100% 0, 100% 92%, 0 100%)' }}
-      >
+      {/* ── Portrait ── */}
+      <div className="relative w-full overflow-hidden" style={{ height: '290px' }}>
         <Image
           src={image}
           alt={name}
           fill
           sizes="(max-width: 768px) 100vw, 300px"
-          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
       </div>
 
-      {/* ── White info section ── */}
-      <div className="bg-white px-5 pt-3 pb-5 text-center">
-        <p className="font-bold text-[#0C2340] text-[15px] leading-tight tracking-tight">{name}</p>
+      {/* ── Info section ── */}
+      <div className="px-5 pt-4 pb-5">
+        <p className="font-bold text-[#0C2340] text-[14.5px] leading-tight tracking-tight">{name}</p>
+        <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-[#3D4F5F]/50 mt-1.5">{role}</p>
 
-        {/* Role */}
-        <p className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-[#3D4F5F]/55 mt-1.5">
-          {role}
-        </p>
-
-        {/* View Bio — slides up on hover */}
+        {/* View Bio */}
         <div className="mt-3 h-4 overflow-hidden">
-          <div className="flex items-center justify-center gap-1.5 translate-y-5 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <circle cx="6" cy="6" r="5.25" stroke="#A32035" strokeWidth="0.75" />
-              <path d="M4 6h4M8 6L6 4M8 6L6 8" stroke="#A32035" strokeWidth="0.8" strokeLinecap="round" />
-            </svg>
-            <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#A32035]">View Bio</span>
+          <div className="flex items-center gap-1.5 translate-y-5 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+            <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#A32035]">View Bio →</span>
           </div>
         </div>
       </div>

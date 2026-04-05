@@ -39,6 +39,9 @@ export const metadata: Metadata = {
   applicationName: "SHPE Stevens",
   keywords: [
     "SHPE",
+    "SHPE Stevens",
+    "Society of Hispanic Professional Engineers",
+    "SHPE Stevens Chapter",
     "Stevens Institute of Technology",
     "Hispanic engineers",
     "STEM",
@@ -74,13 +77,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/og-image.png",
     apple: "/og-image.png",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "SHPE Stevens | Society of Hispanic Professional Engineers",
-    description:
-      "Empowering the Hispanic community at Stevens Institute of Technology through STEM awareness, access, support, and development.",
-    images: ["/og-image.png"],
   },
 };
 

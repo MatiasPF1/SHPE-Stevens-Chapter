@@ -61,10 +61,10 @@ const eBoards: EBoard[] = [
 ];
 // ─────────────────────────────────────────────────────────────────────────────
 
-const blueprintBg = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath fill='none' stroke='%230C2340' stroke-width='0.5' opacity='0.1' d='M0 40h160M0 80h160M0 120h160M40 0v160M80 0v160M120 0v160'/%3E%3Crect x='6' y='6' width='68' height='52' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Crect x='86' y='6' width='68' height='52' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Crect x='6' y='86' width='68' height='68' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Crect x='86' y='86' width='68' height='68' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='80' cy='40' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='120' cy='40' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='40' cy='80' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='80' cy='80' r='1.5' fill='%230C2340' opacity='0.12'/%3E%3Ccircle cx='120' cy='80' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='40' cy='120' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='80' cy='120' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='120' cy='120' r='1' fill='%230C2340' opacity='0.1'/%3E%3C/svg%3E")`;
+
 
 export default function TeamSection() {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(1);
   const board = eBoards[index];
   const hasPrev = index > 0;
   const hasNext = index < eBoards.length - 1;
@@ -72,13 +72,19 @@ export default function TeamSection() {
   return (
     <section
       className="py-24 relative overflow-hidden"
-      style={{
-        backgroundColor: '#F9FAFB',
-        backgroundImage: blueprintBg,
-        backgroundRepeat: 'repeat',
-        backgroundSize: '160px 160px',
-      }}
+      style={{ backgroundColor: '#F9FAFB' }}
     >
+      {/* Subtle background pattern */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cline x1='0' y1='60' x2='120' y2='60' stroke='%230C2340' stroke-width='0.5'/%3E%3Cline x1='60' y1='0' x2='60' y2='120' stroke='%230C2340' stroke-width='0.5'/%3E%3Ccircle cx='0' cy='0' r='1.5' fill='%230C2340'/%3E%3Ccircle cx='120' cy='0' r='1.5' fill='%230C2340'/%3E%3Ccircle cx='0' cy='120' r='1.5' fill='%230C2340'/%3E%3Ccircle cx='120' cy='120' r='1.5' fill='%230C2340'/%3E%3Ccircle cx='60' cy='60' r='3' fill='none' stroke='%230C2340' stroke-width='0.8'/%3E%3Ccircle cx='60' cy='60' r='1' fill='%230C2340'/%3E%3Cline x1='0' y1='0' x2='60' y2='60' stroke='%230C2340' stroke-width='0.4'/%3E%3Cline x1='120' y1='0' x2='60' y2='60' stroke='%230C2340' stroke-width='0.4'/%3E%3Cline x1='0' y1='120' x2='60' y2='60' stroke='%230C2340' stroke-width='0.4'/%3E%3Cline x1='120' y1='120' x2='60' y2='60' stroke='%230C2340' stroke-width='0.4'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '120px 120px',
+          opacity: 0.06,
+        }}
+      />
       <div className="max-w-300 mx-auto px-10 text-center">
 
         {/* Header */}
@@ -94,15 +100,7 @@ export default function TeamSection() {
             Meet the Team
           </h2>
 
-          {/* Thin divider */}
-          <div className="flex items-center justify-center gap-3 mt-6">
-            <div className="h-px w-16 bg-[#0C2340]/12" />
-            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" className="shrink-0">
-              <rect x="3" y="0.5" width="3.54" height="3.54" transform="rotate(45 3 3)" fill="#A32035" />
-            </svg>
-            <div className="h-px w-16 bg-[#0C2340]/12" />
-          </div>
-
+    
           {/* Year navigator */}
           <div className="mt-8 flex items-center justify-center gap-4">
             <button
@@ -142,7 +140,7 @@ export default function TeamSection() {
         </div>
 
         {/* Team grid */}
-        <div className="grid grid-cols-4 gap-15">
+        <div className="grid grid-cols-4 gap-20">
           {board.members.map((m) => (
             <TeamCard key={m.name + m.role} {...m} />
           ))}

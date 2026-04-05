@@ -69,7 +69,18 @@ export default function TestimonialsSection() {
   const t = testimonials[active];
 
   return (
-    <section className="py-28 bg-(--page-bg)">
+    <section className="py-28 bg-(--page-bg) relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cline x1='0' y1='60' x2='120' y2='60' stroke='%230C2340' stroke-width='0.5'/%3E%3Cline x1='60' y1='0' x2='60' y2='120' stroke='%230C2340' stroke-width='0.5'/%3E%3Ccircle cx='0' cy='0' r='1.5' fill='%230C2340'/%3E%3Ccircle cx='120' cy='0' r='1.5' fill='%230C2340'/%3E%3Ccircle cx='0' cy='120' r='1.5' fill='%230C2340'/%3E%3Ccircle cx='120' cy='120' r='1.5' fill='%230C2340'/%3E%3Ccircle cx='60' cy='60' r='3' fill='none' stroke='%230C2340' stroke-width='0.8'/%3E%3Ccircle cx='60' cy='60' r='1' fill='%230C2340'/%3E%3Cline x1='0' y1='0' x2='60' y2='60' stroke='%230C2340' stroke-width='0.4'/%3E%3Cline x1='120' y1='0' x2='60' y2='60' stroke='%230C2340' stroke-width='0.4'/%3E%3Cline x1='0' y1='120' x2='60' y2='60' stroke='%230C2340' stroke-width='0.4'/%3E%3Cline x1='120' y1='120' x2='60' y2='60' stroke='%230C2340' stroke-width='0.4'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '120px 120px',
+          opacity: 0.06,
+        }}
+      />
       {/* Section header */}
       <div className="max-w-3xl mx-auto px-8 text-center mb-20">
         {/* Eyebrow with flanking rules */}
@@ -81,18 +92,6 @@ export default function TestimonialsSection() {
 
         <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(3.5rem,10vw,5.5rem)] font-black text-[#0C2340] leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>
 
-        {/* Diamond divider */}
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <div className="h-px w-20 bg-[#0C2340]/15" />
-          <svg width="7" height="7" viewBox="0 0 7 7" fill="none" className="shrink-0">
-            <rect x="3.5" y="0.5" width="4.24" height="4.24" transform="rotate(45 3.5 3.5)" fill="#A32035" />
-          </svg>
-          <div className="h-px w-20 bg-[#0C2340]/15" />
-        </div>
-
-        <p className="font-[family-name:var(--font-playfair)] text-[1.15rem] text-[#3D4F5F]/80 font-light italic tracking-wide">
-          Per aspera Ad Astra
-        </p>
       </div>
 
       <div className="max-w-7.5xl mx-auto px-16">
