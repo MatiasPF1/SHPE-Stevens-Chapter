@@ -61,6 +61,8 @@ const eBoards: EBoard[] = [
 ];
 // ─────────────────────────────────────────────────────────────────────────────
 
+const blueprintBg = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath fill='none' stroke='%230C2340' stroke-width='0.5' opacity='0.1' d='M0 40h160M0 80h160M0 120h160M40 0v160M80 0v160M120 0v160'/%3E%3Crect x='6' y='6' width='68' height='52' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Crect x='86' y='6' width='68' height='52' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Crect x='6' y='86' width='68' height='68' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Crect x='86' y='86' width='68' height='68' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='80' cy='40' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='120' cy='40' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='40' cy='80' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='80' cy='80' r='1.5' fill='%230C2340' opacity='0.12'/%3E%3Ccircle cx='120' cy='80' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='40' cy='120' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='80' cy='120' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='120' cy='120' r='1' fill='%230C2340' opacity='0.1'/%3E%3C/svg%3E")`;
+
 export default function TeamSection() {
   const [index, setIndex] = useState(1);
   const board = eBoards[index];
@@ -68,49 +70,79 @@ export default function TeamSection() {
   const hasNext = index < eBoards.length - 1;
 
   return (
-    <section className="py-20 bg-[#FAFAF8]">
+    <section
+      className="py-24 relative overflow-hidden"
+      style={{
+        backgroundColor: '#F9FAFB',
+        backgroundImage: blueprintBg,
+        backgroundRepeat: 'repeat',
+        backgroundSize: '160px 160px',
+      }}
+    >
       <div className="max-w-300 mx-auto px-10 text-center">
-        <h2 className="text-4xl font-bold text-[#0C2340]">Meet the Team</h2>
 
-        {/* Year navigator */}
-        <div className="mt-8 flex items-center justify-center gap-4">
-          <button
-            onClick={() => setIndex((i) => i - 1)}
-            disabled={!hasPrev}
-            aria-label="Previous year"
-            className="w-9 h-9 rounded-full border-2 border-[#0C2340] flex items-center justify-center
-                       text-[#0C2340] hover:bg-[#0C2340] hover:text-white transition-colors duration-200
-                       disabled:opacity-25 disabled:cursor-not-allowed"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-                 className="w-4 h-4">
-              <path d="M15 18l-6-6 6-6" />
+        {/* Header */}
+        <div className="mb-14">
+          {/* Eyebrow with flanking lines */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-px w-12 bg-[#A32035]" />
+            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#A32035]">Stevens Chapter</p>
+            <div className="h-px w-12 bg-[#A32035]" />
+          </div>
+
+          <h2 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl font-black text-[#0C2340] leading-tight tracking-tight">
+            Meet the Team
+          </h2>
+
+          {/* Thin divider */}
+          <div className="flex items-center justify-center gap-3 mt-6">
+            <div className="h-px w-16 bg-[#0C2340]/12" />
+            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" className="shrink-0">
+              <rect x="3" y="0.5" width="3.54" height="3.54" transform="rotate(45 3 3)" fill="#A32035" />
             </svg>
-          </button>
+            <div className="h-px w-16 bg-[#0C2340]/12" />
+          </div>
 
-          <span className="px-6 py-1.5 rounded-full border-2 border-[#0C2340] text-[#0C2340] font-semibold text-sm min-w-[120px]">
-            {board.year}
-          </span>
+          {/* Year navigator */}
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <button
+              onClick={() => setIndex((i) => i - 1)}
+              disabled={!hasPrev}
+              aria-label="Previous year"
+              className="w-9 h-9 rounded-full border border-[#0C2340]/30 flex items-center justify-center
+                         text-[#0C2340] hover:bg-[#0C2340] hover:text-white hover:border-[#0C2340] transition-all duration-200
+                         disabled:opacity-20 disabled:cursor-not-allowed"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                   className="w-4 h-4">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
 
-          <button
-            onClick={() => setIndex((i) => i + 1)}
-            disabled={!hasNext}
-            aria-label="Next year"
-            className="w-9 h-9 rounded-full border-2 border-[#0C2340] flex items-center justify-center
-                       text-[#0C2340] hover:bg-[#0C2340] hover:text-white transition-colors duration-200
-                       disabled:opacity-25 disabled:cursor-not-allowed"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-                 className="w-4 h-4">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
+            <span className="px-6 py-1.5 rounded-full border border-[#0C2340]/30 text-[#0C2340] font-semibold text-sm min-w-[120px] tracking-wide">
+              {board.year}
+            </span>
+
+            <button
+              onClick={() => setIndex((i) => i + 1)}
+              disabled={!hasNext}
+              aria-label="Next year"
+              className="w-9 h-9 rounded-full border border-[#0C2340]/30 flex items-center justify-center
+                         text-[#0C2340] hover:bg-[#0C2340] hover:text-white hover:border-[#0C2340] transition-all duration-200
+                         disabled:opacity-20 disabled:cursor-not-allowed"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                   className="w-4 h-4">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Team grid */}
-        <div className="mt-12 grid grid-cols-4 gap-5">
+        <div className="grid grid-cols-4 gap-15">
           {board.members.map((m) => (
             <TeamCard key={m.name + m.role} {...m} />
           ))}
