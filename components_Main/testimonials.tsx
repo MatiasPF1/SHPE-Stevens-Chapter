@@ -72,14 +72,14 @@ export default function TestimonialsSection() {
     <section className="py-28 bg-(--page-bg)">
       {/* Section header */}
       <div className="max-w-3xl mx-auto px-8 text-center mb-20">
+        <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(3.5rem,10vw,5.5rem)] font-black text-[#0C2340] leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>
+
         {/* Eyebrow with flanking rules */}
-        <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="flex items-center justify-center gap-4 translate-y-10">
           <div className="h-px w-10 bg-[#A32035]" />
-          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#A32035]">Stevens SHPE Member Spotlight</p>
+          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#A32035] ">Stevens SHPE Member Spotlight</p>
           <div className="h-px w-10 bg-[#A32035]" />
         </div>
-
-        <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(3.5rem,10vw,5.5rem)] font-black text-[#0C2340] leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>
 
       </div>
 
