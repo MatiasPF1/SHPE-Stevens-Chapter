@@ -36,21 +36,17 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
       </div>
 
       {/* ── White info section ── */}
-      <div className="bg-white px-5 pt-3 pb-5">
-        {/* Red accent line + Name */}
-        <div className="flex items-center gap-2.5">
-          <span className="w-[3px] h-[18px] bg-[#A32035] rounded-full shrink-0" />
-          <p className="font-bold text-[#0C2340] text-[15px] leading-tight tracking-tight">{name}</p>
-        </div>
+      <div className="bg-white px-5 pt-3 pb-5 text-center">
+        <p className="font-bold text-[#0C2340] text-[15px] leading-tight tracking-tight">{name}</p>
 
         {/* Role */}
-        <p className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-[#3D4F5F]/55 mt-1.5 ml-[15.5px]">
+        <p className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-[#3D4F5F]/55 mt-1.5">
           {role}
         </p>
 
         {/* View Bio — slides up on hover */}
-        <div className="ml-[15.5px] mt-3 h-4 overflow-hidden">
-          <div className="flex items-center gap-1.5 translate-y-5 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+        <div className="mt-3 h-4 overflow-hidden">
+          <div className="flex items-center justify-center gap-1.5 translate-y-5 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <circle cx="6" cy="6" r="5.25" stroke="#A32035" strokeWidth="0.75" />
               <path d="M4 6h4M8 6L6 4M8 6L6 8" stroke="#A32035" strokeWidth="0.8" strokeLinecap="round" />

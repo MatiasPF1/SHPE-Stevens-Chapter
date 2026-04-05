@@ -40,7 +40,7 @@ const eBoards: EBoard[] = [
   {
     year: "2026 / 2027",
     members: [
-      // ── returning members (images reused) ───────────────────────────────────
+      // ── 2025/2026members (images reused) ───────────────────────────────────
       { name: "Sabrina Elgazzar",         role: "President",                      image: "/team/Sabrina_VP.jpg",          linkedin: "https://www.linkedin.com/in/sabrinaelgazzar/",           email: "selgazza@stevens.edu",  description: "Leads the chapter, sets the vision, and represents SHPE Stevens to the campus and national organization." },
       { name: "Emely Vargas",             role: "Internal Vice President",        image: "/team/Emely_ExternalRel.jpg",   linkedin: "https://www.linkedin.com/in/emely-vargas1/",             email: "evargas2@stevens.edu",  description: "Oversees member engagement, internal events, and the well-being of the chapter community." },
       { name: "Emmanuel Madera",          role: "External Vice President",        image: "/team/Emanuel_Treasurer.jpg",   linkedin: "https://www.linkedin.com/in/emmanuel-madera/",           email: "emadera@stevens.edu",   description: "Manages corporate partnerships, professional events, and external chapter representation." },
@@ -48,7 +48,7 @@ const eBoards: EBoard[] = [
       { name: "Isabella Chiang",          role: "Secretary",                      image: "/team/Isabella_PublicRel.jpg",  linkedin: "https://www.linkedin.com/in/ichiang12/",                 email: "ichiang@stevens.edu",   description: "Keeps records, manages communication channels, and coordinates meeting logistics." },
       { name: "Diego Sanabriga",          role: "Internal Relations Co-Chair",    image: "/team/Diego_prechair.jpg",      linkedin: "https://www.linkedin.com/in/diego-sanabriga-41545831b/", email: "dsanabri@stevens.edu",  description: "Fosters internal community and coordinates member-facing events and initiatives." },
       { name: "Ines V. Nuñez",            role: "SHPEtina Chair",                 image: "/team/Ines_SHPETINA.jpg",       linkedin: "https://www.linkedin.com/in/inesnunez1/",                email: "inunez1@stevens.edu",   description: "Empowers Latina women in STEM through mentorship, networking, and dedicated programming." },
-      // ── new members (swap placeholder once photos are ready) ────────────────
+      // ── new members for ────────────────
       { name: "Matias Freire",            role: "Chief Web Officer",              image: "/team/MatiasFreire_ChiefWebOfficer.jpg", linkedin: "https://www.linkedin.com/in/matias43/", email: "mfreire@stevens.edu", description: "Builds and maintains the chapter website, ensuring a great digital experience for members and visitors." },
       { name: "Angel Zarate",             role: "Academic Chair",                 image: "/team/AngelZarate.jpg",              description: "Organizes tutoring, study resources, and academic events to support member success." },
       { name: "Antony Saldana",           role: "External Relations",             image: "/team/AnthonySaldana_ExternalRelations.png",              description: "Cultivates relationships with alumni, industry partners, and the broader STEM community." },
@@ -64,7 +64,7 @@ const eBoards: EBoard[] = [
 const blueprintBg = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath fill='none' stroke='%230C2340' stroke-width='0.5' opacity='0.1' d='M0 40h160M0 80h160M0 120h160M40 0v160M80 0v160M120 0v160'/%3E%3Crect x='6' y='6' width='68' height='52' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Crect x='86' y='6' width='68' height='52' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Crect x='6' y='86' width='68' height='68' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Crect x='86' y='86' width='68' height='68' rx='1' fill='none' stroke='%230C2340' stroke-width='0.6' opacity='0.06'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='80' cy='40' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='120' cy='40' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='40' cy='80' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='80' cy='80' r='1.5' fill='%230C2340' opacity='0.12'/%3E%3Ccircle cx='120' cy='80' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='40' cy='120' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='80' cy='120' r='1' fill='%230C2340' opacity='0.1'/%3E%3Ccircle cx='120' cy='120' r='1' fill='%230C2340' opacity='0.1'/%3E%3C/svg%3E")`;
 
 export default function TeamSection() {
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState(0);
   const board = eBoards[index];
   const hasPrev = index > 0;
   const hasNext = index < eBoards.length - 1;
@@ -109,9 +109,9 @@ export default function TeamSection() {
               onClick={() => setIndex((i) => i - 1)}
               disabled={!hasPrev}
               aria-label="Previous year"
-              className="w-9 h-9 rounded-full border border-[#0C2340]/30 flex items-center justify-center
-                         text-[#0C2340] hover:bg-[#0C2340] hover:text-white hover:border-[#0C2340] transition-all duration-200
-                         disabled:opacity-20 disabled:cursor-not-allowed"
+              className="w-9 h-9 rounded-full border-2 border-[#0C2340] flex items-center justify-center
+                         text-[#0C2340] hover:bg-[#0C2340] hover:text-white transition-all duration-200
+                         disabled:opacity-25 disabled:cursor-not-allowed"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
@@ -120,7 +120,7 @@ export default function TeamSection() {
               </svg>
             </button>
 
-            <span className="px-6 py-1.5 rounded-full border border-[#0C2340]/30 text-[#0C2340] font-semibold text-sm min-w-[120px] tracking-wide">
+            <span className="px-6 py-1.5 rounded-full border-2 border-[#0C2340] text-[#0C2340] font-semibold text-sm min-w-[120px] tracking-wide">
               {board.year}
             </span>
 
@@ -128,9 +128,9 @@ export default function TeamSection() {
               onClick={() => setIndex((i) => i + 1)}
               disabled={!hasNext}
               aria-label="Next year"
-              className="w-9 h-9 rounded-full border border-[#0C2340]/30 flex items-center justify-center
-                         text-[#0C2340] hover:bg-[#0C2340] hover:text-white hover:border-[#0C2340] transition-all duration-200
-                         disabled:opacity-20 disabled:cursor-not-allowed"
+              className="w-9 h-9 rounded-full border-2 border-[#0C2340] flex items-center justify-center
+                         text-[#0C2340] hover:bg-[#0C2340] hover:text-white transition-all duration-200
+                         disabled:opacity-25 disabled:cursor-not-allowed"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
