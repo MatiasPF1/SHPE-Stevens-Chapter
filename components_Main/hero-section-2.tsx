@@ -89,11 +89,19 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         //#A32035 
         //#faf8f8;
 
-        style={{ backgroundColor: '#0C2340', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #0C2340 0%, #0f2e52 50%, #0C2340 100%)', color: 'white' }}
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
+        {/* Dot texture */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.035]"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+            backgroundSize: '28px 28px',
+          }}
+        />
         {/* Left Side: Content */}
         <div className="flex w-full flex-col justify-center px-8 py-10 md:w-[45%] md:px-12 md:py-10 lg:w-[42%] lg:pl-20 lg:pr-12 lg:pt-10 lg:pb-16">
             {/* Top Section: Logo & Main Content */}

@@ -50,11 +50,12 @@ const eBoards: EBoard[] = [
       { name: "Ines V. Nuñez",            role: "SHPEtina Chair",                 image: "/team/Ines_SHPETINA.jpg",       linkedin: "https://www.linkedin.com/in/inesnunez1/",                email: "inunez1@stevens.edu",   description: "Empowers Latina women in STEM through mentorship, networking, and dedicated programming." },
       // ── new members for ────────────────
       { name: "Matias Freire",            role: "Chief Web Officer",              image: "/team/MatiasFreire_ChiefWebOfficer.jpg", linkedin: "https://www.linkedin.com/in/matias43/", email: "mfreire@stevens.edu", description: "Builds and maintains the chapter website, ensuring a great digital experience for members and visitors." },
-      { name: "Angel Zarate",             role: "Academic Chair",                 image: "/team/AngelZarate.jpg",              description: "Organizes tutoring, study resources, and academic events to support member success." },
-      { name: "Antony Saldana",           role: "External Relations",             image: "/team/AnthonySaldana_ExternalRelations.png",              description: "Cultivates relationships with alumni, industry partners, and the broader STEM community." },
-      { name: "Jean Reyes",               role: "Recruitment Chair",              image: "/team/JeanReyes_RecruitmentChair.jpg",              description: "Develops initiatives to attract and welcome new members into the chapter." },
-      { name: "Joe Simon",                role: "Public Relations Chair",         image: "/team/JoeSimon_PublicRelations.jpg",              description: "Manages social media, press outreach, and the chapter's public image." },
-      { name: "Andrea Manzanares Claros", role: "Public Relations Chair",         image: "/team/AndreaManzanares.jpg",              description: "Manages social media, press outreach, and the chapter's public image." },
+      { name: "Angel Zarate",             role: "Academic Chair",                 image: "/team/AngelZarate.jpg",              linkedin: "https://www.linkedin.com/in/angel-zarate29/",  email: "azarate@stevens.edu",  description: "Organizes tutoring, study resources, and academic events to support member success." },
+      { name: "Antony Saldana",           role: "External Relations",             image: "/team/AnthonySaldana_ExternalRelations.png",              linkedin: "https://www.linkedin.com/in/antony-saldana/",  email: "asaldana1@stevens.edu",  description: "Cultivates relationships with alumni, industry partners, and the broader STEM community." },
+      { name: "Joe Simon",                role: "Public Relations Chair",         image: "/team/JoeSimon_PublicRelations.jpg",              linkedin: "https://www.linkedin.com/in/joe-simon-622236374/",  email: "jsimon8@stevens.edu",  description: "Manages social media, press outreach, and the chapter's public image." },
+      { name: "Andrea Manzanares Claros", role: "Public Relations Chair",         image: "/team/AndreaManzanares.jpg",              linkedin: "https://www.linkedin.com/in/andreamzrc/",  email: "amanzana@stevens.edu",  description: "Manages social media, press outreach, and the chapter's public image." },
+      { name: "Jean Reyes",               role: "Recruitment Chair",              image: "/team/JeanReyes_RecruitmentChair.jpg",              linkedin: "https://www.linkedin.com/in/jeanreyes02/",  email: "jreyes8@stevens.edu",  description: "Develops initiatives to attract and welcome new members into the chapter." },
+
     ],
   },
   

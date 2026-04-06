@@ -13,6 +13,7 @@ export default function Navbar() {
             width={320}
             height={60}
             className="w-80 h-auto transition-transform duration-300 ease-in-out hover:scale-110 translate-y-2"
+            style={{ height: 'auto' }}
             priority
           />
         </a>
@@ -22,7 +23,7 @@ export default function Navbar() {
       <div className="flex items-center gap-8 font-semibold text-[#0C2340]">
         {[
           { label: "Team", href: "/team" },
-          { label: "Sponsors", href: "#sponsors" },
+          { label: "Sponsors", href: "/sponsors" },
           { label: "SHPEJR", href: "#shpejr" },
           { label: "SHEPtina", href: "#shepetina" },
           { label: "Contact Us", href: "#contact" },
