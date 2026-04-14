@@ -17,14 +17,15 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
 
   return (
     <div
-      className="group relative bg-white cursor-pointer overflow-hidden rounded-2xl transition-shadow duration-300 hover:shadow-[0_8px_32px_rgba(12,35,64,0.14)]"
-      style={{ boxShadow: '0 1px 4px rgba(12,35,64,0.08), 0 4px 16px rgba(12,35,64,0.06)' }}
+      className="group relative bg-white cursor-pointer overflow-hidden rounded-3xl transition-all duration-300 hover:shadow-[0_20px_56px_rgba(12,35,64,0.18)] hover:-translate-y-1.5"
+      style={{ boxShadow: '0 2px 8px rgba(12,35,64,0.07), 0 6px 24px rgba(12,35,64,0.06)' }}
       onClick={() => setShowBio((v) => !v)}
     >
-      {/* ── Top accent bar (animates left→right on hover) ── */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] z-10 overflow-hidden">
-        <div className="h-full bg-[#A32035] w-0 group-hover:w-full transition-all duration-500 ease-out" />
+      {/* ── Top accent bar (gradient, animates left→right on hover) ── */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] z-10 overflow-hidden">
+        <div className="h-full bg-gradient-to-r from-[#A32035] via-[#d63658] to-[#A32035] w-0 group-hover:w-full transition-all duration-500 ease-out" />
       </div>
+
       {/* ── Portrait ── */}
       <div className="relative w-full overflow-hidden" style={{ height: '290px' }}>
         <Image
@@ -32,18 +33,18 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
           alt={name}
           fill
           sizes="(max-width: 768px) 100vw, 300px"
-          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
         />
-        {/* Subtle bottom vignette on hover */}
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        {/* Persistent soft bottom fade */}
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0C2340]/15 to-transparent pointer-events-none" />
+        {/* Stronger vignette on hover */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0C2340]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       </div>
 
       {/* ── Info section ── */}
-      <div className="px-5 pt-4 pb-5">
-        <div className="flex flex-col items-center text-center">
-            <p className="font-bold text-[#0C2340] text-[14.5px] leading-tight tracking-tight">{name}</p>
-            <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-[#3D4F5F]/50 mt-1.5">{role}</p>
-        </div>
+      <div className="px-5 pt-4 pb-5 text-center">
+        <p className="font-bold text-[#0C2340] text-[15px] leading-tight tracking-tight">{name}</p>
+        <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-[#3D4F5F]/50 mt-1.5">{role}</p>
 
         {/* View Bio */}
         <div className="mt-3 h-4 overflow-hidden flex justify-center">
@@ -55,13 +56,14 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
 
       {/* ── Bio overlay ── */}
       <div
-        className={`absolute inset-0 bg-[#0C2340]/96 flex flex-col justify-center px-6 text-left transition-all duration-300 ease-out ${
+        className={`absolute inset-0 flex flex-col justify-center px-6 text-left transition-all duration-300 ease-out ${
           showBio ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
+        style={{ background: 'linear-gradient(160deg, #0C2340 70%, #1a3a5c 100%)' }}
       >
         <div className="w-8 h-[2px] bg-[#A32035] mb-4 rounded-full" />
         <p className="font-bold text-white text-[15px] leading-tight">{name}</p>
-        <p className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-[#A32035] mt-1">{role}</p>
+        <p className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-[#d63658] mt-1">{role}</p>
         {description && (
           <p className="text-white/70 text-[11px] mt-3 leading-relaxed">{description}</p>
         )}
