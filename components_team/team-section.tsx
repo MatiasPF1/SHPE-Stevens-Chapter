@@ -54,7 +54,7 @@ const eBoards: EBoard[] = [
       { name: "Antony Saldana",           role: "External Relations",             image: "/team/AnthonySaldana_ExternalRelations.png",              linkedin: "https://www.linkedin.com/in/antony-saldana/",  email: "asaldana1@stevens.edu",  description: "Cultivates relationships with alumni, industry partners, and the broader STEM community." },
       { name: "Joe Simon",                role: "Public Relations Chair",         image: "/team/JoeSimon_PublicRelations.jpg",              linkedin: "https://www.linkedin.com/in/joe-simon-622236374/",  email: "jsimon8@stevens.edu",  description: "Manages social media, press outreach, and the chapter's public image." },
       { name: "Andrea Manzanares Claros", role: "Public Relations Chair",         image: "/team/AndreaManzanares.jpg",              linkedin: "https://www.linkedin.com/in/andreamzrc/",  email: "amanzana@stevens.edu",  description: "Manages social media, press outreach, and the chapter's public image." },
-      { name: "Jean Reyes",               role: "Recruitment Chair",              image: "/team/JeanReyes_RecruitmentChair.jpg",              linkedin: "https://www.linkedin.com/in/jeanreyes02/",  email: "jreyes8@stevens.edu",  description: "Develops initiatives to attract and welcome new members into the chapter." },
+      { name: "Jean Reyes",               role: "Recruitment Chair",              image: "/team/JeanReyes_RecruitmentChair1.jpg",              linkedin: "https://www.linkedin.com/in/jeanreyes02/",  email: "jreyes8@stevens.edu",  description: "Develops initiatives to attract and welcome new members into the chapter." },
 
     ],
   },

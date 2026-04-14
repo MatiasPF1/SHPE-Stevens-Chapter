@@ -40,16 +40,13 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
 
       {/* ── Info section ── */}
       <div className="px-5 pt-4 pb-5">
-        <div className="flex items-start gap-3">
-          <div className="w-[2px] self-stretch bg-[#A32035] rounded-full shrink-0 mt-[2px]" />
-          <div>
+        <div className="flex flex-col items-center text-center">
             <p className="font-bold text-[#0C2340] text-[14.5px] leading-tight tracking-tight">{name}</p>
             <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-[#3D4F5F]/50 mt-1.5">{role}</p>
-          </div>
         </div>
 
         {/* View Bio */}
-        <div className="mt-3 ml-5 h-4 overflow-hidden">
+        <div className="mt-3 h-4 overflow-hidden flex justify-center">
           <div className="flex items-center gap-1.5 translate-y-5 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
             <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#A32035]">View Bio →</span>
           </div>
