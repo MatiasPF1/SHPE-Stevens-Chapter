@@ -72,9 +72,20 @@ export default function TeamSection() {
 
   return (
     <section
-      className="py-24"
+      className="py-24 relative overflow-hidden"
       style={{ backgroundColor: '#F9FAFB' }}
     >
+      {/* SHPE diamond logo motif — repeating background */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpolygon points='60,18 102,60 60,102 18,60' fill='none' stroke='%230C2340' stroke-width='0.8'/%3E%3Cpolygon points='60,34 86,60 60,86 34,60' fill='none' stroke='%230C2340' stroke-width='0.5'/%3E%3Ccircle cx='60' cy='60' r='2.5' fill='none' stroke='%230C2340' stroke-width='0.8'/%3E%3Ccircle cx='60' cy='60' r='0.8' fill='%230C2340'/%3E%3Cline x1='60' y1='0' x2='60' y2='18' stroke='%230C2340' stroke-width='0.5'/%3E%3Cline x1='60' y1='102' x2='60' y2='120' stroke='%230C2340' stroke-width='0.5'/%3E%3Cline x1='0' y1='60' x2='18' y2='60' stroke='%230C2340' stroke-width='0.5'/%3E%3Cline x1='102' y1='60' x2='120' y2='60' stroke='%230C2340' stroke-width='0.5'/%3E%3Ccircle cx='60' cy='0' r='1.5' fill='%230C2340'/%3E%3Ccircle cx='60' cy='120' r='1.5' fill='%230C2340'/%3E%3Ccircle cx='0' cy='60' r='1.5' fill='%230C2340'/%3E%3Ccircle cx='120' cy='60' r='1.5' fill='%230C2340'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '120px 120px',
+          opacity: 0.07,
+        }}
+      />
       <div className="max-w-340 mx-auto px-10 text-center">
 
         {/* Header */}

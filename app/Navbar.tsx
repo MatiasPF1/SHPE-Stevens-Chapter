@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     // Navbar Container
-    <div className="flex h-20 items-center justify-between border-b border-gray-100 bg-white/95 px-10 shadow-sm backdrop-blur-md">
+    <div className="flex h-20 items-center justify-between border-b border-gray-350 bg-white/95 px-10 shadow-sm backdrop-blur-md">
       {/* Left Section - Stevens SHPE Logo → links to home */}
       <div className="flex items-center">
         <a href="/">
