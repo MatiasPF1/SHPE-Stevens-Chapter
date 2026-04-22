@@ -126,7 +126,7 @@ export default function ElegantCarousel() {
 
   return (
     <div
-      className="carousel-wrapper"
+      className="carousel-wrapper relative"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}

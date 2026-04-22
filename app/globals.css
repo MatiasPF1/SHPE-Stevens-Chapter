@@ -24,11 +24,11 @@
 }
 
 :root {
-  --page-bg: #FAFAF8; 
+  --page-bg: #F9FAFB; 
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --background: #FAFAF8;
+  --background: #F9FAFB;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -65,6 +65,7 @@ body {
   }
   html {
     @apply font-sans;
+    background-color: #F9FAFB;
   }
 }
 

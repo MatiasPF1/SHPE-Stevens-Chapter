@@ -69,7 +69,7 @@ export default function TestimonialsSection() {
   const t = testimonials[active];
 
   return (
-    <section className="py-28 bg-(--page-bg)">
+    <section className="py-28 bg-(--page-bg) relative overflow-hidden">
       {/* Section header */}
       <div className="max-w-3xl mx-auto px-8 text-center mb-20">
         <h2 className="font-[family-name:var(--font-raleway)] text-[clamp(3.5rem,10vw,5.5rem)] font-black text-[#0C2340] leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>

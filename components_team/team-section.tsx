@@ -77,7 +77,7 @@ export default function TeamSection() {
   return (
     <section
       className="py-24 relative overflow-hidden"
-      style={{ backgroundColor: '#F9FAFB' }}
+      style={{ backgroundColor: 'var(--page-bg)' }}
     >
       {/* SHPE diamond logo motif — repeating background */}
       <div
