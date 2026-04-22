@@ -24,10 +24,7 @@ export default function Navbar() {
         {[
           { label: "Team", href: "/team" },
           { label: "Sponsors", href: "/sponsors" },
-          { label: "SHPEJR", href: "#shpejr" },
-          { label: "SHEPtina", href: "#shepetina" },
           { label: "Contact Us", href: "#contact" },
-          { label: "Conference", href: "#conference" },
         ].map(({ label, href }) => (
           <a
             key={label}

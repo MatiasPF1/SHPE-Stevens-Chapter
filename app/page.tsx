@@ -48,10 +48,10 @@ export default function Home() {
       <div className="-translate-y-11">
       <ElegantCarousel />
       </div>
-      <div className="-translate-y-11">
+      <div className="-translate-y-25">
       <TestimonialsSection />
       </div>
-      <div className="-translate-y-11">
+      <div className="-translate-y-35">
       <SocialsSection />
       </div>
     </div>

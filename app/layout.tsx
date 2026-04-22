@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Playfair_Display, Inter } from "next/font/google";
+import { Montserrat, Playfair_Display, Inter, Raleway } from "next/font/google";
 import Navbar from "@/app/Navbar";
 import Footer from "@/app/Footer";
 import "./globals.css";
@@ -25,6 +25,13 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
+  variable: "--font-raleway",
   display: "swap",
 });
 
@@ -116,7 +123,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${montserrat.variable} ${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
+      <body className={`${montserrat.variable} ${playfair.variable} ${inter.variable} ${raleway.variable}`} suppressHydrationWarning>
         <Navbar />
         {children}
         <Footer />

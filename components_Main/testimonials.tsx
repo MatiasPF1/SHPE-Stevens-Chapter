@@ -6,20 +6,6 @@ import Image from 'next/image';
 
 const testimonials = [
   {
-    name: "Mauricio Sanchez",
-    role: "SHPE Member Spotlight",
-    shortRole: "Systems Design Intern",
-    designation: "System Design Intern at NVIDIA",
-    companyLogo: "/Testimonials/Nvidia.png",
-    quote:
-      "I chose SHPE because I wanted to join a community that would help me develop both professionally and personally. The connections I've made through SHPE have shaped where I am today.",
-    src: "/Testimonials/Mauricio.jpg",
-    nationality: "Peruvian",
-    focus: "Electrical Engineering",
-    impactText:
-      "Mauricio proves that a strong network is the real competitive edge. SHPE gave him the community and the confidence to walk into NVIDIA as a first generation engineer.",
-  },
-  {
     name: "Nataly Jimenez-Cruz",
     role: "SHPE Member Spotlight",
     shortRole: "ML/AI Intern",
@@ -32,6 +18,20 @@ const testimonials = [
     focus: "Computer Science",
     impactText:
       "Nataly didn't just find an internship through SHPE, she found a blueprint for leadership. Her path to Collins Aerospace started with showing up for her community.",
+  },
+  {
+    name: "Mauricio Sanchez",
+    role: "SHPE Member Spotlight",
+    shortRole: "Systems Design Intern",
+    designation: "System Design Intern at NVIDIA",
+    companyLogo: "/Testimonials/Nvidia.png",
+    quote:
+      "I chose SHPE because I wanted to join a community that would help me develop both professionally and personally. The connections I've made through SHPE have shaped where I am today.",
+    src: "/Testimonials/Mauricio.jpg",
+    nationality: "Peruvian",
+    focus: "Electrical Engineering",
+    impactText:
+      "Mauricio proves that a strong network is the real competitive edge. SHPE gave him the community and the confidence to walk into NVIDIA as a first generation engineer.",
   },
   {
     name: "Matias Freire",
@@ -72,7 +72,7 @@ export default function TestimonialsSection() {
     <section className="py-28 bg-(--page-bg)">
       {/* Section header */}
       <div className="max-w-3xl mx-auto px-8 text-center mb-20">
-        <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(3.5rem,10vw,5.5rem)] font-black text-[#0C2340] leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>
+        <h2 className="font-[family-name:var(--font-raleway)] text-[clamp(3.5rem,10vw,5.5rem)] font-black text-[#0C2340] leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>
 
         {/* Eyebrow with flanking rules */}
         <div className="flex items-center justify-center gap-4 translate-y-10">
@@ -115,7 +115,7 @@ export default function TestimonialsSection() {
 
             {/* Impact */}
             <div>
-              <h3 className="text-[#0C2340] font-bold text-sm">The SHPE Impact</h3>
+              <h3 className="text-[#0C2340] font-bold text-sm">In Their Words</h3>
               <p className="mt-1.5 text-[#3D4F5F] text-sm leading-relaxed">{t.impactText}</p>
             </div>
 
