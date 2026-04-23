@@ -3,6 +3,8 @@ import Image from "next/image";
 export default function Sponsors() {
   const sponsorLogos = [
     { name: "Merck", src: "/Merck.webp", width: 200, height: 100 },
+    { name: "Bank Of America", src: "/BOFA.png", width: 300, height: 300 },
+     { name: "Whiting Turner", src: "/wt.png", width: 120, height: 100 },
   ];
 
   return (
@@ -22,7 +24,7 @@ export default function Sponsors() {
         </p>
         <div className="flex justify-center items-center gap-16 flex-wrap">
           {sponsorLogos.map((sponsor) => (
-            <div key={sponsor.name} className="grayscale hover:grayscale-0 transition-all duration-300">
+            <div key={sponsor.name} className="transition-all duration-300">
               <Image
                 src={sponsor.src}
                 alt={`${sponsor.name} Logo`}
