@@ -85,12 +85,12 @@ export default function TeamSection() {
         <div className="mb-14">
           {/* Eyebrow with flanking lines */}
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-px w-12 bg-[#A32035]" />
-            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#A32035]">Stevens Chapter</p>
-            <div className="h-px w-12 bg-[#A32035]" />
+            <div className="h-px w-12 bg-(--color-crimson)" />
+            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-(--color-crimson)">Stevens Chapter</p>
+            <div className="h-px w-12 bg-(--color-crimson)" />
           </div>
 
-          <h2 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl font-black text-[#0C2340] leading-tight tracking-tight">
+          <h2 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl font-black text-(--color-navy) leading-tight tracking-tight">
             Meet the Team
           </h2>
 
@@ -101,8 +101,8 @@ export default function TeamSection() {
               onClick={() => setIndex((i) => i - 1)}
               disabled={!hasPrev}
               aria-label="Previous year"
-              className="w-9 h-9 rounded-full border-2 border-[#0C2340] flex items-center justify-center
-                         text-[#0C2340] hover:bg-[#0C2340] hover:text-white transition-all duration-200
+              className="w-9 h-9 rounded-full border-2 border-(--color-navy) flex items-center justify-center
+                         text-(--color-navy) hover:bg-(--color-crimson) hover:text-white hover:border-(--color-crimson) transition-all duration-200
                          disabled:opacity-25 disabled:cursor-not-allowed"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -112,7 +112,7 @@ export default function TeamSection() {
               </svg>
             </button>
 
-            <span className="px-6 py-1.5 rounded-full border-2 border-[#0C2340] text-[#0C2340] font-semibold text-sm min-w-[120px] tracking-wide">
+            <span className="px-6 py-1.5 rounded-full border-2 border-(--color-navy) text-(--color-navy) font-semibold text-sm min-w-[120px] tracking-wide">
               {board.year}
             </span>
 
@@ -120,8 +120,8 @@ export default function TeamSection() {
               onClick={() => setIndex((i) => i + 1)}
               disabled={!hasNext}
               aria-label="Next year"
-              className="w-9 h-9 rounded-full border-2 border-[#0C2340] flex items-center justify-center
-                         text-[#0C2340] hover:bg-[#0C2340] hover:text-white transition-all duration-200
+              className="w-9 h-9 rounded-full border-2 border-(--color-navy) flex items-center justify-center
+                         text-(--color-navy) hover:bg-(--color-crimson) hover:text-white hover:border-(--color-crimson) transition-all duration-200
                          disabled:opacity-25 disabled:cursor-not-allowed"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"

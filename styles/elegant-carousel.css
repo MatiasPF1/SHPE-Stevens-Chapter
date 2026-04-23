@@ -77,14 +77,14 @@
   display: block;
   width: 40px;
   height: 1px;
-  background: #c4cdd6;
+  background: var(--color-num-line);
 }
 
 .carousel-num-text {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #6b7a8a;
+  color: var(--color-text-muted);
   font-weight: 500;
 }
 
@@ -94,7 +94,7 @@
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 0.75rem;
-  color: #0C2340;
+  color: var(--color-navy);
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
@@ -140,7 +140,7 @@
 .carousel-description {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: #1e293b;
+  color: var(--color-text-primary);
   font-weight: 500;
   margin-bottom: 2.5rem;
   opacity: 0;
@@ -168,9 +168,9 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--color-border);
   background: transparent;
-  color: #0C2340;
+  color: var(--color-navy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,9 +179,9 @@
 }
 
 .carousel-arrow-btn:hover {
-  background: #D4380D;
+  background: var(--color-orange);
   color: #ffffff;
-  border-color: #D4380D;
+  border-color: var(--color-orange);
 }
 
 /* Right: Image */
@@ -285,7 +285,7 @@
 .carousel-progress-track {
   width: 100%;
   height: 2px;
-  background: rgba(12, 35, 64, 0.12);
+  background: var(--color-progress-track);
   border-radius: 1px;
   overflow: hidden;
   margin-bottom: 0.5rem;
@@ -293,7 +293,7 @@
 
 .carousel-progress-fill {
   height: 100%;
-  background: #c4cdd6;
+  background: var(--color-num-line);
   border-radius: 1px;
   transition: width 0.05s linear;
 }
@@ -302,10 +302,10 @@
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #6b7a8a;
+  color: var(--color-text-muted);
   transition: color 0.3s ease;
 }
 
 .carousel-progress-item.active .carousel-progress-label {
-  color: #0C2340;
+  color: var(--color-navy);
 }

@@ -23,7 +23,7 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
     >
       {/* ── Top accent bar (gradient, animates left→right on hover) ── */}
       <div className="absolute top-0 left-0 right-0 h-[3px] z-10 overflow-hidden">
-        <div className="h-full bg-gradient-to-r from-[#A32035] via-[#d63658] to-[#A32035] w-0 group-hover:w-full transition-all duration-500 ease-out" />
+        <div className="h-full bg-gradient-to-r from-(--color-crimson) via-(--color-crimson-hover) to-(--color-crimson) w-0 group-hover:w-full transition-all duration-500 ease-out" />
       </div>
 
       {/* ── Portrait fills entire card ── */}
@@ -47,7 +47,7 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
         {/* View Bio */}
         <div className="h-4 overflow-hidden mt-2">
           <div className="flex items-center gap-1.5 translate-y-5 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-            <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#d63658]">View Bio →</span>
+            <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-(--color-crimson)">View Bio →</span>
           </div>
         </div>
       </div>
@@ -59,9 +59,9 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
         }`}
         style={{ background: 'linear-gradient(160deg, #0C2340 70%, #1a3a5c 100%)' }}
       >
-        <div className="w-8 h-[2px] bg-[#A32035] mb-4 rounded-full" />
+        <div className="w-8 h-[2px] bg-(--color-crimson) mb-4 rounded-full" />
         <p className="font-bold text-white text-[15px] leading-tight">{name}</p>
-        <p className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-[#d63658] mt-1">{role}</p>
+        <p className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-(--color-crimson) mt-1">{role}</p>
         {description && (
           <p className="text-white/70 text-[11px] mt-3 leading-relaxed">{description}</p>
         )}

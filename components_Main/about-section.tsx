@@ -12,35 +12,35 @@ export default function AboutSection() {
         <div className="flex flex-col gap-15">
 
           {/* Heading */}
-          <h2 className="font-[family-name:var(--font-raleway)] text-6xl md:text-7xl font-black text-[#0C2340] leading-tight text-center">
+          <h2 className="font-[family-name:var(--font-raleway)] text-6xl md:text-7xl font-black text-(--color-navy) leading-tight text-center">
             Who Are We?
           </h2>
 
           {/* Eyebrow + body */}
           <div className="flex flex-col">
             <div className="flex items-center justify-center gap-4 mb-5">
-              <span className="w-16 h-px bg-[#A32035]" />
-              <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#A32035] whitespace-nowrap">About Us</p>
-              <span className="w-16 h-px bg-[#A32035]" />
+              <span className="w-16 h-px bg-(--color-crimson)" />
+              <p className="text-xs font-bold tracking-[0.2em] uppercase text-(--color-crimson) whitespace-nowrap">About Us</p>
+              <span className="w-16 h-px bg-(--color-crimson)" />
             </div>
 
             {/* Triangle text — 3 layers, wide → narrow */}
-            <div className="flex flex-col items-center text-center text-base text-[#3D4F5F] leading-[1.9]">
+            <div className="flex flex-col items-center text-center text-base text-(--color-slate) leading-[1.9]">
               {/* Layer 1 — widest */}
               <p className="w-full">
                 The{" "}
-                <span className="font-bold text-[#0C2340]">Society of Hispanic Professional Engineers</span>{" "}
+                <span className="font-bold text-(--color-navy)">Society of Hispanic Professional Engineers</span>{" "}
                 at Stevens empowers students to succeed{" "}
-                <span className="font-bold text-[#0C2340]">professionally</span>,{" "}
-                <span className="font-bold text-[#0C2340]">academically</span>, and{" "}
-                <span className="font-bold text-[#0C2340]">socially</span>.
+                <span className="font-bold text-(--color-navy)">professionally</span>,{" "}
+                <span className="font-bold text-(--color-navy)">academically</span>, and{" "}
+                <span className="font-bold text-(--color-navy)">socially</span>.
               </p>
               {/* Layer 2 — medium */}
               <p className="max-w-[72%]">
                 We are a family built on{" "}
-                <span className="font-bold italic text-[#0C2340]">excellence</span>{" "}
+                <span className="font-bold italic text-(--color-navy)">excellence</span>{" "}
                 and{" "}
-                <span className="font-bold italic text-[#0C2340]">community</span>.
+                <span className="font-bold italic text-(--color-navy)">community</span>.
               </p>
               {/* Layer 3 — narrowest */}
               <p className="max-w-[42%]">

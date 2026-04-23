@@ -72,13 +72,13 @@ export default function TestimonialsSection() {
     <section className="py-28 bg-(--page-bg) relative overflow-hidden">
       {/* Section header */}
       <div className="max-w-3xl mx-auto px-8 text-center mb-20">
-        <h2 className="font-[family-name:var(--font-raleway)] text-[clamp(3.5rem,10vw,5.5rem)] font-black text-[#0C2340] leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>
+        <h2 className="font-[family-name:var(--font-raleway)] text-[clamp(3.5rem,10vw,5.5rem)] font-black text-(--color-navy) leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>
 
         {/* Eyebrow with flanking rules */}
         <div className="flex items-center justify-center gap-4 translate-y-10">
-          <div className="h-px w-10 bg-[#A32035]" />
-          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#A32035] ">Stevens SHPE Member Spotlight</p>
-          <div className="h-px w-10 bg-[#A32035]" />
+          <div className="h-px w-10 bg-(--color-crimson)" />
+          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-(--color-crimson) ">Stevens SHPE Member Spotlight</p>
+          <div className="h-px w-10 bg-(--color-crimson)" />
         </div>
 
       </div>
@@ -86,7 +86,7 @@ export default function TestimonialsSection() {
       <div className="max-w-7.5xl mx-auto px-16">
         <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr_200px] gap-20 items-start">
 
-          {/* Left — Photo */}
+          {/* Left � Photo */}
           <div className="relative min-h-[480px] rounded-2xl overflow-hidden">
             <Image
               key={t.src + active}
@@ -103,34 +103,34 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Center — Content */}
+          {/* Center � Content */}
           <div className="flex flex-col gap-6 py-2">
             {/* Quote */}
             <div className="relative">
-              <span className="font-[family-name:var(--font-playfair)] text-[7rem] text-[#A32035]/10 font-black leading-none absolute -top-6 -left-3 select-none pointer-events-none"></span>
-              <blockquote key={active} className="font-[family-name:var(--font-playfair)] text-[#0C2340] text-xl font-bold italic leading-snug relative z-10">
+              <span className="font-[family-name:var(--font-playfair)] text-[7rem] text-(--color-crimson)/10 font-black leading-none absolute -top-6 -left-3 select-none pointer-events-none"></span>
+              <blockquote key={active} className="font-[family-name:var(--font-playfair)] text-(--color-navy) text-xl font-bold italic leading-snug relative z-10">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
             </div>
 
             {/* Impact */}
             <div>
-              <h3 className="text-[#0C2340] font-bold text-sm">In Their Words</h3>
-              <p className="mt-1.5 text-[#3D4F5F] text-sm leading-relaxed">{t.impactText}</p>
+              <h3 className="text-(--color-navy) font-bold text-sm">In Their Words</h3>
+              <p className="mt-1.5 text-(--color-slate) text-sm leading-relaxed">{t.impactText}</p>
             </div>
 
             {/* Metadata rows */}
-            <div className="flex flex-col divide-y divide-gray-100 mt-4 border-t border-gray-100">
+            <div className="flex flex-col divide-y divide-(--color-border) mt-4 border-t border-(--color-border)">
               <div className="flex items-baseline gap-4 py-3">
-                <span className="w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] text-gray-400 font-medium">Nationality</span>
-                <span className="text-[#0C2340] font-[family-name:var(--font-playfair)] text-sm leading-snug">{t.nationality}</span>
+                <span className="w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] text-(--color-text-muted) font-medium">Nationality</span>
+                <span className="text-(--color-navy) font-[family-name:var(--font-playfair)] text-sm leading-snug">{t.nationality}</span>
               </div>
               <div className="flex items-baseline gap-4 py-3">
-                <span className="w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] text-gray-400 font-medium">Major</span>
-                <span className="text-[#0C2340] font-[family-name:var(--font-playfair)] text-sm leading-snug">{t.focus}</span>
+                <span className="w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] text-(--color-text-muted) font-medium">Major</span>
+                <span className="text-(--color-navy) font-[family-name:var(--font-playfair)] text-sm leading-snug">{t.focus}</span>
               </div>
               <div className="flex items-center gap-4 py-3">
-                <span className="w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] text-gray-400 font-medium">Interned At</span>
+                <span className="w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] text-(--color-text-muted) font-medium">Interned At</span>
                 {t.companyLogo && (
                   <Image
                     src={t.companyLogo}
@@ -144,9 +144,9 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Right — See More Stories sidebar */}
+          {/* Right � See More Stories sidebar */}
           <div className="hidden md:flex flex-col items-center gap-4 pt-2">
-            <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#0C2340]">
+            <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-(--color-navy)">
               More Stories
             </p>
             <div className="grid grid-cols-2 gap-12">
@@ -161,8 +161,8 @@ export default function TestimonialsSection() {
                   {/* Circle */}
                   <div className={`w-14 h-14 rounded-full overflow-hidden relative transition-all duration-300 ${
                     i === active
-                      ? 'outline outline-3 outline-offset-2 outline-[#0C2340] shadow-md'
-                      : 'outline outline-2 outline-offset-2 outline-transparent grayscale group-hover:grayscale-0 group-hover:outline-[#0C2340]/40 group-hover:scale-105'
+                      ? 'outline outline-3 outline-offset-2 outline-(--color-navy) shadow-md'
+                      : 'outline outline-2 outline-offset-2 outline-transparent grayscale group-hover:grayscale-0 group-hover:outline-(--color-navy)/40 group-hover:scale-105'
                   }`}>
                     <Image
                       src={story.src}
@@ -174,7 +174,7 @@ export default function TestimonialsSection() {
                   </div>
                   {/* Name */}
                   <p className={`text-[10px] font-semibold leading-tight transition-colors duration-200 ${
-                    i === active ? 'text-[#0C2340]' : 'text-[#9CA3AF] group-hover:text-[#0C2340]'
+                    i === active ? 'text-(--color-navy)' : 'text-(--color-text-muted) group-hover:text-(--color-navy)'
                   }`}>
                     {story.name.split(' ')[0]}
                   </p>

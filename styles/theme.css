@@ -1,0 +1,71 @@
+/* ============================================================
+   Theme CSS Variables — Light & Dark Mode
+   Single source of truth for all brand/UI colors.
+   Usage: var(--color-navy), var(--color-crimson), etc.
+   Toggle by setting data-theme="dark" on <html>.
+   ============================================================ */
+
+:root {
+  /* ── Brand colors ───────────────────────────────────── */
+  --color-navy:           #0C2340;
+  --color-crimson:        #A32035;
+  --color-crimson-hover:  #8a1c2e;
+  --color-orange:         #D4380D;
+  --color-slate:          #3D4F5F;
+
+  /* ── Surfaces ───────────────────────────────────────── */
+  --color-page-bg:        #F9FAFB;
+  --color-card-bg:        #ffffff;
+  --color-navbar-bg:      #F9FAFB;
+  --color-footer-bg:      #0C2340;
+  --color-footer-text:    #ffffff;
+
+  /* ── Text ───────────────────────────────────────────── */
+  --color-text-primary:   #0C2340;
+  --color-text-muted:     #6b7a8a;
+
+  /* ── Borders & decorative ───────────────────────────── */
+  --color-border:         #e5e7eb;
+  --color-num-line:       #c4cdd6;
+  --color-progress-track: rgba(12, 35, 64, 0.12);
+
+  /* ── Social icon surfaces ───────────────────────────── */
+  --color-icon-bg:        #27272a;
+  --color-icon-text:      #a1a1aa;
+
+  /* ── Logo filter (no change in light mode) ──────────── */
+  --logo-filter:          none;
+}
+
+[data-theme="dark"] {
+  /* ── Brand colors ───────────────────────────────────── */
+  --color-navy:           #C8D9F0;
+  --color-crimson:        #F4647A;
+  --color-crimson-hover:  #e04060;
+  --color-orange:         #FB8C5A;
+  --color-slate:          #90AECB;
+
+  /* ── Surfaces ───────────────────────────────────────── */
+  /* Deep navy blue — rich, not black, full of character  */
+  --color-page-bg:        #0D1B2E;
+  --color-card-bg:        #142038;
+  --color-navbar-bg:      #0A1525;
+  --color-footer-bg:      #070F1C;
+  --color-footer-text:    #CBD5E1;
+
+  /* ── Text ───────────────────────────────────────────── */
+  --color-text-primary:   #D6E4F7;
+  --color-text-muted:     #7A9ABF;
+
+  /* ── Borders & decorative ───────────────────────────── */
+  --color-border:         #1E3352;
+  --color-num-line:       #2E4A6A;
+  --color-progress-track: rgba(200, 217, 240, 0.12);
+
+  /* ── Social icon surfaces ───────────────────────────── */
+  --color-icon-bg:        #1A2F4A;
+  --color-icon-text:      #7A9ABF;
+
+  /* ── Logo filter (invert dark logos to white) ───────── */
+  --logo-filter:          brightness(0) invert(1);
+}

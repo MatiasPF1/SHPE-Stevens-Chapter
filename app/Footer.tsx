@@ -4,10 +4,10 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0C2340] text-white">
+    <footer style={{ backgroundColor: 'var(--color-footer-bg)', color: 'var(--color-footer-text)' }}>
 
       {/* Top accent line */}
-      <div className="h-1 w-full bg-[#A32035]" />
+      <div className="h-1 w-full bg-(--color-crimson)" />
 
       {/* Main content */}
       <div className="max-w-7xl mx-auto px-8 md:px-14 py-6">
@@ -36,7 +36,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-800 text-zinc-400 hover:bg-[#A32035] hover:text-white transition-all duration-200"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-(--color-icon-bg) text-(--color-icon-text) hover:bg-(--color-crimson) hover:text-white transition-all duration-200"
               >
                 <FaInstagram size={16} />
               </a>
@@ -45,14 +45,14 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-800 text-zinc-400 hover:bg-[#A32035] hover:text-white transition-all duration-200"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-(--color-icon-bg) text-(--color-icon-text) hover:bg-(--color-crimson) hover:text-white transition-all duration-200"
               >
                 <FaLinkedin size={16} />
               </a>
               <a
                 href="mailto:shpe@stevens.edu"
                 aria-label="Email"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-800 text-zinc-400 hover:bg-[#A32035] hover:text-white transition-all duration-200"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-(--color-icon-bg) text-(--color-icon-text) hover:bg-(--color-crimson) hover:text-white transition-all duration-200"
               >
                 <Mail size={16} />
               </a>
@@ -64,7 +64,7 @@ export default function Footer() {
 
             {/* Navigate */}
             <div className="flex flex-col gap-4">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-[#A32035]">Navigate</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-(--color-crimson)">Navigate</h3>
               <ul className="flex flex-col gap-3 text-sm text-zinc-400">
                 {[
                   { label: "Home", href: "/" },
@@ -82,7 +82,7 @@ export default function Footer() {
 
             {/* Programs */}
             <div className="flex flex-col gap-4">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-[#A32035]">Programs</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-(--color-crimson)">Programs</h3>
               <ul className="flex flex-col gap-3 text-sm text-zinc-400">
                 {[
                   { label: "SHPEtina", href: "#shepetina" },
@@ -100,7 +100,7 @@ export default function Footer() {
 
             {/* Resources */}
             <div className="flex flex-col gap-4">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-[#A32035]">Resources</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-(--color-crimson)">Resources</h3>
               <ul className="flex flex-col gap-3 text-sm text-zinc-400">
                 <li>
                   <a href="https://shpe.org" target="_blank" rel="noopener noreferrer"
@@ -127,7 +127,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-zinc-800">
+      <div className="border-t border-(--color-border)">
         <div className="max-w-7xl mx-auto px-8 md:px-14 py-5 text-xs text-zinc-500">
           <span>© 2026 SHPE Stevens. All rights reserved.</span>
         </div>
