@@ -35,7 +35,7 @@ export default function Navbar() {
         {[
           { label: "Team", href: "/team" },
           { label: "Sponsors", href: "/sponsors" },
-          { label: "Contact Us", href: "#contact" },
+          { label: "Contact Us", href: "/contact" },
         ].map(({ label, href }) => (
           <Link
             key={label}

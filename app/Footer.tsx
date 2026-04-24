@@ -116,9 +116,9 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
+                  <Link href="/contact" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
