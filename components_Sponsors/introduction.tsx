@@ -30,6 +30,8 @@ export default function Introduction() {
 
           {/* Stats */}
           <div className="flex gap-10 mt-2">
+
+
             <div className="flex flex-col">
               <span
                 className="text-4xl font-extrabold"
@@ -44,6 +46,9 @@ export default function Introduction() {
                 Active Members
               </span>
             </div>
+
+
+
             <div className="flex flex-col">
               <span
                 className="text-4xl font-extrabold"
@@ -58,6 +63,27 @@ export default function Introduction() {
                 Represented Countries
               </span>
             </div>
+
+
+            <div className="flex flex-col">
+              <span
+                className="text-4xl font-extrabold"
+                style={{ color: "var(--color-crimson)" }}
+              >
+                50+
+              </span>
+              <span
+                className="text-xs font-semibold tracking-widest uppercase mt-1"
+                style={{ color: "var(--color-text-muted)" }}
+              >
+                Annual Events
+              </span>
+            </div>
+
+
+
+
+
           </div>
         </div>
 
