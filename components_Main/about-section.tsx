@@ -49,19 +49,25 @@ export default function AboutSection() {
             </div>
 
             {/* Extended description for SEO and readability */}
-            <div className="mt-10 max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-(--color-slate) leading-relaxed text-left">
-              <p>
-                Founded at <span className="font-semibold text-(--color-navy)">Stevens Institute of Technology</span> in
-                Hoboken, NJ, SHPE Stevens is a student-run chapter of the national Society of Hispanic Professional
-                Engineers. Our mission is to advance STEM careers for Hispanic students through mentorship, networking,
-                and hands-on professional experiences.
-              </p>
-              <p>
-                We host <span className="font-semibold text-(--color-navy)">50+ annual events</span> including career
-                fairs, company visits, hackathons, community service projects, and academic workshops. Members gain
-                direct access to top recruiters, alumni networks, and leadership opportunities — building the skills and
-                connections needed to thrive in engineering and technology.
-              </p>
+            <div className="mt-12 max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-(--color-border) rounded-2xl overflow-hidden shadow-sm">
+              <div className="bg-(--page-bg) px-8 py-7 flex flex-col gap-3">
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-(--color-crimson)">Our Story</span>
+                <p className="text-sm text-(--color-slate) leading-relaxed">
+                  Founded at <span className="font-semibold text-(--color-navy)">Stevens Institute of Technology</span> in
+                  Hoboken, NJ, SHPE Stevens is a student-run chapter of the national Society of Hispanic Professional
+                  Engineers. Our mission is to advance STEM careers for Hispanic students through mentorship, networking,
+                  and hands-on professional experiences.
+                </p>
+              </div>
+              <div className="bg-(--page-bg) px-8 py-7 flex flex-col gap-3">
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-(--color-crimson)">What We Do</span>
+                <p className="text-sm text-(--color-slate) leading-relaxed">
+                  We host <span className="font-semibold text-(--color-navy)">50+ annual events</span> including career
+                  fairs, company visits, hackathons, community service projects, and academic workshops. Members gain
+                  direct access to top recruiters, alumni networks, and leadership opportunities, building the skills and
+                  connections needed to thrive in engineering and technology.
+                </p>
+              </div>
             </div>
           </div>
         </div>
