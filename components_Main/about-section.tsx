@@ -9,7 +9,7 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto">
 
         {/* Top: big heading | Below: label + body text */}
-        <div className="flex flex-col gap-15">
+        <div className="flex flex-col gap-6">
 
           {/* Heading */}
           <h2 className="font-[family-name:var(--font-raleway)] text-6xl md:text-7xl font-black text-(--color-navy) leading-tight text-center">
@@ -24,49 +24,30 @@ export default function AboutSection() {
               <span className="w-16 h-px bg-(--color-crimson)" />
             </div>
 
-            {/* Triangle text — 3 layers, wide → narrow */}
-            <div className="flex flex-col items-center text-center text-base text-(--color-slate) leading-[1.9]">
-              {/* Layer 1 — widest */}
-              <p className="w-full">
-                The{" "}
-                <span className="font-bold text-(--color-navy)">Society of Hispanic Professional Engineers</span>{" "}
-                at Stevens empowers students to succeed{" "}
-                <span className="font-bold text-(--color-navy)">professionally</span>,{" "}
-                <span className="font-bold text-(--color-navy)">academically</span>, and{" "}
-                <span className="font-bold text-(--color-navy)">socially</span>.
+            {/*  description for SEO and readability */}
+            <div className="mt-4 max-w-3xl mx-auto flex flex-col items-center gap-2">
+              <p className="text-sm text-(--color-slate) leading-relaxed text-center">
+                A student-run chapter of the{" "}
+                <span className="font-semibold text-(--color-navy)">Society of Hispanic Professional Engineers</span>{" "}
+                at Stevens Institute of Technology, Hoboken NJ, empowering Hispanic students in STEM.
               </p>
-              {/* Layer 2 — medium */}
-              <p className="max-w-[72%]">
-                We are a family built on{" "}
-                <span className="font-bold italic text-(--color-navy)">excellence</span>{" "}
-                and{" "}
-                <span className="font-bold italic text-(--color-navy)">community</span>.
-              </p>
-              {/* Layer 3 — narrowest */}
-              <p className="max-w-[42%]">
-                Together, we rise.
-              </p>
-            </div>
-
-            {/* Extended description for SEO and readability */}
-            <div className="mt-12 max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-(--color-border) rounded-2xl overflow-hidden shadow-sm">
-              <div className="bg-(--page-bg) px-8 py-7 flex flex-col gap-3">
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-(--color-crimson)">Our Story</span>
-                <p className="text-sm text-(--color-slate) leading-relaxed">
-                  Founded at <span className="font-semibold text-(--color-navy)">Stevens Institute of Technology</span> in
-                  Hoboken, NJ, SHPE Stevens is a student-run chapter of the national Society of Hispanic Professional
-                  Engineers. Our mission is to advance STEM careers for Hispanic students through mentorship, networking,
-                  and hands-on professional experiences.
-                </p>
-              </div>
-              <div className="bg-(--page-bg) px-8 py-7 flex flex-col gap-3">
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-(--color-crimson)">What We Do</span>
-                <p className="text-sm text-(--color-slate) leading-relaxed">
-                  We host <span className="font-semibold text-(--color-navy)">50+ annual events</span> including career
-                  fairs, company visits, hackathons, community service projects, and academic workshops. Members gain
-                  direct access to top recruiters, alumni networks, and leadership opportunities, building the skills and
-                  connections needed to thrive in engineering and technology.
-                </p>
+              <div className="flex flex-col items-center gap-3">
+                <div className="flex justify-center gap-10">
+                  {["Career Fairs & Recruiting", "Mentorship Programs", "Alumni Networking"].map((item) => (
+                    <span key={item} className="flex items-center gap-2 text-sm text-(--color-slate)">
+                      <span className="w-1.5 h-1.5 rounded-full bg-(--color-crimson) shrink-0" />
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex justify-center gap-10">
+                  {["Community Service", "Academic Workshops"].map((item) => (
+                    <span key={item} className="flex items-center gap-2 text-sm text-(--color-slate)">
+                      <span className="w-1.5 h-1.5 rounded-full bg-(--color-crimson) shrink-0" />
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
