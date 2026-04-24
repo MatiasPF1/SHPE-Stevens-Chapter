@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     template: "%s | SHPE Stevens",
   },
   description:
-    "The Society of Hispanic Professional Engineers at Stevens Institute of Technology empowers the Hispanic community through STEM awareness, access, support, and professional development.",
+    "SHPE Stevens empowers Hispanic students at Stevens Institute of Technology through STEM awareness, academic support, and professional development.",
   applicationName: "SHPE Stevens",
   keywords: [
     "SHPE",

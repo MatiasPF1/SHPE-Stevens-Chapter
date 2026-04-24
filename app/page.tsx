@@ -11,7 +11,7 @@ const SocialsSection = dynamic(() => import("@/components_Main/socials-section")
 export const metadata: Metadata = {
   title: "SHPE Stevens | Society of Hispanic Professional Engineers",
   description:
-    "The Society of Hispanic Professional Engineers at Stevens Institute of Technology empowers the Hispanic community through STEM awareness, access, support, and professional development.",
+    "SHPE Stevens empowers Hispanic students at Stevens Institute of Technology through STEM awareness, academic support, and professional development.",
   alternates: {
     canonical: "/",
   },

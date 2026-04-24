@@ -47,6 +47,22 @@ export default function AboutSection() {
                 Together, we rise.
               </p>
             </div>
+
+            {/* Extended description for SEO and readability */}
+            <div className="mt-10 max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-(--color-slate) leading-relaxed text-left">
+              <p>
+                Founded at <span className="font-semibold text-(--color-navy)">Stevens Institute of Technology</span> in
+                Hoboken, NJ, SHPE Stevens is a student-run chapter of the national Society of Hispanic Professional
+                Engineers. Our mission is to advance STEM careers for Hispanic students through mentorship, networking,
+                and hands-on professional experiences.
+              </p>
+              <p>
+                We host <span className="font-semibold text-(--color-navy)">50+ annual events</span> including career
+                fairs, company visits, hackathons, community service projects, and academic workshops. Members gain
+                direct access to top recruiters, alumni networks, and leadership opportunities — building the skills and
+                connections needed to thrive in engineering and technology.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -54,7 +70,7 @@ export default function AboutSection() {
         <div className="flex flex-row flex-nowrap justify-center gap-8 mt-20">
           <TiltedCard
             imageSrc="/Competition.png"
-            altText="Competititon"
+            altText="SHPE Stevens students competing at an engineering competition"
             captionText="Competititon"
             containerHeight="300px"
             containerWidth="300px"

@@ -3,7 +3,12 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { cn } from "@/lib/utils";
 import { motion, type Easing } from 'motion/react';
-const heroImages = ["/SHPE2025.jpg", "/Kahoot.png", "/tips.jpg", "/tip2.jpg"];
+const heroImages = [
+  { src: "/SHPE2025.jpg", alt: "SHPE Stevens chapter members at the 2025 annual event" },
+  { src: "/Kahoot.png", alt: "SHPE Stevens members enjoying a Kahoot trivia night" },
+  { src: "/tips.jpg", alt: "SHPE Stevens professional development workshop session" },
+  { src: "/tip2.jpg", alt: "SHPE Stevens networking and career tips session" },
+];
 
 // Icon component for contact details
 const InfoIcon = ({ type }: { type:'address' }) => {
@@ -158,11 +163,11 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
           animate={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
           transition={{ duration: 1.2, ease: "circOut" }}
         >
-          {heroImages.map((src, index) => (
+          {heroImages.map((item, index) => (
             <Image
-              key={src}
-              src={src}
-              alt=""
+              key={item.src}
+              src={item.src}
+              alt={item.alt}
               fill
               sizes="(max-width: 768px) 100vw, 58vw"
               className="object-cover transition-opacity duration-700 ease-in-out"
