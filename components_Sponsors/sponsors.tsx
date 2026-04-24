@@ -11,7 +11,7 @@ export default function Sponsors() {
     <section className="py-20" style={{ backgroundColor: "var(--color-page-bg)" }}>
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 
-          className="text-4xl font-extrabold mb-4"
+          className="text-4xl font-extrabold mb-9 -translate-y-4"
           style={{ color: "var(--color-navy)", fontFamily: "var(--font-playfair)" }}
         >
           Thank You to Our Sponsors
@@ -24,7 +24,7 @@ export default function Sponsors() {
         </p>
         <div className="flex justify-center items-center gap-16 flex-wrap">
           {sponsorLogos.map((sponsor) => (
-            <div key={sponsor.name} className="transition-all duration-300">
+            <div key={sponsor.name} className="transition-all duration-300 flex justify-center items-center">
               <Image
                 src={sponsor.src}
                 alt={`${sponsor.name} Logo`}
