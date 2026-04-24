@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const siteUrl = "https://shpestevens.vercel.app";
+const siteUrl = "https://stevensshpe.org";
 
-const montserrat = Montserrat({ 
+const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
   variable: "--font-montserrat",
@@ -76,10 +76,23 @@ export const metadata: Metadata = {
     title: "SHPE Stevens | Society of Hispanic Professional Engineers",
     description:
       "Empowering the Hispanic community at Stevens Institute of Technology through STEM awareness, access, support, and development.",
-    url: "/",
+    url: siteUrl,
     siteName: "SHPE Stevens",
-    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
     locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SHPE Stevens | Society of Hispanic Professional Engineers",
+    description:
+      "Empowering the Hispanic community at Stevens Institute of Technology through STEM awareness, access, support, and development.",
     images: ["/og-image.png"],
   },
   icons: {
@@ -87,6 +100,7 @@ export const metadata: Metadata = {
     apple: "/og-image.png",
   },
 };
+
 
 export default function RootLayout({
   children,

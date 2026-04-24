@@ -1,6 +1,7 @@
 import { Mail } from "lucide-react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -15,7 +16,7 @@ export default function Footer() {
 
           {/* Left — Logo + tagline + socials */}
           <div className="flex flex-col gap-3 md:w-80 shrink-0 self-start md:-mt-8 -translate-y-14">
-            <a href="/" className="inline-block -mt-1">
+            <Link href="/" className="inline-block -mt-1">
               <Image
                 src="/Stevens Institute of Technology.svg"
                 alt="SHPE Stevens Institute of Technology"
@@ -23,7 +24,7 @@ export default function Footer() {
                 height={240}
                 className="brightness-0 invert h-60 w-auto"
               />
-            </a>
+            </Link>
 
             <p className="text-sm text-zinc-400 leading-relaxed max-w-sm -translate-y-25 translate-x-5">
               Empowering Hispanic students in STEM through professional
@@ -72,9 +73,9 @@ export default function Footer() {
                   { label: "Sponsors", href: "#sponsors" },
                 ].map(({ label, href }) => (
                   <li key={label}>
-                    <a href={href} className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
+                    <Link href={href} className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
                       {label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

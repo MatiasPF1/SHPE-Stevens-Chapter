@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://shpestevens.vercel.app/sitemap.xml",
+    sitemap: "https://stevensshpe.org/sitemap.xml",
   };
 }

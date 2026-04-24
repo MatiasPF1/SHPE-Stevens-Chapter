@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
@@ -9,13 +10,14 @@ export default function Navbar() {
 
   return (
     // Navbar Container
-    <div
+    <nav
+      aria-label="Main navigation"
       className="flex h-20 items-center justify-between px-10 border-b border-(--color-border)"
       style={{ backgroundColor: "var(--color-navbar-bg)" }}
     >
       {/* Left Section - Stevens SHPE Logo → links to home */}
       <div className="flex items-center">
-        <a href="/">
+        <Link href="/">
           <Image
             src="/Stevens Institute of Technology.svg"
             alt="Stevens Institute of Technology"
@@ -25,7 +27,7 @@ export default function Navbar() {
             style={{ height: "auto", filter: "var(--logo-filter)" }}
             priority
           />
-        </a>
+        </Link>
       </div>
 
       {/* Right Section - Hyperlinks to different sections */}
@@ -35,14 +37,14 @@ export default function Navbar() {
           { label: "Sponsors", href: "/sponsors" },
           { label: "Contact Us", href: "#contact" },
         ].map(({ label, href }) => (
-          <a
+          <Link
             key={label}
             href={href}
             className="relative inline-block text-(--color-navy) text-sm font-semibold tracking-wide transition-colors duration-200 hover:text-(--color-crimson) group"
           >
             {label}
             <span className="absolute -bottom-0.5 left-0 h-0.5 w-0 rounded-full bg-(--color-crimson) transition-all duration-300 group-hover:w-full" />
-          </a>
+          </Link>
         ))}
 
         <a
@@ -68,6 +70,6 @@ export default function Navbar() {
           {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
         </button>
       </div>
-    </div>
+    </nav>
   );
 }

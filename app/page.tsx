@@ -19,15 +19,22 @@ export const metadata: Metadata = {
     title: "SHPE Stevens | Society of Hispanic Professional Engineers",
     description:
       "Empowering the Hispanic community at Stevens Institute of Technology through STEM awareness, access, support, and development.",
-    url: "/",
+    url: "https://stevensshpe.org/",
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SHPE Stevens | Society of Hispanic Professional Engineers",
+    description:
+      "Empowering the Hispanic community at Stevens Institute of Technology through STEM awareness, access, support, and development.",
     images: ["/og-image.png"],
   },
 };
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <HeroSection
         title={ <> Society of Hispanic <br /> Professional Engineers </> }
         subtitle="Stevens SHPE builds professional excellence through leadership, community engagement, and sustainable innovation in engineering, empowering the next generation of Hispanic STEM professionals."
@@ -54,6 +61,6 @@ export default function Home() {
       <div className="-translate-y-35">
       <SocialsSection />
       </div>
-    </div>
+    </main>
   );
 }

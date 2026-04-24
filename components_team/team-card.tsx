@@ -29,7 +29,7 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
       {/* ── Portrait fills entire card ── */}
       <Image
         src={image}
-        alt={name}
+        alt={`Photo of ${name}, ${role} at SHPE Stevens`}
         fill
         sizes="(max-width: 768px) 100vw, 300px"
         className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
