@@ -1,4 +1,4 @@
-//                   API Route for the contact form via EmailJS REST API
+//                         API Route for the contact form via EmailJS REST API
 import { NextRequest, NextResponse } from "next/server"; // Next.js 13+ API route
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>(); // this rate limiter is in-memory and will reset on server restart.
 const WINDOW_MS = 15 * 120 * 1000; // 15*120 seconds = 30 minutes per window
@@ -24,6 +24,7 @@ function sanitize(value: unknown, maxLength: number): string {
   return value.trim().slice(0, maxLength).replace(/[<>]/g, "");
 }
 
+//all thsi are the contact form stuff that email askss
 const ALLOWED_GOALS = [
   "Provide a suggestion",
   "Ask a question",
@@ -31,8 +32,10 @@ const ALLOWED_GOALS = [
   "Account concerns (activation/deletion/questions)",
 ];
 
+
+// Post Request --> Handle form validation/rate limiting --> Send email via EmailJS REST API
 export async function POST(req: NextRequest) {
-  // ── Rate limit ──────────────────────────────────────────────────────────
+  //Rate limit
   const forwarded = req.headers.get("x-forwarded-for");
   const ip = forwarded ? forwarded.split(",")[0].trim() : "unknown";
 
@@ -43,7 +46,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // ── Parse body ───────────────────────────────────────────────────────────
+  // Parse body to seend to emailjs and sanitize inputs
   let body: unknown;
   try {
     body = await req.json();
@@ -61,7 +64,7 @@ export async function POST(req: NextRequest) {
   const cleanTitle = sanitize(title, 100);
   const cleanMessage = sanitize(message, 500);
 
-  // ── Server-side validation ───────────────────────────────────────────────
+  // ── Server-side validation
   if (!cleanName) {
     return NextResponse.json({ error: "Name is required." }, { status: 400 });
   }
@@ -75,17 +78,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Message is required." }, { status: 400 });
   }
 
-  // ── Read keys from server-only env vars ──────────
+  // Read keys from server env vars
   const serviceId = process.env.EMAILJS_SERVICE_ID;
   const templateId = process.env.EMAILJS_TEMPLATE_ID;
   const publicKey = process.env.EMAILJS_PUBLIC_KEY;
-
   if (!serviceId || !templateId || !publicKey) {
     console.error("EmailJS environment variables are not configured.");
     return NextResponse.json({ error: "Server configuration error." }, { status: 500 });
   }
 
-  // ── Send via EmailJS REST API ─────────────────────────────────────────────
+  // ── Send via EmailJS REST API 
   try {
     const emailRes = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
       method: "POST",
