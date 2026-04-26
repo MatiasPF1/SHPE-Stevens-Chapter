@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, FormEvent, ChangeEvent } from "react";
-import emailjs from "@emailjs/browser";
 
 const GOAL_OPTIONS = [
   "Provide a suggestion",
@@ -66,22 +65,23 @@ export default function ContactForm() {
 
     setStatus("loading");
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
-
     try {
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
           name: `${form.firstName} ${form.lastName}`,
           email: form.email,
           title: form.goal,
           message: form.message,
-        },
-        publicKey
-      );
+        }),
+      });
+
+      if (!res.ok) {
+        setStatus("error");
+        return;
+      }
+
       setStatus("success");
       setForm(EMPTY_FORM);
     } catch {
