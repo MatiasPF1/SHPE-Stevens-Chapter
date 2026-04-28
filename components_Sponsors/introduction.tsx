@@ -70,7 +70,7 @@ export default function Introduction() {
                 className="text-4xl font-extrabold"
                 style={{ color: "var(--color-crimson)" }}
               >
-                50+
+                40+
               </span>
               <span
                 className="text-xs font-semibold tracking-widest uppercase mt-1"
