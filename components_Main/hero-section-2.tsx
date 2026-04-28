@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { cn } from "@/lib/utils";
 import { motion, type Easing } from 'motion/react';
 const heroImages = [
-  { src: "/SHPE2025.jpg", alt: "SHPE Stevens chapter members at the 2025 annual event" },
-  { src: "/Kahoot.png", alt: "SHPE Stevens members enjoying a Kahoot trivia night" },
-  { src: "/tips.jpg", alt: "SHPE Stevens professional development workshop session" },
-  { src: "/tip2.jpg", alt: "SHPE Stevens networking and career tips session" },
+  { src: "/events/SHPE2025.jpg", alt: "SHPE Stevens chapter members at the 2025 annual event" },
+  { src: "/events/Kahoot.png", alt: "SHPE Stevens members enjoying a Kahoot trivia night" },
+  { src: "/events/tips.jpg", alt: "SHPE Stevens professional development workshop session" },
+  { src: "/events/tip2.jpg", alt: "SHPE Stevens networking and career tips session" },
 ];
 
 // Icon component for contact details

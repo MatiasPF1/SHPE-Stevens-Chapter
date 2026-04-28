@@ -56,7 +56,7 @@ export default function AboutSection() {
         {/* Tilted Cards */}
         <div className="flex flex-row flex-nowrap justify-center gap-8 mt-20">
           <TiltedCard
-            imageSrc="/Competition.png"
+            imageSrc="/about/Competition.png"
             altText="SHPE Stevens students competing at an engineering competition"
             captionText="Competititon"
             containerHeight="300px"
@@ -73,7 +73,7 @@ export default function AboutSection() {
             }
           />
           <TiltedCard
-            imageSrc="/Service.png"
+            imageSrc="/about/Service.png"
             altText="Community Service Event"
             captionText="Community Service"
             containerHeight="300px"
@@ -90,7 +90,7 @@ export default function AboutSection() {
             }
           />
           <TiltedCard
-            imageSrc="/Mentorship.png"
+            imageSrc="/about/Mentorship.png"
             altText="Mentorship Event"
             captionText="Mentorship"
             containerHeight="300px"
@@ -107,7 +107,7 @@ export default function AboutSection() {
             }
           />
           <TiltedCard
-            imageSrc="/ProffesionalDevelopment.png"
+            imageSrc="/about/ProffesionalDevelopment.png"
             altText="Professional Development Event"
             captionText="Professional Development"
             containerHeight="300px"

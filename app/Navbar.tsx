@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="flex items-center">
         <Link href="/">
           <Image
-            src="/Stevens Institute of Technology.svg"
+            src="/branding/Stevens Institute of Technology.svg"
             alt="Stevens Institute of Technology"
             width={320}
             height={60}

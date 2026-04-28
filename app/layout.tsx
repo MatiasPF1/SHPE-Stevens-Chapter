@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     siteName: "SHPE Stevens",
     images: [
       {
-        url: "/og-image.png",
+        url: "/branding/og-image.png",
         width: 1200,
         height: 630,
       },
@@ -93,11 +93,11 @@ export const metadata: Metadata = {
     title: "SHPE Stevens | Society of Hispanic Professional Engineers",
     description:
       "Empowering the Hispanic community at Stevens Institute of Technology through STEM awareness, access, support, and development.",
-    images: ["/og-image.png"],
+    images: ["/branding/og-image.png"],
   },
   icons: {
-    icon: "/og-image.png",
-    apple: "/og-image.png",
+    icon: "/branding/og-image.png",
+    apple: "/branding/og-image.png",
   },
 };
 
@@ -113,7 +113,7 @@ export default function RootLayout({
     name: "SHPE Stevens",
     alternateName: "Society of Hispanic Professional Engineers at Stevens Institute of Technology",
     url: siteUrl,
-    logo: `${siteUrl}/og-image.png`,
+    logo: `${siteUrl}/branding/og-image.png`,
     sameAs: [
       "https://shpe.org",
       "https://www.stevens.edu",

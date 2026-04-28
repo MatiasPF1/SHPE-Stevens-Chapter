@@ -15,14 +15,14 @@ export const metadata: Metadata = {
       "Get in touch with the SHPE Stevens Chapter. Ask questions, share suggestions, or report issues.",
     url: "/contact",
     type: "website",
-    images: ["/og-image.png"],
+    images: ["/branding/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact Us | SHPE Stevens",
     description:
       "Get in touch with the SHPE Stevens Chapter. Ask questions, share suggestions, or report issues.",
-    images: ["/og-image.png"],
+    images: ["/branding/og-image.png"],
   },
 };
 

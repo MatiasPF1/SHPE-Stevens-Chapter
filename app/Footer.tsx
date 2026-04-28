@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3 md:w-80 shrink-0 self-start md:-mt-8 -translate-y-14">
             <Link href="/" className="inline-block -mt-1">
               <Image
-                src="/Stevens Institute of Technology.svg"
+                src="/branding/Stevens Institute of Technology.svg"
                 alt="SHPE Stevens Institute of Technology"
                 width={400}
                 height={240}

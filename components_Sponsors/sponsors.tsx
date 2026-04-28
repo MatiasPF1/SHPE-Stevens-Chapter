@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function Sponsors() {
   const sponsorLogos = [
-    { name: "Merck", src: "/Merck.webp", width: 200, height: 100 },
-    { name: "Bank Of America", src: "/BOFA.png", width: 300, height: 300 },
-     { name: "Whiting Turner", src: "/wt.png", width: 120, height: 100 },
+    { name: "Merck", src: "/sponsors/Merck.webp", width: 200, height: 100 },
+    { name: "Bank Of America", src: "/sponsors/BOFA.png", width: 300, height: 300 },
+     { name: "Whiting Turner", src: "/sponsors/wt.png", width: 120, height: 100 },
   ];
 
   return (

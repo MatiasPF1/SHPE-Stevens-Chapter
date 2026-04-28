@@ -23,7 +23,7 @@ type EBoard = {
 const eBoards: EBoard[] = [
   {
     year: "2025 / 2026",
-    groupPhoto: "/SHPE_2025-2026.png",
+    groupPhoto: "/team/SHPE_2025-2026.png",
     members: [
       { name: "Eve Gutierrez",          role: "President",               image: "/team/Eve_President.jpg",             linkedin: "https://www.linkedin.com/in/eve-gutierrez-07333724a/",   email: "egutier1@stevens.edu",   description: "Leads the chapter, sets the vision, and represents SHPE Stevens to the campus and national organization." },
       { name: "Sabrina Elgazzar",       role: "Internal Vice President", image: "/team/Sabrina_VP.jpg",                linkedin: "https://www.linkedin.com/in/sabrinaelgazzar/",           email: "selgazza@stevens.edu",   description: "Oversees member engagement, internal events, and the well-being of the chapter community." },
@@ -42,7 +42,7 @@ const eBoards: EBoard[] = [
   },
   {
     year: "2026 / 2027",
-    groupPhoto: "/SHPE_2026-2027.png",
+    groupPhoto: "/team/SHPE_2026-2027.png",
     members: [
       // ── 2025/2026members (images reused) ───────────────────────────────────
       { name: "Sabrina Elgazzar",         role: "President",                      image: "/team/Sabrina_VP.jpg",          linkedin: "https://www.linkedin.com/in/sabrinaelgazzar/",           email: "selgazza@stevens.edu",  description: "Leads the chapter, sets the vision, and represents SHPE Stevens to the campus and national organization." },

@@ -94,7 +94,7 @@ export default function Introduction() {
             style={{ borderColor: "var(--color-border)", border: "1px solid var(--color-border)" }}
           >
             <Image
-              src="/SHPE_SPONSORS.jpg"
+              src="/sponsors/SHPE_SPONSORS.jpg"
               alt="SHPE Stevens Chapter sponsors event"
               width={800}
               height={560}

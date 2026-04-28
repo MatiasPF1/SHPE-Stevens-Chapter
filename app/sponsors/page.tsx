@@ -17,14 +17,14 @@ export const metadata: Metadata = {
       "Support SHPE Stevens and invest in the next generation of Hispanic engineers. Explore partnership tiers and sponsorship opportunities.",
     url: "/sponsors",
     type: "website",
-    images: ["/og-image.png"],
+    images: ["/branding/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sponsors | SHPE Stevens",
     description:
       "Support SHPE Stevens and invest in the next generation of Hispanic engineers. Explore partnership tiers and sponsorship opportunities.",
-    images: ["/og-image.png"],
+    images: ["/branding/og-image.png"],
   },
 };
 

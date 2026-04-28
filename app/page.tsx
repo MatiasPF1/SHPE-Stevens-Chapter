@@ -21,14 +21,14 @@ export const metadata: Metadata = {
       "Empowering the Hispanic community at Stevens Institute of Technology through STEM awareness, access, support, and development.",
     url: "https://stevensshpe.org/",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/branding/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "SHPE Stevens | Society of Hispanic Professional Engineers",
     description:
       "Empowering the Hispanic community at Stevens Institute of Technology through STEM awareness, access, support, and development.",
-    images: ["/og-image.png"],
+    images: ["/branding/og-image.png"],
   },
 };
 
@@ -42,7 +42,7 @@ export default function Home() {
           text: "JOIN NATIONAL CHAPTER →",
           href: "https://shpe.org/membership/become-a-member/",
         }}
-        backgroundImage="/SHPE2025.jpg"
+        backgroundImage="/events/SHPE2025.jpg"
         contactInfo={{
           address: "1 Castle Point Terrace, Hoboken, NJ",
         }}
