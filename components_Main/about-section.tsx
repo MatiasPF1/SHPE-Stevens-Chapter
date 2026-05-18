@@ -19,9 +19,7 @@ export default function AboutSection() {
           {/* Eyebrow + body */}
           <div className="flex flex-col">
             <div className="flex items-center justify-center gap-4 mb-5">
-              <span className="w-16 h-px bg-(--color-crimson)" />
               <p className="text-xs font-bold tracking-[0.2em] uppercase text-(--color-crimson) whitespace-nowrap">About Us</p>
-              <span className="w-16 h-px bg-(--color-crimson)" />
             </div>
 
             {/*  description for SEO and readability */}
@@ -31,23 +29,21 @@ export default function AboutSection() {
                 <span className="font-semibold text-(--color-navy)">Society of Hispanic Professional Engineers</span>{" "}
                 at Stevens Institute of Technology, Hoboken NJ, empowering Hispanic students in STEM.
               </p>
-              <div className="flex flex-col items-center gap-3">
-                <div className="flex justify-center gap-10">
-                  {["Career Fairs & Recruiting", "Mentorship Programs", "Alumni Networking"].map((item) => (
-                    <span key={item} className="flex items-center gap-2 text-sm text-(--color-slate)">
-                      <span className="w-1.5 h-1.5 rounded-full bg-(--color-crimson) shrink-0" />
-                      {item}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex justify-center gap-10">
-                  {["Community Service", "Academic Workshops"].map((item) => (
-                    <span key={item} className="flex items-center gap-2 text-sm text-(--color-slate)">
-                      <span className="w-1.5 h-1.5 rounded-full bg-(--color-crimson) shrink-0" />
-                      {item}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex flex-wrap justify-center gap-3 mt-3">
+                {[
+                  "Career Fairs & Recruiting",
+                  "Mentorship Programs",
+                  "Alumni Networking",
+                  "Community Service",
+                  "Academic Workshops",
+                ].map((label) => (
+                  <span
+                    key={label}
+                    className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-(--color-crimson)/30 bg-(--color-crimson)/5 text-sm font-medium text-(--color-navy) hover:bg-(--color-crimson)/15 transition-colors duration-200"
+                  >
+                    {label}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

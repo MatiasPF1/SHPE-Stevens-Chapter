@@ -2,7 +2,7 @@ import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function SocialsSection() {
   return (
-    <section className="py-12 text-center bg-(--page-bg) pt-30">
+    <section className="py-1 text-center bg-(--page-bg) pt-5">
       <p className="text-xs font-semibold tracking-widest text-(--color-crimson) uppercase mb-2">
         Stay Connected
       </p>
@@ -10,6 +10,9 @@ export default function SocialsSection() {
         Follow our journey
       </h2>
       <div className="flex justify-center gap-16">
+
+
+
         {/* Instagram */}
         <a
           href="https://www.instagram.com/shpe_stevens/"
@@ -24,6 +27,7 @@ export default function SocialsSection() {
           <div className="w-10 h-px bg-(--color-navy) group-hover:bg-pink-500 transition-colors duration-200" />
         </a>
 
+
         {/* LinkedIn */}
         <a
           href="https://www.linkedin.com/in/shpe-at-sit/"
@@ -37,7 +41,15 @@ export default function SocialsSection() {
           </div>
           <div className="w-10 h-px bg-(--color-navy) group-hover:bg-[#0A66C2] transition-colors duration-200" />
         </a>
+
+
+
       </div>
+
+
+      
     </section>
+
+
   );
 }

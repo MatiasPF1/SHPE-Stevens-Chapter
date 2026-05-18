@@ -76,9 +76,7 @@ export default function TestimonialsSection() {
 
         {/* Eyebrow with flanking rules */}
         <div className="flex items-center justify-center gap-4 translate-y-10">
-          <div className="h-px w-10 bg-(--color-crimson)" />
           <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-(--color-crimson) ">Stevens SHPE Member Spotlight</p>
-          <div className="h-px w-10 bg-(--color-crimson)" />
         </div>
 
       </div>
