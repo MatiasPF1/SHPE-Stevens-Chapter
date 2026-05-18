@@ -2,14 +2,14 @@ import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function SocialsSection() {
   return (
-    <section className="py-1 text-center bg-(--page-bg) pt-5">
+    <section className="py-6 md:py-10 text-center bg-(--page-bg)">
       <p className="text-xs font-semibold tracking-widest text-(--color-crimson) uppercase mb-2">
         Stay Connected
       </p>
-      <h2 className="text-3xl font-bold text-(--color-navy) mb-8">
+      <h2 className="text-2xl md:text-3xl font-bold text-(--color-navy) mb-8">
         Follow our journey
       </h2>
-      <div className="flex justify-center gap-16">
+      <div className="flex justify-center gap-8 md:gap-16">
 
 
 
@@ -25,6 +25,7 @@ export default function SocialsSection() {
             <FaInstagram className="w-8 h-8 text-(--color-navy) group-hover:text-pink-500 transition-colors duration-200" />
           </div>
           <div className="w-10 h-px bg-(--color-navy) group-hover:bg-pink-500 transition-colors duration-200" />
+          <span className="text-xs font-semibold tracking-wider uppercase text-(--color-navy) group-hover:text-pink-500 transition-colors duration-200">Instagram</span>
         </a>
 
 
@@ -40,6 +41,7 @@ export default function SocialsSection() {
             <FaLinkedinIn className="w-8 h-8 text-(--color-navy) group-hover:text-[#0A66C2] transition-colors duration-200" />
           </div>
           <div className="w-10 h-px bg-(--color-navy) group-hover:bg-[#0A66C2] transition-colors duration-200" />
+          <span className="text-xs font-semibold tracking-wider uppercase text-(--color-navy) group-hover:text-[#0A66C2] transition-colors duration-200">LinkedIn</span>
         </a>
 
 

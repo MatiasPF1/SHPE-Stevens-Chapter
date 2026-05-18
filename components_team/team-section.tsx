@@ -79,15 +79,13 @@ export default function TeamSection() {
       className="py-24 relative overflow-hidden"
       style={{ backgroundColor: 'var(--page-bg)' }}
     >
-      <div className="max-w-340 mx-auto px-10 text-center">
+      <div className="max-w-340 mx-auto px-4 md:px-10 text-center">
 
         {/* Header */}
         <div className="mb-14">
           {/* Eyebrow with flanking lines */}
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-px w-12 bg-(--color-crimson)" />
             <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-(--color-crimson)">Stevens Chapter</p>
-            <div className="h-px w-12 bg-(--color-crimson)" />
           </div>
 
           <h2 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl font-black text-(--color-navy) leading-tight tracking-tight">
@@ -134,7 +132,7 @@ export default function TeamSection() {
         </div>
 
         {/* Team grid */}
-        <div className="grid grid-cols-4 gap-20 ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10 lg:gap-20">
           {board.members.map((m) => (
             <TeamCard key={m.name + m.role} {...m} />
           ))}
@@ -142,15 +140,13 @@ export default function TeamSection() {
 
         {/* Group photo */}
         {board.groupPhoto && (
-          <div className="flex justify-center mt-16">
-            <div className="relative w-[480px] h-[270px] rounded-xl overflow-hidden shadow-md">
-              <Image
-                src={board.groupPhoto}
-                alt={`${board.year} E-Board`}
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="mt-16 relative mx-auto w-full max-w-[480px] h-[200px] md:h-[270px] rounded-xl overflow-hidden shadow-md">
+            <Image
+              src={board.groupPhoto}
+              alt={`${board.year} E-Board`}
+              fill
+              className="object-cover"
+            />
           </div>
         )}
       </div>

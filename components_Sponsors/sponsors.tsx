@@ -11,18 +11,18 @@ export default function Sponsors() {
     <section className="py-20" style={{ backgroundColor: "var(--color-page-bg)" }}>
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 
-          className="text-4xl font-extrabold mb-9 -translate-y-4"
+          className="text-3xl md:text-4xl font-extrabold mb-9 -translate-y-4"
           style={{ color: "var(--color-navy)", fontFamily: "var(--font-playfair)" }}
         >
           Thank You to Our Sponsors
         </h2>
         <p 
-          className="text-lg mb-12"
+          className="text-base md:text-lg mb-12"
           style={{ color: "var(--color-text-muted)" }}
         >
           We are incredibly grateful for the support of our sponsors, who make our mission possible.
         </p>
-        <div className="flex justify-center items-center gap-16 flex-wrap">
+        <div className="flex justify-center items-center gap-8 md:gap-16 flex-wrap">
           {sponsorLogos.map((sponsor) => (
             <div key={sponsor.name} className="transition-all duration-300 flex justify-center items-center">
               <Image

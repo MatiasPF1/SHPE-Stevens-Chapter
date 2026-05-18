@@ -50,7 +50,7 @@ export default function AboutSection() {
         </div>
 
         {/* Tilted Cards */}
-        <div className="flex flex-row flex-nowrap justify-center gap-8 mt-20">
+        <div className="flex flex-row flex-nowrap justify-start md:justify-center gap-8 mt-20 overflow-x-auto pb-4 md:overflow-x-visible md:pb-0 ">
           <TiltedCard
             imageSrc="/about/Competition.png"
             altText="SHPE Stevens students competing at an engineering competition"
