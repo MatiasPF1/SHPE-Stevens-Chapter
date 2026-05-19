@@ -129,7 +129,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-(--color-border)">
+      <div className="border-sm">
         <div className="max-w-7xl mx-auto px-8 md:px-14 py-5 text-xs text-zinc-500 text-center md:text-left">
           <span>© 2026 SHPE Stevens. All rights reserved.</span>
         </div>
