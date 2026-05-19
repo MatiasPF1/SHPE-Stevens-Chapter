@@ -8,6 +8,7 @@ import { useState } from "react";
 
 const navLinks = [
   { label: "Team", href: "/team" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Sponsors", href: "/sponsors" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -64,6 +65,14 @@ export default function Navbar() {
           >
             Join SHPE
           </a>
+
+          <Link
+            href="/login"
+            className="px-5 py-2 rounded-full border border-(--color-navy) text-(--color-navy) text-sm font-semibold
+                       hover:bg-(--color-navy) hover:text-white transition-all duration-200"
+          >
+            Log In
+          </Link>
 
           {/* Dark mode toggle */}
           <button
@@ -125,6 +134,13 @@ export default function Navbar() {
           >
             Join SHPE
           </a>
+          <Link
+            href="/login"
+            onClick={() => setMenuOpen(false)}
+            className="w-fit px-5 py-2 rounded-full border border-(--color-navy) text-(--color-navy) text-sm font-semibold"
+          >
+            Log In
+          </Link>
         </div>
       )}
     </nav>
