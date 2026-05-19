@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display, Inter, Raleway } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/app/Navbar";
 import Footer from "@/app/Footer";
 import { ThemeProvider } from "@/context/ThemeContext";
@@ -148,6 +149,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
