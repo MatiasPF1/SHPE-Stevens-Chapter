@@ -2,10 +2,16 @@
 .carousel-wrapper {
   position: relative;
   width: 100%;
-  min-height: 600px;
+  min-height: auto; /* Fits content dynamically on mobile */
   overflow: hidden;
-  padding: 3rem 2rem;
+  padding: 2.5rem 1rem 0.5rem 1rem; /* Less padding at the bottom on mobile */
   background: var(--page-bg);
+}
+
+@media (min-width: 640px) {
+  .carousel-wrapper {
+    padding: 3rem 2rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -264,8 +270,8 @@
 /* Progress Bar */
 .carousel-progress-bar {
   display: flex;
-  gap: 1rem;
-  margin-top: 3rem;
+  gap: 0.5rem;
+  margin-top: 4.5rem; /* Pushed further down on mobile */
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
@@ -273,8 +279,16 @@
   z-index: 1;
 }
 
+@media (min-width: 640px) {
+  .carousel-progress-bar {
+    gap: 1rem;
+    margin-top: 3rem; /* Original spacing on larger screens */
+  }
+}
+
 .carousel-progress-item {
   flex: 1;
+  min-width: 0; /* Crucial to allow shrinking on mobile without overflowing */
   background: none;
   border: none;
   cursor: pointer;
@@ -299,11 +313,25 @@
 }
 
 .carousel-progress-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
+  font-size: 0.58rem; /* Sized down for mobile screens to fit neatly */
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-text-muted);
   transition: color 0.3s ease;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Graceful ellipsis fallback if needed */
+}
+
+@media (min-width: 640px) {
+  .carousel-progress-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
 }
 
 .carousel-progress-item.active .carousel-progress-label {

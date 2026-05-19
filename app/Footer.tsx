@@ -11,11 +11,11 @@ export default function Footer() {
       <div className="h-1 w-full bg-(--color-crimson)" />
 
       {/* Main content */}
-      <div className="max-w-7xl mx-auto px-8 md:px-14 py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-8 md:px-14 py-12 md:pt-16 md:pb-8">
         <div className="flex flex-col md:flex-row md:items-start gap-12 md:gap-20 items-center md:items-start -translate-y-6 md:translate-y-0">
 
           {/* Left — Logo + tagline + socials */}
-          <div className="flex flex-col gap-3 md:w-80 shrink-0 items-center md:items-start text-center md:text-left md:-mt-8 -translate-y-14">
+          <div className="flex flex-col gap-3 md:w-80 shrink-0 items-center md:items-start text-center md:text-left md:-mt-8 -translate-y-14 md:-mb-20">
             <Link href="/" className="inline-block -mt-1">
               <Image
                 src="/branding/Stevens Institute of Technology.svg"
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           {/* Right — link columns, evenly spread */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-10 -mt-6 sm:mt-0">
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-10 -mt-6 sm:-mt-20">
 
             {/* Navigate */}
             <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-4">

@@ -37,7 +37,7 @@ export default function Home() {
     <main>
       {/* Main Panel*/}
       <HeroSection
-        title={ <> Society of Hispanic <br /> Professional Engineers </> }
+        title={<> Society of Hispanic <br /> Professional Engineers </>}
         subtitle="Stevens SHPE builds professional excellence through leadership, community engagement, and sustainable innovation in engineering, empowering the next generation of Hispanic STEM professionals."
         callToAction={{
           text: "JOIN NATIONAL CHAPTER →",
@@ -51,25 +51,20 @@ export default function Home() {
       {/* Company Logos Section */}
       <Logos3 />
 
-       {/* Intro Text + Events Section */}
+      {/* Intro Text + Events Section */}
       <div className="-translate-y-11">
-      <IntroTextEvents />
+        <IntroTextEvents />
       </div>
 
       {/* Values Carrousel Section */}
-      <div className="-translate-y-11">
       <CarrouselValues />
-      </div>
 
       {/* Testimonials Section */}
-      <div className="-translate-y-25">
       <Testimonials />
-      </div>
+
 
       {/* Socials Section */}
-      <div className="-translate-y-35">
       <Socials />
-      </div>
 
     </main>
   );

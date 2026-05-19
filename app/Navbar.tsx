@@ -33,7 +33,7 @@ export default function Navbar() {
               alt="Stevens Institute of Technology"
               width={320}
               height={60}
-              className="w-56 sm:w-64 md:w-80 h-auto transition-transform duration-300 ease-in-out hover:scale-105 translate-y-1 md:translate-y-2"
+              className="w-58 sm:w-64 md:w-80 h-auto transition-transform duration-300 ease-in-out hover:scale-105 translate-y-1 md:translate-y-2"
               style={{ height: "auto", filter: "var(--logo-filter)" }}
               priority
             />
