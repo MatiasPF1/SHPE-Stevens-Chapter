@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           {/* Right — link columns, evenly spread */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-10 -mt-6 sm:-mt-20">
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-10 -mt-36 md:mt-0">
 
             {/* Navigate */}
             <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-4">
