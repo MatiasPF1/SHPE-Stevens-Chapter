@@ -2,7 +2,8 @@ import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function SocialsSection() {
   return (
-    <section className="py-6 md:py-10 text-center bg-(--page-bg)">
+    <section className="py-6  text-center bg-(--page-bg)">
+      
       <p className="text-xs font-semibold tracking-widest text-(--color-crimson) uppercase mb-2">
         Stay Connected
       </p>
@@ -10,7 +11,6 @@ export default function SocialsSection() {
         Follow our journey
       </h2>
       <div className="flex justify-center gap-8 md:gap-16">
-
 
 
         {/* Instagram */}
