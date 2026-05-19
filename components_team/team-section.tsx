@@ -22,7 +22,7 @@ type EBoard = {
 // ── Add future e-boards here ──────────────────────────────────────────────────
 const eBoards: EBoard[] = [
   {
-    year: "2025 / 2026",
+    year: "2025/2026",
     groupPhoto: "/team/SHPE_2025-2026.png",
     members: [
       { name: "Eve Gutierrez",          role: "President",               image: "/team/Eve_President.jpg",             linkedin: "https://www.linkedin.com/in/eve-gutierrez-07333724a/",   email: "egutier1@stevens.edu",   description: "Leads the chapter, sets the vision, and represents SHPE Stevens to the campus and national organization." },
