@@ -11,11 +11,11 @@ export default function Footer() {
       <div className="h-1 w-full bg-(--color-crimson)" />
 
       {/* Main content */}
-      <div className="max-w-7xl mx-auto px-8 md:px-14 py-6">
-        <div className="flex flex-col md:flex-row md:items-start gap-12 translate-y-20">
+      <div className="max-w-7xl mx-auto px-8 md:px-14 py-12 md:py-16">
+        <div className="flex flex-col md:flex-row md:items-start gap-12 md:gap-20 items-center md:items-start -translate-y-6 md:translate-y-0">
 
           {/* Left — Logo + tagline + socials */}
-          <div className="flex flex-col gap-3 md:w-80 shrink-0 self-start md:-mt-8 -translate-y-14">
+          <div className="flex flex-col gap-3 md:w-80 shrink-0 items-center md:items-start text-center md:text-left md:-mt-8 -translate-y-14">
             <Link href="/" className="inline-block -mt-1">
               <Image
                 src="/branding/Stevens Institute of Technology.svg"
@@ -23,15 +23,16 @@ export default function Footer() {
                 width={400}
                 height={240}
                 className="brightness-0 invert h-60 w-auto"
+                priority
               />
             </Link>
 
-            <p className="text-sm text-zinc-400 leading-relaxed max-w-sm -translate-y-25 translate-x-5">
+            <p className="text-sm text-zinc-400 leading-relaxed max-w-sm -translate-y-25">
               Empowering Hispanic students in STEM through professional
               development, networking, and community service.
             </p>
 
-            <div className="flex items-center gap-3 -mt-1 -translate-y-22 translate-x-20">
+            <div className="flex items-center gap-3 -mt-1 -translate-y-22">
               <a
                 href="https://www.instagram.com/shpe.stevens/"
                 target="_blank"
@@ -61,12 +62,12 @@ export default function Footer() {
           </div>
 
           {/* Right — link columns, evenly spread */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-10">
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-10 -mt-6 sm:mt-0">
 
             {/* Navigate */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-4">
               <h3 className="text-xs font-bold uppercase tracking-widest text-(--color-crimson)">Navigate</h3>
-              <ul className="flex flex-col gap-3 text-sm text-zinc-400">
+              <ul className="flex flex-col items-center sm:items-start gap-3 text-sm text-zinc-400">
                 {[
                   { label: "Home", href: "/" },
                   { label: "Team", href: "/team" },
@@ -82,9 +83,9 @@ export default function Footer() {
             </div>
 
             {/* Programs */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-4">
               <h3 className="text-xs font-bold uppercase tracking-widest text-(--color-crimson)">Programs</h3>
-              <ul className="flex flex-col gap-3 text-sm text-zinc-400">
+              <ul className="flex flex-col items-center sm:items-start gap-3 text-sm text-zinc-400">
                 {[
                   { label: "SHPEtina", href: "#shepetina" },
                   { label: "SHPE Jr.", href: "#shpejr" },
@@ -100,9 +101,9 @@ export default function Footer() {
             </div>
 
             {/* Resources */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-4">
               <h3 className="text-xs font-bold uppercase tracking-widest text-(--color-crimson)">Resources</h3>
-              <ul className="flex flex-col gap-3 text-sm text-zinc-400">
+              <ul className="flex flex-col items-center sm:items-start gap-3 text-sm text-zinc-400">
                 <li>
                   <a href="https://shpe.org" target="_blank" rel="noopener noreferrer"
                     className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
@@ -129,7 +130,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-(--color-border)">
-        <div className="max-w-7xl mx-auto px-8 md:px-14 py-5 text-xs text-zinc-500">
+        <div className="max-w-7xl mx-auto px-8 md:px-14 py-5 text-xs text-zinc-500 text-center md:text-left">
           <span>© 2026 SHPE Stevens. All rights reserved.</span>
         </div>
       </div>

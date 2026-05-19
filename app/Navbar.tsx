@@ -26,14 +26,14 @@ export default function Navbar() {
       <div className="flex h-20 items-center justify-between px-6 md:px-10">
 
         {/* Logo */}
-        <div className="flex items-center">
-          <Link href="/">
+        <div className="flex items-center shrink-0">
+          <Link href="/" className="block w-fit">
             <Image
               src="/branding/Stevens Institute of Technology.svg"
               alt="Stevens Institute of Technology"
               width={320}
               height={60}
-              className="w-64 md:w-80 h-auto transition-transform duration-300 ease-in-out hover:scale-110 translate-y-2"
+              className="w-56 sm:w-64 md:w-80 h-auto transition-transform duration-300 ease-in-out hover:scale-105 translate-y-1 md:translate-y-2"
               style={{ height: "auto", filter: "var(--logo-filter)" }}
               priority
             />
@@ -78,7 +78,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile: theme toggle + hamburger */}
-        <div className="flex md:hidden items-center gap-2">
+        <div className="flex md:hidden items-center gap-2 shrink-0 relative z-20">
           <button
             onClick={toggleTheme}
             aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
@@ -104,7 +104,7 @@ export default function Navbar() {
       {/* Mobile dropdown */}
       {menuOpen && (
         <div
-          className="md:hidden border-t border-(--color-border) px-6 py-5 flex flex-col gap-5"
+          className="md:hidden border-t border-(--color-border) px-6 py-5 flex flex-col gap-5 relative z-20"
           style={{ backgroundColor: "var(--color-navbar-bg)" }}
         >
           {navLinks.map(({ label, href }) => (
