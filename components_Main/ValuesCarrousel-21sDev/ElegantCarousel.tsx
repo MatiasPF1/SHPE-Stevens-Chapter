@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import '@/styles/elegant-carousel.css';
 
-interface SlideData {
+export interface SlideData {
   title: string;
   subtitle: string;
   description: string;
@@ -10,42 +10,11 @@ interface SlideData {
   imageUrl: string;
 }
 
-const slides: SlideData[] = [
-  {
-    title: 'Familia',
-    subtitle: 'SHPE National Convention 2025',
-    description:
-      'At Stevens SHPE, we are more than a professional organization. We are familia. Every year, we send 25+ sponsored students to the National Convention, connecting them with industry leaders and opportunities that shape their careers.',
-    accent: '#16a34a',
-    imageUrl: '/about/JoeSimon.jpg',
-  },
-  {
-    title: 'Service',
-    subtitle: 'Hoboken Grace Toy Drive',
-    description:
-      'We give back. Through initiatives like the Hoboken Grace Toy Drive, our members serve the local community with purpose. Great engineers build more than products.',
-    accent: '#e63946',
-    imageUrl: '/about/Service.jpg',
-  },
-  {
-    title: 'Education',
-    subtitle: 'MOCK INTERVIEWS',
-    description:
-      'From mock interviews to technical workshops, we give our members the tools to compete. Growth does not stop at graduation. It starts here.',
-    accent: '#7c3aed',
-    imageUrl: '/about/Education.jpg',
-  },
-  {
-    title: 'Resilience',
-    subtitle: 'LEADERSHPE X SHPETINA',
-    description:
-      'Latinos are 9% of the engineering workforce. Latinas, just 2%. We are changing that. We build leaders who do not just break barriers. They redefine what is possible.',
-    accent: '#f59e0b',
-    imageUrl: '/about/Rescilence.jpg',
-  },
-];
+interface Props {
+  slides: SlideData[];
+}
 
-export default function ElegantCarousel() {
+export default function ElegantCarousel({ slides }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
@@ -79,12 +48,12 @@ export default function ElegantCarousel() {
   const goNext = useCallback(() => {
     const nextIndex = (currentIndex + 1) % slides.length;
     goToSlide(nextIndex, 'next');
-  }, [currentIndex, goToSlide]);
+  }, [currentIndex, goToSlide, slides.length]);
 
   const goPrev = useCallback(() => {
     const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
     goToSlide(prevIndex, 'prev');
-  }, [currentIndex, goToSlide]);
+  }, [currentIndex, goToSlide, slides.length]);
 
   useEffect(() => {
     if (isPaused) return;

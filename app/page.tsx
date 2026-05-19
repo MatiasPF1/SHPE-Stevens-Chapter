@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { HeroSection } from "@/components_Main/hero-section-2";
-import { Logos3 } from "@/components_Main/logos_carousel/logos3";
+import { HeroSection } from "@/components_Main/PrincipalPanel";
+import { Logos3 } from "@/components_Main/CompanySlider/logos3";
 
-const AboutSection = dynamic(() => import("@/components_Main/about-section"));
-const ElegantCarousel = dynamic(() => import("@/components_Main/elegant-carousel"));
-const TestimonialsSection = dynamic(() => import("@/components_Main/testimonials"));
-const SocialsSection = dynamic(() => import("@/components_Main/socials-section"));
+const IntroTextEvents = dynamic(() => import("@/components_Main/IntroText&Events"));
+const CarrouselValues = dynamic(() => import("@/components_Main/CarrouselValues"));
+const Testimonials = dynamic(() => import("@/components_Main/Testimonials"));
+const Socials = dynamic(() => import("@/components_Main/Socials"));
 
 export const metadata: Metadata = {
   title: "SHPE Stevens | Society of Hispanic Professional Engineers",
@@ -35,6 +35,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
+      {/* Main Panel*/}
       <HeroSection
         title={ <> Society of Hispanic <br /> Professional Engineers </> }
         subtitle="Stevens SHPE builds professional excellence through leadership, community engagement, and sustainable innovation in engineering, empowering the next generation of Hispanic STEM professionals."
@@ -47,20 +48,29 @@ export default function Home() {
           address: "1 Castle Point Terrace, Hoboken, NJ",
         }}
       />
+      {/* Company Logos Section */}
       <Logos3 />
+
+       {/* Intro Text + Events Section */}
       <div className="-translate-y-11">
-      <AboutSection />
+      <IntroTextEvents />
       </div>
 
+      {/* Values Carrousel Section */}
       <div className="-translate-y-11">
-      <ElegantCarousel />
+      <CarrouselValues />
       </div>
+
+      {/* Testimonials Section */}
       <div className="-translate-y-25">
-      <TestimonialsSection />
+      <Testimonials />
       </div>
+
+      {/* Socials Section */}
       <div className="-translate-y-35">
-      <SocialsSection />
+      <Socials />
       </div>
+
     </main>
   );
 }

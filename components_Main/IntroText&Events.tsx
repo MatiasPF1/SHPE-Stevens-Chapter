@@ -1,4 +1,4 @@
-import TiltedCard from './about-section/AboutReactBit';
+import TiltedCard from './Events-Reactbits/AboutReactBit';
 
 export default function AboutSection() {
   return (

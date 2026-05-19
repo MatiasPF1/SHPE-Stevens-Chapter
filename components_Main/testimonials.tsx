@@ -84,7 +84,7 @@ export default function TestimonialsSection() {
       <div className="max-w-7.5xl mx-auto px-16">
         <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr_200px] gap-20 items-start">
 
-          {/* Left � Photo */}
+          {/* Left Photo */}
           <div className="relative min-h-[480px] rounded-2xl overflow-hidden">
             <Image
               key={t.src + active}
@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Center � Content */}
+          {/* Center Content */}
           <div className="flex flex-col gap-6 py-2">
             {/* Quote */}
             <div className="relative">
@@ -142,7 +142,7 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Right � See More Stories sidebar */}
+          {/* Right See More Stories sidebar */}
           <div className="hidden md:flex flex-col items-center gap-4 pt-2">
             <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-(--color-navy)">
               More Stories

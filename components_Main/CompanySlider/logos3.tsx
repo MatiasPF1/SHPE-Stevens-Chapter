@@ -6,7 +6,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components_Main/logos_carousel/carousel";
+} from "@/components_Main/CompanySlider/carousel";
 
 interface Logo {
   id: string;
