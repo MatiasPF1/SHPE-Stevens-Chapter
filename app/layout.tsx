@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display, Inter, Raleway } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import Navbar from "@/app/Navbar";
-import Footer from "@/app/Footer";
 import { ThemeProvider } from "@/context/ThemeContext";
+import SiteLayout from "@/app/SiteLayout";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -145,9 +144,7 @@ export default function RootLayout({
       </head>
       <body className={`${montserrat.variable} ${playfair.variable} ${inter.variable} ${raleway.variable}`} suppressHydrationWarning>
         <ThemeProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <SiteLayout>{children}</SiteLayout>
         </ThemeProvider>
         <Analytics />
       </body>

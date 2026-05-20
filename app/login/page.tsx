@@ -1,18 +1,51 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Eye, EyeOff, LogIn } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabase";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) {
+        router.push("/AdminPortal");
+      }
+    });
+  }, [router]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Supabase auth logic goes here
+    setErrorMsg("");
+    setLoading(true);
+
+    try {
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) {
+        setErrorMsg(error.message === "Invalid login credentials" ? "Incorrect email or password." : error.message);
+      } else {
+        router.push("/AdminPortal");
+        router.refresh();
+      }
+    } catch (err) {
+      console.error(err);
+      setErrorMsg("An unexpected error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -58,6 +91,13 @@ export default function LoginPage() {
             <h1 className="text-2xl font-bold text-(--color-navy)">Welcome back</h1>
             <p className="text-sm text-(--color-text-muted)">Sign in to your SHPE Stevens account</p>
           </div>
+
+          {/* Error Message */}
+          {errorMsg && (
+            <div className="p-3.5 rounded-xl border border-red-500/20 bg-red-500/10 text-red-500 text-xs font-semibold text-center transition-all">
+              {errorMsg}
+            </div>
+          )}
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -112,12 +152,19 @@ export default function LoginPage() {
             {/* Submit */}
             <button
               type="submit"
+              disabled={loading}
               className="mt-2 flex items-center justify-center gap-2 w-full rounded-full bg-(--color-crimson) text-white
                          text-sm font-semibold py-3 shadow-md hover:shadow-[0_0_22px_rgba(163,32,53,0.5)]
-                         hover:bg-(--color-crimson-hover) transition-all duration-200"
+                         hover:bg-(--color-crimson-hover) transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <LogIn size={16} />
-              Log In
+              {loading ? (
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              ) : (
+                <>
+                  <LogIn size={16} />
+                  Log In
+                </>
+              )}
             </button>
           </form>
 

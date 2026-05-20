@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Sun, Moon, Menu, X } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase";
+import { Session } from "@supabase/supabase-js";
 
 const navLinks = [
   { label: "Team", href: "/team" },
@@ -16,6 +18,21 @@ const navLinks = [
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [session, setSession] = useState<Session | null>(null);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
 
   return (
     <nav
@@ -66,13 +83,32 @@ export default function Navbar() {
             Join SHPE
           </a>
 
-          <Link
-            href="/login"
-            className="px-5 py-2 rounded-full border border-(--color-navy) text-(--color-navy) text-sm font-semibold
-                       hover:bg-(--color-navy) hover:text-white transition-all duration-200"
-          >
-            Log In
-          </Link>
+          {session ? (
+            <>
+              <Link
+                href="/AdminPortal"
+                className="px-5 py-2 rounded-full border border-(--color-navy) text-(--color-navy) text-sm font-semibold
+                           hover:bg-(--color-navy) hover:text-white transition-all duration-200"
+              >
+                Admin Portal
+              </Link>
+              <button
+                onClick={() => supabase.auth.signOut()}
+                className="cursor-pointer px-5 py-2 rounded-full bg-(--color-crimson) text-white text-sm font-semibold
+                           hover:bg-(--color-crimson-hover) transition-all duration-200"
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <Link
+              href="/login"
+              className="px-5 py-2 rounded-full border border-(--color-navy) text-(--color-navy) text-sm font-semibold
+                         hover:bg-(--color-navy) hover:text-white transition-all duration-200"
+            >
+              Log In
+            </Link>
+          )}
 
           {/* Dark mode toggle */}
           <button
@@ -134,13 +170,34 @@ export default function Navbar() {
           >
             Join SHPE
           </a>
-          <Link
-            href="/login"
-            onClick={() => setMenuOpen(false)}
-            className="w-fit px-5 py-2 rounded-full border border-(--color-navy) text-(--color-navy) text-sm font-semibold"
-          >
-            Log In
-          </Link>
+          {session ? (
+            <>
+              <Link
+                href="/AdminPortal"
+                onClick={() => setMenuOpen(false)}
+                className="w-fit px-5 py-2 rounded-full border border-(--color-navy) text-(--color-navy) text-sm font-semibold"
+              >
+                Admin Portal
+              </Link>
+              <button
+                onClick={() => {
+                  supabase.auth.signOut();
+                  setMenuOpen(false);
+                }}
+                className="w-fit text-left px-5 py-2 rounded-full bg-(--color-crimson) text-white text-sm font-semibold"
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <Link
+              href="/login"
+              onClick={() => setMenuOpen(false)}
+              className="w-fit px-5 py-2 rounded-full border border-(--color-navy) text-(--color-navy) text-sm font-semibold"
+            >
+              Log In
+            </Link>
+          )}
         </div>
       )}
     </nav>
