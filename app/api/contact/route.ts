@@ -31,8 +31,6 @@ function escapeHtml(str: string): string {
 }
 
 export async function POST(req: NextRequest) {
-  // Use the rightmost IP from x-forwarded-for to reduce spoofing risk.
-  // For full protection, configure your reverse proxy to set a trusted header.
   const forwarded = req.headers.get("x-forwarded-for");
   const ip = forwarded
     ? forwarded.split(",").at(-1)!.trim()

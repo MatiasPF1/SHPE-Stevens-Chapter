@@ -22,14 +22,14 @@ export default function AdminPortalPage() {
   const router = useRouter();
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session) router.push("/login");
+    supabase.auth.getSession().then(({ data: { session }, error }) => {
+      if (error || !session) router.push("/login");
       else setSession(session);
       setLoading(false);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (!session) router.push("/login");
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_OUT" || !session) router.push("/login");
       else setSession(session);
     });
 

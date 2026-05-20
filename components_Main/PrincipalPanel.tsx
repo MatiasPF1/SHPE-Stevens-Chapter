@@ -48,7 +48,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
-  ({ className, logo, slogan, title, subtitle, callToAction, backgroundImage, contactInfo }, ref) => {
+  ({ className, logo, slogan, title, subtitle, callToAction, contactInfo }, ref) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
@@ -106,7 +106,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 <motion.header className="mb-6" variants={itemVariants}>
                     {logo && (
                         <div className="flex items-center">
-                            <img src={logo.url} alt={logo.alt} className="mr-3 h-8" />
+                            <Image src={logo.url} alt={logo.alt} width={120} height={32} className="mr-3 h-8 w-auto" />
                             <div>
                                 {logo.text && <p className="text-lg font-bold text-(--color-navy)">{logo.text}</p>}
                                 {slogan && <p className="text-xs tracking-wider text-(--color-navy)/50">{slogan}</p>}

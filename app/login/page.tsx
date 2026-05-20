@@ -16,10 +16,13 @@ export default function LoginPage() {
   const router = useRouter();
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) {
-        router.push("/AdminPortal");
+    supabase.auth.getSession().then(({ data: { session }, error }) => {
+      if (error) {
+        // Stale or invalid refresh token — clear local storage and stay on login
+        supabase.auth.signOut();
+        return;
       }
+      if (session) router.push("/AdminPortal");
     });
   }, [router]);
 

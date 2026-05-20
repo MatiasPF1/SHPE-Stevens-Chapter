@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import '@/styles/elegant-carousel.css';
 
 export interface SlideData {
@@ -17,7 +18,6 @@ interface Props {
 export default function ElegantCarousel({ slides }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -29,9 +29,8 @@ export default function ElegantCarousel({ slides }: Props) {
   const TRANSITION_DURATION = 800;
 
   const goToSlide = useCallback(
-    (index: number, dir?: 'next' | 'prev') => {
+    (index: number, _dir?: 'next' | 'prev') => {
       if (isTransitioning || index === currentIndex) return;
-      setDirection(dir || (index > currentIndex ? 'next' : 'prev'));
       setIsTransitioning(true);
       setProgress(0);
 
@@ -167,10 +166,12 @@ export default function ElegantCarousel({ slides }: Props) {
           <div
             className={`carousel-image-frame ${isTransitioning ? 'transitioning' : 'visible'}`}
           >
-            <img
+            <Image
               src={currentSlide.imageUrl}
               alt={currentSlide.title}
+              fill
               className="carousel-image"
+              style={{ objectFit: 'cover' }}
             />
           </div>
 
