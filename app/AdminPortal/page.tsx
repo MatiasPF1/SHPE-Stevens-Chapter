@@ -1,15 +1,15 @@
-﻿"use client";
+"use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { Session } from "@supabase/supabase-js";
 import { LayoutDashboard, Image as ImageIcon, Briefcase, Users, Globe, LogOut, User } from "lucide-react";
 import EBoardManager from "./E-Board/EBoardManager";
+import SponsorsManager from "./Sponsors/SponsorsManager";
 
-type ActiveTab = "overview" | "gallery" | "sponsors" | "eboard";
+type ActiveTab = "gallery" | "sponsors" | "eboard";
 
 const NAV_ITEMS: { id: ActiveTab; label: string; icon: React.ElementType }[] = [
-  { id: "overview", label: "Overview", icon: LayoutDashboard },
   { id: "gallery", label: "Gallery", icon: ImageIcon },
   { id: "sponsors", label: "Sponsors", icon: Briefcase },
   { id: "eboard", label: "E-Board", icon: Users },
@@ -18,7 +18,7 @@ const NAV_ITEMS: { id: ActiveTab; label: string; icon: React.ElementType }[] = [
 export default function AdminPortalPage() {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<ActiveTab>("overview");
+  const [activeTab, setActiveTab] = useState<ActiveTab>("eboard");
   const router = useRouter();
 
   useEffect(() => {
@@ -160,24 +160,11 @@ export default function AdminPortalPage() {
         </header>
 
         <div className="flex-1 p-8">
-          {activeTab === "overview" && (
-            <div className="flex flex-col gap-2">
-              <h2 className="text-2xl font-extrabold" style={{ color: "var(--color-navy)" }}>
-                Welcome back.
-              </h2>
-              <p className="text-sm font-medium" style={{ color: "var(--color-text-muted)" }}>
-                Select a section from the sidebar to get started.
-              </p>
-            </div>
-          )}
-
           {activeTab === "gallery" && (
             <p className="text-sm font-medium" style={{ color: "var(--color-text-muted)" }}>Gallery manager - coming soon.</p>
           )}
 
-          {activeTab === "sponsors" && (
-            <p className="text-sm font-medium" style={{ color: "var(--color-text-muted)" }}>Sponsors manager - coming soon.</p>
-          )}
+          {activeTab === "sponsors" && <SponsorsManager />}
 
           {activeTab === "eboard" && <EBoardManager />}
         </div>

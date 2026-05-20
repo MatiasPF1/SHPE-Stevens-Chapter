@@ -1,6 +1,32 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { supabase } from "@/lib/supabase";
 
 export default function Introduction() {
+  const [mainImageUrl, setMainImageUrl] = useState<string>("/sponsors/SHPE_SPONSORS.jpg");
+
+  useEffect(() => {
+    async function fetchContent() {
+      try {
+        const { data, error } = await supabase
+          .from("sponsors_content")
+          .select("main_image_url")
+          .limit(1)
+          .single();
+          
+        if (error) throw error;
+        if (data?.main_image_url) {
+          setMainImageUrl(data.main_image_url);
+        }
+      } catch (err) {
+        console.error("Failed to load sponsors content:", err);
+      }
+    }
+    fetchContent();
+  }, []);
+
   return (
     <section
       style={{ backgroundColor: "var(--color-page-bg)" }}
@@ -30,8 +56,6 @@ export default function Introduction() {
 
           {/* Stats */}
           <div className="flex gap-10 mt-2">
-
-
             <div className="flex flex-col">
               <span
                 className="text-4xl font-extrabold"
@@ -46,8 +70,6 @@ export default function Introduction() {
                 Active Members
               </span>
             </div>
-
-
 
             <div className="flex flex-col">
               <span
@@ -64,7 +86,6 @@ export default function Introduction() {
               </span>
             </div>
 
-
             <div className="flex flex-col">
               <span
                 className="text-4xl font-extrabold"
@@ -79,26 +100,21 @@ export default function Introduction() {
                 Annual Events
               </span>
             </div>
-
-
-
-
-
           </div>
         </div>
 
         {/* Right: Image */}
         <div className="flex-1 flex justify-center">
           <div
-            className="relative w-full max-w-xl rounded-2xl overflow-hidden shadow-lg"
+            className="relative w-full max-w-xl rounded-2xl overflow-hidden shadow-lg aspect-[800/560]"
             style={{ borderColor: "var(--color-border)", border: "1px solid var(--color-border)" }}
           >
             <Image
-              src="/sponsors/SHPE_SPONSORS.jpg"
+              src={mainImageUrl}
               alt="SHPE Stevens Chapter sponsors event"
-              width={800}
-              height={560}
-              className="w-full h-auto object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, 800px"
+              className="object-cover"
               priority
             />
           </div>
