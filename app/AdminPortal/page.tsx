@@ -1,18 +1,18 @@
 ﻿"use client";
-
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { Session } from "@supabase/supabase-js";
 import { LayoutDashboard, Image as ImageIcon, Briefcase, Users, Globe, LogOut, User } from "lucide-react";
+import EBoardManager from "./E-Board/EBoardManager";
 
 type ActiveTab = "overview" | "gallery" | "sponsors" | "eboard";
 
 const NAV_ITEMS: { id: ActiveTab; label: string; icon: React.ElementType }[] = [
   { id: "overview", label: "Overview", icon: LayoutDashboard },
-  { id: "gallery",  label: "Gallery",  icon: ImageIcon },
+  { id: "gallery", label: "Gallery", icon: ImageIcon },
   { id: "sponsors", label: "Sponsors", icon: Briefcase },
-  { id: "eboard",   label: "E-Board",  icon: Users },
+  { id: "eboard", label: "E-Board", icon: Users },
 ];
 
 export default function AdminPortalPage() {
@@ -179,9 +179,7 @@ export default function AdminPortalPage() {
             <p className="text-sm font-medium" style={{ color: "var(--color-text-muted)" }}>Sponsors manager - coming soon.</p>
           )}
 
-          {activeTab === "eboard" && (
-            <p className="text-sm font-medium" style={{ color: "var(--color-text-muted)" }}>E-Board manager - coming soon.</p>
-          )}
+          {activeTab === "eboard" && <EBoardManager />}
         </div>
       </main>
     </div>

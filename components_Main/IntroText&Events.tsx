@@ -7,7 +7,6 @@ export default function AboutSection() {
       style={{ backgroundColor: 'var(--page-bg)' }}
     >
       <div className="max-w-6xl mx-auto">
-
         {/* Top: big heading | Below: label + body text */}
         <div className="flex flex-col gap-6">
 
@@ -29,17 +28,18 @@ export default function AboutSection() {
                 <span className="font-semibold text-(--color-navy)">Society of Hispanic Professional Engineers</span>{" "}
                 at Stevens Institute of Technology, Hoboken NJ, empowering Hispanic students in STEM.
               </p>
-              <div className="flex flex-wrap justify-center gap-3 mt-3">
+              <div className="flex flex-wrap justify-center gap-3 mt-6">
                 {[
-                  "Career Fairs & Recruiting",
-                  "Mentorship Programs",
-                  "Alumni Networking",
-                  "Community Service",
-                  "Academic Workshops",
-                ].map((label) => (
+                  { label: "Career Fairs & Recruiting", color: "#1d4ed8", bg: "#eff6ff", border: "#bfdbfe" },
+                  { label: "Mentorship Programs",        color: "#15803d", bg: "#f0fdf4", border: "#bbf7d0" },
+                  { label: "Alumni Networking",          color: "#b45309", bg: "#fffbeb", border: "#fde68a" },
+                  { label: "Community Service",          color: "#be123c", bg: "#fff1f2", border: "#fecdd3" },
+                  { label: "Academic Workshops",         color: "#7e22ce", bg: "#faf5ff", border: "#e9d5ff" },
+                ].map(({ label, color, bg, border }) => (
                   <span
                     key={label}
-                    className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-(--color-crimson)/30 bg-(--color-crimson)/5 text-sm font-medium text-(--color-navy) hover:bg-(--color-crimson)/15 transition-colors duration-200"
+                    className="px-5 py-2 rounded-full text-xs font-semibold tracking-wide uppercase cursor-default select-none transition-opacity duration-200 hover:opacity-80"
+                    style={{ color, backgroundColor: bg, border: `1px solid ${border}` }}
                   >
                     {label}
                   </span>

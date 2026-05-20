@@ -31,7 +31,7 @@ function escapeHtml(str: string): string {
 export async function POST(req: NextRequest) {
   const forwarded = req.headers.get("x-forwarded-for");
   const ip = forwarded
-    ? forwarded.split(",").at(-1)!.trim()
+    ? forwarded.split(",").at(0)!.trim()  // first IP = original client; last is forgeable
     : req.headers.get("x-real-ip") ?? "unknown";
 
   if (isRateLimited(ip)) {

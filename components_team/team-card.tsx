@@ -27,13 +27,22 @@ export default function TeamCard({ name, role, image, linkedin, email, descripti
       </div>
 
       {/* ── Portrait fills entire card ── */}
-      <Image
-        src={image}
-        alt={`Photo of ${name}, ${role} at SHPE Stevens`}
-        fill
-        sizes="(max-width: 768px) 100vw, 300px"
-        className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-      />
+      {image ? (
+        <Image
+          src={image}
+          alt={`Photo of ${name}, ${role} at SHPE Stevens`}
+          fill
+          sizes="(max-width: 768px) 100vw, 300px"
+          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-(--color-progress-track) flex items-center justify-center transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="w-16 h-16 text-(--color-text-muted) opacity-50">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </div>
+      )}
 
       {/* Bottom gradient for text legibility */}
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />

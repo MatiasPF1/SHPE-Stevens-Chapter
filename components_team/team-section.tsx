@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import TeamCard from "@/components_team/team-card";
+import { supabase } from "@/lib/supabase";
 
 type Member = {
   name: string;
@@ -19,57 +20,85 @@ type EBoard = {
   members: Member[];
 };
 
-// ── Add future e-boards here ──────────────────────────────────────────────────
-const eBoards: EBoard[] = [
-  {
-    year: "2025/2026",
-    groupPhoto: "/team/SHPE_2025-2026.png",
-    members: [
-      { name: "Eve Gutierrez",          role: "President",               image: "/team/Eve_President.jpg",             linkedin: "https://www.linkedin.com/in/eve-gutierrez-07333724a/",   email: "egutier1@stevens.edu",   description: "Leads the chapter, sets the vision, and represents SHPE Stevens to the campus and national organization." },
-      { name: "Sabrina Elgazzar",       role: "Internal Vice President", image: "/team/Sabrina_VP.jpg",                linkedin: "https://www.linkedin.com/in/sabrinaelgazzar/",           email: "selgazza@stevens.edu",   description: "Oversees member engagement, internal events, and the well-being of the chapter community." },
-      { name: "Nicolas Buendia",        role: "External Vice President", image: "/team/Nicolas_VP.jpg",                linkedin: "https://www.linkedin.com/in/nicolas-buendia/",           email: "nbuendia@stevens.edu",   description: "Manages corporate partnerships, professional events, and external chapter representation." },
-      { name: "Emmanuel Madera",        role: "Treasurer",               image: "/team/Emanuel_Treasurer.jpg",         linkedin: "https://www.linkedin.com/in/emmanuel-madera/",           email: "emadera@stevens.edu",    description: "Maintains the chapter budget, manages funding, and ensures financial transparency." },
-      { name: "Leonel Andrade",         role: "Chief Web Officer",       image: "/team/Leone_WebChief.jpg",            linkedin: "https://www.linkedin.com/in/leonel-andrade-ba9763212/",  email: "landrade1@stevens.edu",  description: "Books rooms for chapter events and manages attendance tracking for all meetings and activities." },
-      { name: "Jesus Monegro",          role: "Secretary",               image: "/team/Jesus_Secretary.jpg",           linkedin: "https://www.linkedin.com/in/jesusmonegrojimenez/",       email: "jmonegro1@stevens.edu",  description: "Keeps records, manages communication channels, and coordinates meeting logistics." },
-      { name: "Ines V. Nuñez",          role: "SHPEtina Head",           image: "/team/Ines_SHPETINA.jpg",             linkedin: "https://www.linkedin.com/in/inesnunez1/",                email: "inunez1@stevens.edu",    description: "Empowers Latina women in STEM through mentorship, networking, and dedicated programming." },
-      { name: "Emely Vargas",           role: "External Relations",      image: "/team/Emely_ExternalRel.jpg",         linkedin: "https://www.linkedin.com/in/emely-vargas1/",             email: "evargas2@stevens.edu",   description: "Cultivates relationships with alumni, industry partners, and the broader STEM community." },
-      { name: "Luis Alejandro Ruiz",    role: "Recruitment Chair",       image: "/team/Luis_Recruitmentchair.jpg",     linkedin: "https://www.linkedin.com/in/luis-alejandro-ruiz-20xx/",  email: "lruiz1@stevens.edu",     description: "Develops initiatives to attract and welcome new members into the chapter." },
-      { name: "Isabella Chiang",        role: "Public Relations",        image: "/team/Isabella_PublicRel.jpg",        linkedin: "https://www.linkedin.com/in/ichiang12/",                 email: "ichiang@stevens.edu",    description: "Manages social media, press outreach, and the chapter's public image." },
-      { name: "Diego Sanabriga",        role: "Pre-Collegiate Chair",    image: "/team/Diego_prechair.jpg",            linkedin: "https://www.linkedin.com/in/diego-sanabriga-41545831b/", email: "dsanabri@stevens.edu",   description: "Inspires K–12 students to pursue STEM through community outreach and mentorship programs." },
-      { name: "Naomi Fernandez",        role: "Pre-Collegiate Chair",    image: "/team/Naomi_prechair.jpg",            linkedin: "https://www.linkedin.com/in/naomi-fernandez-b43b72207/", email: "nfernan3@stevens.edu",   description: "Inspires K–12 students to pursue STEM through community outreach and mentorship programs." },
-      { name: "Tomas Gonzalez Bonilla", role: "Academic Chair",          image: "/team/ThomasAcademichair.jpg",        linkedin: "https://www.linkedin.com/in/tomas-gonzalezbonilla/",     email: "tgonzale1@stevens.edu",  description: "Organizes tutoring, study resources, and academic events to support member success." },
-    ],
-  },
-  {
-    year: "2026 / 2027",
-    groupPhoto: "/team/SHPE_2026-2027.png",
-    members: [
-      // ── 2025/2026members (images reused) ───────────────────────────────────
-      { name: "Sabrina Elgazzar",         role: "President",                      image: "/team/Sabrina_VP.jpg",          linkedin: "https://www.linkedin.com/in/sabrinaelgazzar/",           email: "selgazza@stevens.edu",  description: "Leads the chapter, sets the vision, and represents SHPE Stevens to the campus and national organization." },
-      { name: "Emely Vargas",             role: "Internal Vice President",        image: "/team/Emely_ExternalRel.jpg",   linkedin: "https://www.linkedin.com/in/emely-vargas1/",             email: "evargas2@stevens.edu",  description: "Oversees member engagement, internal events, and the well-being of the chapter community." },
-      { name: "Emmanuel Madera",          role: "External Vice President",        image: "/team/Emanuel_Treasurer.jpg",   linkedin: "https://www.linkedin.com/in/emmanuel-madera/",           email: "emadera@stevens.edu",   description: "Manages corporate partnerships, professional events, and external chapter representation." },
-      { name: "Leonel Andrade",           role: "Treasurer",                      image: "/team/Leone_WebChief.jpg",      linkedin: "https://www.linkedin.com/in/leonel-andrade-ba9763212/",  email: "landrade1@stevens.edu", description: "Maintains the chapter budget, manages funding, and ensures financial transparency." },
-      { name: "Isabella Chiang",          role: "Secretary",                      image: "/team/Isabella_PublicRel.jpg",  linkedin: "https://www.linkedin.com/in/ichiang12/",                 email: "ichiang@stevens.edu",   description: "Keeps records, manages communication channels, and coordinates meeting logistics." },
-      { name: "Diego Sanabriga",          role: "Pre-Collegiate Chair",           image: "/team/Diego_prechair.jpg",      linkedin: "https://www.linkedin.com/in/diego-sanabriga-41545831b/", email: "dsanabri@stevens.edu",  description: "Fosters internal community and coordinates member-facing events and initiatives." },
-      { name: "Ines V. Nuñez",            role: "SHPEtina Chair",                 image: "/team/Ines_SHPETINA.jpg",       linkedin: "https://www.linkedin.com/in/inesnunez1/",                email: "inunez1@stevens.edu",   description: "Empowers Latina women in STEM through mentorship, networking, and dedicated programming." },
-      // ── new members for ────────────────
-      { name: "Matias Freire",            role: "Chief Web Officer",              image: "/team/MatiasFreire_ChiefWebOfficer.jpg", linkedin: "https://www.linkedin.com/in/matias43/", email: "mfreire@stevens.edu", description: "Builds and maintains the chapter website, ensuring a great digital experience for members and visitors." },
-      { name: "Angel Zarate",             role: "Academic Chair",                 image: "/team/AngelZarate.jpg",              linkedin: "https://www.linkedin.com/in/angel-zarate29/",  email: "azarate@stevens.edu",  description: "Organizes tutoring, study resources, and academic events to support member success." },
-      { name: "Antony Saldana",           role: "External Relations",             image: "/team/AnthonySaldana_ExternalRelations.png",              linkedin: "https://www.linkedin.com/in/antony-saldana/",  email: "asaldana1@stevens.edu",  description: "Cultivates relationships with alumni, industry partners, and the broader STEM community." },
-      { name: "Joe Simon",                role: "Public Relations Chair",         image: "/team/JoeSimon_PublicRelations.jpg",              linkedin: "https://www.linkedin.com/in/joe-simon-622236374/",  email: "jsimon8@stevens.edu",  description: "Manages social media, press outreach, and the chapter's public image." },
-      { name: "Andrea Manzanares Claros", role: "Public Relations Chair",         image: "/team/AndreaManzanares.jpg",              linkedin: "https://www.linkedin.com/in/andreamzrc/",  email: "amanzana@stevens.edu",  description: "Manages social media, press outreach, and the chapter's public image." },
-      { name: "Jean Reyes",               role: "Recruitment Chair",              image: "/team/JeanReyes_RecruitmentChair1.jpg",              linkedin: "https://www.linkedin.com/in/jeanreyes02/",  email: "jreyes8@stevens.edu",  description: "Develops initiatives to attract and welcome new members into the chapter." },
-
-    ],
-  },
-  
-];
 // ─────────────────────────────────────────────────────────────────────────────
 
-
-
 export default function TeamSection() {
-  const [index, setIndex] = useState(1);
+  const [eBoards, setEBoards] = useState<EBoard[]>([]);
+  const [index, setIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch from Supabase on mount
+  useEffect(() => {
+    async function load() {
+      try {
+        const { data, error } = await supabase
+          .from("eboard_years")
+          .select("year, group_photo_url, eboard_members(*)")
+          .order("created_at", { ascending: true });
+
+        if (error) throw error;
+
+        const boards: EBoard[] = (data ?? []).map((y: any) => ({
+          year: y.year,
+          groupPhoto: y.group_photo_url ?? undefined,
+          members: (y.eboard_members ?? [])
+            .sort((a: any, b: any) => a.display_order - b.display_order)
+            .map((m: any) => ({
+              name: m.name,
+              role: m.role,
+              image: m.image_url ?? "",
+              linkedin: m.linkedin ?? undefined,
+              email: m.email ?? undefined,
+              description: m.description ?? undefined,
+            })),
+        }));
+
+        setEBoards(boards);
+        // Default to the latest year
+        setIndex(Math.max(0, boards.length - 1));
+      } catch (err) {
+        console.error("Failed to load E-Board data:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    load();
+  }, []);
+
+  // Loading state
+  if (loading) {
+    return (
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: 'var(--page-bg)' }}>
+        <div className="max-w-340 mx-auto px-4 md:px-10 text-center">
+          <div className="mb-14">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-(--color-crimson)">Stevens Chapter</p>
+            </div>
+            <h2 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl font-black text-(--color-navy) leading-tight tracking-tight">
+              Meet the Team
+            </h2>
+          </div>
+          <div className="flex items-center justify-center py-20">
+            <div className="w-8 h-8 border-3 border-t-transparent rounded-full animate-spin" style={{ borderColor: "var(--color-crimson)", borderTopColor: "transparent" }} />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (eBoards.length === 0) {
+    return (
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: 'var(--page-bg)' }}>
+        <div className="max-w-340 mx-auto px-4 md:px-10 text-center">
+          <h2 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl font-black text-(--color-navy) leading-tight tracking-tight">
+            Meet the Team
+          </h2>
+          <p className="mt-8 text-sm" style={{ color: "var(--color-text-muted)" }}>No team data available yet.</p>
+        </div>
+      </section>
+    );
+  }
+
   const board = eBoards[index];
   const hasPrev = index > 0;
   const hasNext = index < eBoards.length - 1;

@@ -55,8 +55,6 @@ export default function LoginPage() {
     <main className="min-h-screen flex items-center justify-center px-4 py-16 relative overflow-hidden"
       style={{ backgroundColor: "var(--color-page-bg)" }}
     >
-      {/* Background accent blobs */}
-      <div className="pointer-events-none absolute -top-32 -left-32 w-96 h-96 rounded-full bg-(--color-crimson) opacity-5 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-(--color-navy) opacity-5 blur-3xl" />
 
       <div
