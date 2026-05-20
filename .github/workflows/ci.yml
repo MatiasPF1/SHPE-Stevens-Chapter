@@ -20,22 +20,18 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
-          cache-dependency-path: SHPE-Stevens-Chapter/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
-        working-directory: SHPE-Stevens-Chapter
         run: npm ci
 
       - name: Typecheck
-        working-directory: SHPE-Stevens-Chapter
         run: npx tsc --noEmit
 
       - name: Lint
-        working-directory: SHPE-Stevens-Chapter
         run: npm run lint
 
       - name: Build
-        working-directory: SHPE-Stevens-Chapter
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
