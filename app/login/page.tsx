@@ -7,6 +7,7 @@ import { Eye, EyeOff, LogIn } from "lucide-react";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -70,11 +71,12 @@ export default function LoginPage() {
                 type="email"
                 autoComplete="email"
                 required
-                value="shpe.sit@gmail.com"
-                readOnly
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
                 className="w-full rounded-xl border border-(--color-border) px-4 py-3 text-sm
-                           bg-(--color-page-bg) text-(--color-navy) opacity-60 cursor-not-allowed
-                           focus:outline-none transition"
+                           bg-(--color-page-bg) text-(--color-navy) placeholder:text-(--color-text-muted)
+                           focus:outline-none focus:ring-2 focus:ring-(--color-crimson) transition"
               />
             </div>
 
