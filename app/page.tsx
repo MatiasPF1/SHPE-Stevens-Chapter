@@ -65,7 +65,6 @@ export default function Home() {
 
       {/* Socials Section */}
       <Socials />
-
     </main>
   );
 }
