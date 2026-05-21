@@ -6,6 +6,7 @@ import { Session } from "@supabase/supabase-js";
 import { LayoutDashboard, Image as ImageIcon, Briefcase, Users, Globe, LogOut, User } from "lucide-react";
 import EBoardManager from "./E-Board/EBoardManager";
 import SponsorsManager from "./Sponsors/SponsorsManager";
+import GalleryManager from "./Gallery/GalleryManager";
 
 type ActiveTab = "gallery" | "sponsors" | "eboard";
 
@@ -161,7 +162,7 @@ export default function AdminPortalPage() {
 
         <div className="flex-1 p-8">
           {activeTab === "gallery" && (
-            <p className="text-sm font-medium" style={{ color: "var(--color-text-muted)" }}>Gallery manager - coming soon.</p>
+            <GalleryManager />
           )}
 
           {activeTab === "sponsors" && <SponsorsManager />}

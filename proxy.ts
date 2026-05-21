@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const PROTECTED_PREFIX = "/AdminPortal";
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   // Only guard AdminPortal routes
