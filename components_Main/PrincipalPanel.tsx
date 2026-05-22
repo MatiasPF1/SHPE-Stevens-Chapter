@@ -50,6 +50,14 @@ interface HeroSectionProps {
 const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
   ({ className, logo, slogan, title, subtitle, callToAction, contactInfo }, ref) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const check = () => setIsMobile(window.innerWidth < 768);
+      check();
+      window.addEventListener('resize', check);
+      return () => window.removeEventListener('resize', check);
+    }, []);
 
     useEffect(() => {
       const interval = setInterval(() => {
@@ -158,9 +166,9 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         {/* Right Side: Image Carousel with one-time clip-path reveal */}
         <motion.div 
           className="relative w-full md:w-[55%] lg:w-[58%] overflow-hidden"
-          style={{ minHeight: '500px' }}
+          style={{ minHeight: isMobile ? '300px' : '500px' }}
           initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
-          animate={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
+          animate={{ clipPath: isMobile ? 'polygon(0% 0, 100% 0, 100% 100%, 0% 100%)' : 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
           transition={{ duration: 1.2, ease: "circOut" }}
         >
           {heroImages.map((item, index) => (

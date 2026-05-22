@@ -71,18 +71,18 @@ export default function TestimonialsSection() {
   return (
     <section className="pt-12 pb-24 md:py-28 bg-(--page-bg) relative overflow-hidden">
       {/* Section header */}
-      <div className="max-w-3xl mx-auto px-8 text-center mb-20">
-        <h2 className="font-[family-name:var(--font-raleway)] text-[clamp(3.5rem,10vw,5.5rem)] font-black text-(--color-navy) leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>
+      <div className="max-w-3xl mx-auto px-4 md:px-8 text-center mb-10 md:mb-20">
+        <h2 className="font-[family-name:var(--font-raleway)] text-[clamp(2rem,8vw,5.5rem)] font-black text-(--color-navy) leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>
 
         {/* Eyebrow with flanking rules */}
-        <div className="flex items-center justify-center gap-4 translate-y-10">
+        <div className="flex items-center justify-center gap-4 md:translate-y-10">
           <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-(--color-crimson) ">Stevens SHPE Member Spotlight</p>
         </div>
 
       </div>
 
-      <div className="max-w-7.5xl mx-auto px-16">
-        <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr_200px] gap-20 items-start">
+      <div className="max-w-7.5xl mx-auto px-4 sm:px-8 md:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr_200px] gap-10 md:gap-20 items-start">
 
           {/* Left Photo */}
           <div className="relative min-h-[480px] rounded-2xl overflow-hidden">
@@ -180,6 +180,31 @@ export default function TestimonialsSection() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Mobile story switcher */}
+        <div className="flex md:hidden justify-center gap-5 mt-6">
+          {testimonials.map((story, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              aria-label={`View ${story.name}'s story`}
+              className="flex flex-col items-center gap-1.5"
+            >
+              <div className={`w-12 h-12 rounded-full overflow-hidden relative transition-all duration-300 ${
+                i === active
+                  ? 'outline outline-2 outline-offset-2 outline-(--color-navy) shadow-md'
+                  : 'grayscale opacity-50'
+              }`}>
+                <Image src={story.src} alt={story.name} fill sizes="48px" className="object-cover object-top" />
+              </div>
+              <p className={`text-[9px] font-semibold leading-tight ${
+                i === active ? 'text-(--color-navy)' : 'text-(--color-text-muted)'
+              }`}>
+                {story.name.split(' ')[0]}
+              </p>
+            </button>
+          ))}
         </div>
       </div>
     </section>

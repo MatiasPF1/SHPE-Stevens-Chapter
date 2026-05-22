@@ -11,7 +11,7 @@ export default function AboutSection() {
         <div className="flex flex-col gap-6">
 
           {/* Heading */}
-          <h2 className="font-[family-name:var(--font-raleway)] text-6xl md:text-7xl font-black text-(--color-navy) leading-tight text-center">
+          <h2 className="font-[family-name:var(--font-raleway)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-(--color-navy) leading-tight text-center">
             Who Are We?
           </h2>
 
