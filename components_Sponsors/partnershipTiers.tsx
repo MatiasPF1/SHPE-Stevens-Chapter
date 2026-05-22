@@ -65,10 +65,10 @@ const CheckIcon = ({ highlighted }: { highlighted: boolean }) => (
 
 const PartnershipTiers = () => {
   return (
-    <section className="py-5 -translate-y-14" style={{ backgroundColor: "var(--color-page-bg)" }}>
-      <div className="max-w-6xl mx-auto px-5 text-center">
+    <section className="py-5 md:-translate-y-14" style={{ backgroundColor: "var(--color-page-bg)" }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-5 text-center">
         <h2
-          className="text-4xl font-extrabold mb-16"
+          className="text-3xl md:text-4xl font-extrabold mb-10 md:mb-16"
           style={{ color: "var(--color-navy)", fontFamily: "var(--font-playfair)" }}
         >
           Partnership Opportunities

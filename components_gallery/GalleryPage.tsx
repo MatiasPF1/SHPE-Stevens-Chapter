@@ -42,7 +42,7 @@ function EventCarousel({ event }: { event: EventGallery }) {
         <button
           onClick={prev}
           aria-label="Previous"
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center transition-opacity hover:opacity-90 cursor-pointer"
+          className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition-opacity hover:opacity-90 cursor-pointer"
           style={{ backgroundColor: "var(--color-navy)" }}
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -54,7 +54,7 @@ function EventCarousel({ event }: { event: EventGallery }) {
         <button
           onClick={next}
           aria-label="Next"
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center transition-opacity hover:opacity-90 cursor-pointer"
+          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition-opacity hover:opacity-90 cursor-pointer"
           style={{ backgroundColor: "var(--color-navy)" }}
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -111,13 +111,13 @@ export default function GalleryPage() {
 
   return (
     <main
-      className="min-h-screen py-16 px-36 transition-colors duration-300"
+      className="min-h-screen py-10 px-4 sm:px-8 md:py-16 md:px-16 lg:px-36 transition-colors duration-300"
       style={{ backgroundColor: "var(--color-page-bg)" }}
     >
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <h1
             className="font-[family-name:var(--font-raleway)] text-4xl md:text-6xl font-black leading-tight mb-4"
             style={{ color: "var(--color-navy)" }}
@@ -126,7 +126,7 @@ export default function GalleryPage() {
           </h1>
           <p className="text-base md:text-lg leading-relaxed font-medium"
             style={{ color: "var(--color-slate)" }}>
-            Relive our favorite SHPE moments, a visual story of familia, leadership, and growth, captured con cariño by the SHPE Family
+            Relive our favorite SHPE moments, a visual story of familia, leadership, and growth, captured con cariño
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export default function GalleryPage() {
             No events yet — check back soon!
           </p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-26 gap-y-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10 md:gap-x-26 md:gap-y-20">
             {events.map((event) => (
               <EventCarousel key={event.id} event={event} />
             ))}

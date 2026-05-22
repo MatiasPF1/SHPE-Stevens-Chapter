@@ -30,7 +30,7 @@ export default function Introduction() {
   return (
     <section
       style={{ backgroundColor: "var(--color-page-bg)" }}
-      className="w-full py-20 px-6"
+      className="w-full py-10 md:py-20 px-4 sm:px-6"
     >
       <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
         {/* Left: Text content */}
@@ -55,7 +55,7 @@ export default function Introduction() {
           </p>
 
           {/* Stats */}
-          <div className="flex gap-10 mt-2">
+          <div className="flex flex-wrap gap-6 md:gap-10 mt-2">
             <div className="flex flex-col">
               <span
                 className="text-4xl font-extrabold"
