@@ -13,7 +13,7 @@ const testimonials = [
     companyLogo: "/Testimonials/Collins.png",
     quote:
       "SHPE has provided direct connections to career opportunities that have been instrumental to my growth. I'm looking forward to giving back to this community and supporting the next generation of tech professionals.",
-    src: "/Testimonials/Nathaly.jpg",
+    src: "/Testimonials/Nathaly.jpeg",
     nationality: "Peruvian",
     focus: "Computer Science",
     impactText:
