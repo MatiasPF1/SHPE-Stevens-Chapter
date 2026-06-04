@@ -30,16 +30,15 @@ export default function AboutSection() {
               </p>
               <div className="flex flex-wrap justify-center gap-3 mt-6">
                 {[
-                  { label: "Career Fairs & Recruiting", color: "#1d4ed8", bg: "#eff6ff", border: "#bfdbfe" },
-                  { label: "Mentorship Programs",        color: "#15803d", bg: "#f0fdf4", border: "#bbf7d0" },
-                  { label: "Alumni Networking",          color: "#b45309", bg: "#fffbeb", border: "#fde68a" },
-                  { label: "Community Service",          color: "#be123c", bg: "#fff1f2", border: "#fecdd3" },
-                  { label: "Academic Workshops",         color: "#7e22ce", bg: "#faf5ff", border: "#e9d5ff" },
-                ].map(({ label, color, bg, border }) => (
+                  "Career Fairs & Recruiting",
+                  "Mentorship Programs",
+                  "Alumni Networking",
+                  "Community Service",
+                  "Academic Workshops",
+                ].map((label) => (
                   <span
                     key={label}
-                    className="px-5 py-2 rounded-full text-xs font-semibold tracking-wide uppercase cursor-default select-none transition-opacity duration-200 hover:opacity-80"
-                    style={{ color, backgroundColor: bg, border: `1px solid ${border}` }}
+                    className="px-5 py-2 rounded-full text-xs font-semibold tracking-wide uppercase cursor-default select-none border border-(--color-navy)/20 text-(--color-navy) hover:bg-(--color-navy) hover:text-white transition-colors duration-200"
                   >
                     {label}
                   </span>
