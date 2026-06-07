@@ -73,12 +73,6 @@ export default function TestimonialsSection() {
       {/* Section header */}
       <div className="max-w-3xl mx-auto px-4 md:px-8 text-center mb-10 md:mb-20">
         <h2 className="font-[family-name:var(--font-raleway)] text-[clamp(2rem,8vw,5.5rem)] font-black text-(--color-navy) leading-[0.9] tracking-tight mb-7">Hispanic Success</h2>
-
-        {/* Eyebrow with flanking rules */}
-        <div className="flex items-center justify-center gap-4 md:translate-y-10">
-          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-(--color-crimson) ">Stevens SHPE Member Spotlight</p>
-        </div>
-
       </div>
 
       <div className="max-w-7.5xl mx-auto px-4 sm:px-8 md:px-16">

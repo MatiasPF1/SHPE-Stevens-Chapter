@@ -17,9 +17,7 @@ export default function AboutSection() {
 
           {/* Eyebrow + body */}
           <div className="flex flex-col">
-            <div className="flex items-center justify-center gap-4 mb-5">
-              <p className="text-xs font-bold tracking-[0.2em] uppercase text-(--color-crimson) whitespace-nowrap">About Us</p>
-            </div>
+       
 
             {/*  description for SEO and readability */}
             <div className="mt-4 max-w-3xl mx-auto flex flex-col items-center gap-2">
