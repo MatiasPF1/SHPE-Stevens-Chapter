@@ -1,55 +1,45 @@
 import React from 'react';
 
+const ALL_BENEFITS = [
+  'Name/Logo on Socials and Website',
+  'Host General Company Info Session for SHPE @ SIT Members',
+  'Featured Acknowledgement at Membership Meetings',
+  'Access to our Mock Interview and Resume Building Events',
+  'Host Event Workshop/Tech Talk',
+  'Company Excerpt/Event on Socials and Website',
+];
+
 const partnershipTiers = [
   {
     name: 'Bronze',
-    price: '$750',
+    price: '$800',
     period: '/yr',
     description: 'Get your brand in front of Stevens engineers and build early awareness with a talented student audience.',
-    features: [
-      'Logo on website & mailing campaigns',
-    ],
+    included: [true, false, false, false, false, false],
     highlighted: false,
   },
   {
     name: 'Silver',
-    price: '$999',
+    price: '$1,600',
     period: '/yr',
     description: 'Expand your reach and connect with students actively exploring internship and job opportunities.',
-    features: [
-      'Logo on website & mailing campaigns',
-      'Feature in weekly mailing campaign',
-      'Access to resume book',
-    ],
+    included: [true, true, true, false, false, false],
     highlighted: false,
   },
   {
     name: 'Gold',
-    price: '$1,999',
+    price: '$2,500',
     period: '/yr',
     description: 'Engage directly with SHPE members through workshops and events, building real relationships with future engineers.',
-    features: [
-      'Logo on website & mailing campaigns',
-      'Feature in weekly mailing campaign',
-      'Access to resume book',
-      'Host a private workshop or event',
-    ],
+    included: [true, true, true, true, false, false],
     highlighted: false,
   },
   {
     name: 'Platinum',
-    price: '$2,000+',
+    price: '$4,000',
     period: '/yr',
     description: 'Maximum visibility and recruiting power. The premier tier for organizations committed to engaging our full community.',
-    features: [
-      'Logo on website & mailing campaigns',
-      'Feature in weekly mailing campaign',
-      'Access to resume book',
-      'Host a private workshop or event',
-      'Priority Lunch & Learn booking',
-      'Featured social media content',
-      'Priority branding on all materials',
-    ],
+    included: [true, true, true, true, true, true],
     highlighted: true,
   },
 ];
@@ -60,6 +50,15 @@ const CheckIcon = ({ highlighted }: { highlighted: boolean }) => (
     fill="none" stroke="currentColor" viewBox="0 0 24 24"
   >
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+  </svg>
+);
+
+const XIcon = ({ highlighted }: { highlighted: boolean }) => (
+  <svg
+    className={`w-4 h-4 shrink-0 mt-0.5 ${highlighted ? 'text-white/40' : 'text-(--color-slate)/40'}`}
+    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
   </svg>
 );
 
@@ -106,11 +105,18 @@ const PartnershipTiers = () => {
                 What&apos;s included
               </p>
               <ul className="flex flex-col gap-2.5 flex-grow">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2">
-                    <CheckIcon highlighted={tier.highlighted} />
-                    <span className={`text-sm leading-snug ${tier.highlighted ? 'text-white/90' : 'text-(--color-slate)'}`}>
-                      {feature}
+                {ALL_BENEFITS.map((benefit, i) => (
+                  <li key={benefit} className="flex items-start gap-2">
+                    {tier.included[i]
+                      ? <CheckIcon highlighted={tier.highlighted} />
+                      : <XIcon highlighted={tier.highlighted} />
+                    }
+                    <span className={`text-sm leading-snug ${
+                      tier.included[i]
+                        ? tier.highlighted ? 'text-white/90' : 'text-(--color-slate)'
+                        : tier.highlighted ? 'text-white/40' : 'text-(--color-slate)/40'
+                    }`}>
+                      {benefit}
                     </span>
                   </li>
                 ))}
